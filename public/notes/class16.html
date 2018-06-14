@@ -1,0 +1,492 @@
+<!doctype html>
+<html lang="en">
+
+	<head>
+		<title>FEWD: Class 16</title>
+		<link rel="stylesheet" href="css/reveal.css">
+		<link rel="stylesheet" href="css/general-assembly.css" id="theme">
+		<link rel="shortcut icon" type="image/x-icon" href="img/favicon.ico" />
+		<link rel="stylesheet" href="css/zenburn.css">
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.9.0/styles/default.min.css">
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.9.0/highlight.min.js"></script>
+	</head>
+
+	<body>
+		<div class="reveal">
+			<div class="slides">
+				<section class="hero">
+					<h1>HELLO</h1>
+
+					<div class="opening-instructions">
+						<p>1) Please download <a href="../materials/class16.zip">Class 16 Starter Code</a></p>
+						<p>2) Move the following into your <code class="code">class-work</code> directory:</p>
+						<div class="pad-left-lg">
+							<p>&#149; <code class="code">light-box-example</code></p>
+							<p>&#149; <code class="code">raindrops-example</code></p>
+							<p>&#149; <code class="code">google-maps-example</code></p>
+						</div>
+					</div>
+				</section>
+
+				<section class="hero">
+					<h1>Class <span class="red">#16</span></h1>
+					<h1>01/25/2018</h1>
+					<h1 class="lesson-title">jQuery Plugins + Google Maps API</h1>
+				</section>
+
+				<!-- ANNOUNCEMENTS -->
+				<section data-background="#FFF" class="text-left">
+					<div class="heading">Announcements</div>
+
+					<div class="text-smaller">
+						<p>&#149; Final Projects:</p>
+						<div class="pad-left-lg">
+							<p>&rArr; Sixth deliverable due Tuesday, January 30th</p>
+							<p>&rArr; JavaScript (pt. 2)</p>
+						</div>
+					</div>
+				</section>
+
+				<!-- AGENDA -->
+				<section data-background="#FFF" class="text-left">
+					<div class="heading">Agenda</div>
+
+					<!-- <p>&#149; <code class="code lower">cash-register</code> Review</p> -->
+					<p>&#149; <a href="#/jquery-plugins">jQuery Plugins</a></p>
+					<div class="pad-left-lg text-smallest">
+						<p>&rArr; Lightbox</p>
+						<p>&rArr; Raindrops</p>
+					</div>
+					<p>&#149; <a href="#/google-maps">Google Maps API</a></p>
+					<p>&#149; <a href="#/arrays">Arrays</a></p>
+					<p>&#149; <a href="#/iteration">Array Iteration</a></p>
+					<p>&#149; Final Project Check-ins/Work</p>
+				</section>
+
+				<!-- jQuery Warmup -->
+				<section class="title" id="jquery-warmup">
+					<h1>jQuery Warmup</h1>
+				</section>
+
+				<section data-background="#FFF" class="text-left">
+					<div class="heading">Raindrops.js</div>
+
+					<p>1) Open this <a href="https://codepen.io/adrind/pen/LeKvKV?editors=1010">CodePen</a></p>
+					<p>2) Follow the instructions in the JavaScript section</p>
+					<p>3) Review old slides!</p>
+					<p>4) Remember <code class="code">.click()</code>event handler and <code class="code">.html()</code></p>
+				</section>
+
+				<!-- jQuery Plugins -->
+				<section class="title" id="jquery-plugins">
+					<h1>jQuery Plugins</h1>
+				</section>
+
+				<section data-background="#FFF" class="text-left">
+					<div class="heading">jQuery Plugins</div>
+
+					<div class="text-smallest">
+						<p>&#149; Plugins (or libraries) are pre-written pieces of JavaScript</p>
+						<div class="fragment">
+							<p>&#149; Built to solve a particular issue:</p>
+							<div class="pad-left-lg text-smaller">
+								<p>&rArr; Fullscreen video player</p>
+								<p>&rArr; Image carousel</p>
+								<p>&rArr; Page scrolling</p>
+							</div>
+						</div>
+						<div class="fragment">
+							<p>&#149; To use, just add the plugin's <code class="code">script</code> tag <b>below</b> jQuery:</p>
+<pre><code>
+	&lt;script src="jquery.js"&gt;&lt;/script&gt;
+	&lt;script src="my-super-plugin.js"&gt;&lt;/script&gt;
+
+</code></pre>
+						</div>
+					</div>
+				</section>
+
+				<section data-background="#FFF" class="text-left">
+					<div class="heading">jQuery Plugins: What to look for?</div>
+
+					<p>&#149; There are 1000's of plugins; be judicious:</p>
+					<div class="pad-left-lg">
+						<p class="fragment">&rArr; Recently updated</p>
+						<p class="fragment">&rArr; Well-documented</p>
+						<p class="fragment">&rArr; The more contributors the better</p>
+						<p class="fragment">&rArr; Open source</p>
+						<p class="fragment">&rArr; Hosted on GitHub</p>
+					</div>
+				</section>
+
+				<section data-background="#FFF" class="text-left">
+					<div class="heading">jQuery Plugins: Tips for using</div>
+
+					<p class="fragment">1) Read the documentation</p>
+					<p class="fragment">2) Seriously, read the documentation</p>
+					<p class="fragment">3) Look for, and copy, examples</p>
+					<p class="fragment">4) Start simple<span class="fragment">, then add complexity</span></p>
+					<p class="fragment">5) Search for tutorials/examples if you get stuck</p>
+					<p class="fragment">6) Open a GitHub issue if you think you found a bug</p>
+				</section>
+
+				<!-- Accordian Tutorial -->
+				<section data-background="#FFF" class="text-left">
+					<div class="heading">Accordians</div>
+					<p class="fragment">Let's say we want to add an accordian to our page</p>
+					<p class="fragment"><a href="http://freefrontend.com/jquery-accordions/">Many options</a> to choose from! </p>
+					<p class="fragment">Let's try this one: <a href="https://github.com/vctrfrnndz/jquery-accordion">jQuery accordian</a></p>
+				</section>
+
+				<!-- Light Box Tutorial -->
+				<section data-background="#FFF" class="text-left">
+					<div class="heading">Lightbox Plugin</div>
+					<p>1) Open <code class="code">light-box-example</code> in Sublime Text</p>
+					<p>2) Visit <a href="http://lokeshdhakar.com/projects/lightbox2/" target="_blank">http://lokeshdhakar.com/projects/lightbox2/</a></p>
+				</section>
+
+				<!-- RAIN DROPS PLUGIN -->
+				<section data-background="#FFF" class="text-left">
+					<div class="heading">Raindrops.js</div>
+
+					<p>1) Open <code class="code">raindrops-exmaple</code></p>
+					<p>2) Visit <a href="http://daniellaharel.com/raindrops/" target="_blank">http://daniellaharel.com/raindrops/</a></p>
+				</section>
+
+				<!-- GOOGLE MAPS API -->
+				<section class="title" id="google-maps">
+					<h1>Google Maps API</h1>
+				</section>
+
+				<section data-background="#FFF" class="text-left">
+					<div class="heading">What is an API?</div>
+
+					<div class="text-smallest">
+						<p>&#149; API &rArr; Application Programming Interface</p>
+						<p>&#149; Set of rules/instructions for interacting with a piece of software</p>
+						<p>&#149; Middleman; allows different pieces of software to "talk" to each other</p>
+					</div>
+					<div class="text-center">
+						<img src="img/class15/api.png" alt="">
+					</div>
+				</section>
+
+				<section class="center">
+					<h2>Let's Build a Map</h2>
+					<div class="text-left">
+						<p>&#149; <a target="_blank" href="https://developers.google.com/maps/documentation/javascript/tutorial">Google Maps JavaScript API V3 Documentation</a></p>
+						<p>&#149; Open <code class="code">google-maps-example</code> in Sublime Text</p>
+					</div>
+				</section>
+
+				<section data-background="#FFF" class="text-left">
+					<div class="heading">Let's Build a Map</div>
+
+					<p>1. Obtain API Key</p>
+					<p>2. Add starter HTML and CSS</p>
+					<p>3. Enable map using JS</p>
+					<p>4. ???</p>
+					<p>5. Profit</p>
+				</section>
+
+				<section data-background="#FFF" class="text-left">
+					<div class="heading">Google Maps: Changing the <code class="lower">center</code></div>
+
+					<p>Google Maps require:</p>
+					<p class="pad-left-lg">&rArr; <code class="code">center</code></p>
+					<p class="pad-left-lg">&rArr; <code class="code">zoom</code></p>
+
+					<p>Challenge: Change the <code class="code">center</code> of your map to SF</p>
+					<p class="pad-left-lg fragment">&rArr; Hint: look up SF's coordinates!</p>
+					<p class="pad-left-lg fragment">&rArr; 37.7749 N, -122.4194 W</p>
+				</section>
+
+				<section data-background="#FFF" class="text-left">
+					<div class="heading">Google Maps: Adding Markers</div>
+
+					<p>&#149; Markers require:</p>
+					<div class="pad-left-lg">
+						<p>&rArr; <code class="code">position: {lat: y, lng: x}</code></p>
+						<p>&rArr; <code class="code">map</code></p>
+					</div>
+					<p>&#149; Challenge: use the following to add a marker at SF</p>
+<pre><code>
+	var marker = new google.maps.Marker({
+	  position: {lat: y, lng: x},
+	  map: map,
+	  title: 'San Francisco, CA'
+	});
+
+</code></pre>
+				</section>
+
+				<section data-background="#FFF" class="text-left">
+					<div class="heading">Google Maps: Multiple Markers</div>
+
+					<div class="text-smallest">
+						<p>&#149; Easiest way to add multiple markers:</p>
+<div class="fragment">
+<pre><code>
+	var marker1 = new google.maps.Marker({
+	  position: {lat: 38, lng: 50},
+	  map: map,
+	});
+
+	var marker2 = new google.maps.Marker({
+	  position: {lat: 45, lng: 45},
+	  map: map,
+	});
+
+	var marker3 = new google.maps.Marker({
+	  position: {lat: 25, lng: 75},
+	  map: map,
+	});
+
+	...
+
+</code></pre>
+</div>
+						<p class="fragment">&#149; Is this efficient? Say I want to add 100 markers? 1,000?</p>
+					</div>
+				</section>
+
+				<section class="title" id="arrays">
+					<h1>Arrays</h1>
+				</section>
+
+				<section data-background="#FFF" class="text-left">
+					<div class="heading">Arrays</div>
+
+					<div class="text-smallest">
+						<p>&#149; Arrays are a list-like data structure of comma-separated values</p>
+						<p>&#149; Useful for storing a sequence of related data</p>
+						<p>&#149; Declare arrays using square brackets: <code class="code">[ ]</code></p>
+<pre><code>
+	var friends = ['Moe', 'Larry', 'Curly'];
+
+</code></pre>
+						<div class="fragment">
+							<p>&#149; <b>Element</b> - an item inside the array</p>
+							<p>&#149; <b>Index</b> - the numerical location of each element in the array (starts at position 0 - aka "0-indexed")</p>
+						</div>
+					</div>
+				</section>
+
+				<section data-background="#FFF" class="text-left">
+					<div class="heading">Arrays</div>
+
+					<div class="text-smallest">
+						<p>&#149; JS provides multiple methods for array creation:</p>
+						<div class="pad-left-lg">
+							<div class="fragment">
+								<p>&rArr; The <code class="code">new</code> keyword</p>
+<pre><code>
+	var drinks = new Array('beer', 'coffee', 'water');
+
+</code></pre>
+							</div>
+							<div class="fragment">
+								<p>&rArr; Using the array literal</p>
+<pre><code>
+	var drinks = ['beer', 'coffee', 'water'];
+
+</code></pre>
+							</div>
+						</div>
+						<div class="fragment">
+							<p>&#149; While similar, there are crucial differences</p>
+							<p>&#149; Use the <u>array literal</u> for now</p>
+						</div>
+					</div>
+				</section>
+
+				<section data-background="#FFF" class="text-left">
+					<div class="heading">Arrays</div>
+
+					<div class="text-smallest">
+						<p>&#149; Use <code class="code">[index]</code> to retrieve values from an array</p>
+						<p>&#149; Remember that arrays are <u>0-indexed</u></p>
+<pre><code>
+	var drinks = ['beer', 'coffee', 'water'];
+
+	drinks[0]
+	// 'beer'
+
+	drinks [0+1]
+	// 'coffee'
+
+	var x = drinks.length - 1
+	drinks[x]
+	// 'water'
+
+	drinks[4]
+	// undefined
+
+</code></pre>
+						<p>&#149; <a href="https://repl.it/@adrind/FEWD-Array-Examples" target="_blank">REPL.it</a> examples</p>
+					</div>
+				</section>
+
+				<section data-background="#FFF" class="text-left">
+					<div class="heading">Array Iteration</div>
+
+					<div class="text-smallest">
+						<p>&#149; Consider an array of names:</p>
+<pre><code>
+  var neighborhoods = ['the mission', 'nob hill', 'inner sunset', 'north beach', 'bayview'];
+
+</code></pre>
+						<p class="fragment">&#149; How would we <code class="code">console.log</code> all the names in this array?</p>
+						<div class="fragment">
+<pre><code>
+	console.log(neighborhoods[0]);
+	console.log(neighborhoods[1]);
+	console.log(neighborhoods[2]);
+	console.log(neighborhoods[3]);
+	console.log(neighborhoods[4]);
+
+</code></pre>
+						</div>
+						<p class="fragment">&#149; Is this efficient/scalable?</p>
+					</div>
+				</section>
+
+				<!-- ARRAY ITERATION -->
+				<section class="title" id="iteration">
+					<h1>Array Iteration</h1>
+				</section>
+
+				<section data-background="#FFF" class="text-left">
+					<div class="heading">Array Iteration</div>
+
+					<div class="text-smaller">
+						<p>&#149; Iteration is the process of running the same function to every element in an array:</p>
+						<div class="fragment">
+<pre><code>
+  var neighborhoods = ['the mission', 'nob hill', 'inner sunset', 'north beach', 'bayview'];
+
+  neighborhoods.forEach(logNeighborhood);
+
+  function logNeighborhood (neighborhood) {
+    console.log(neighborhood);
+  }
+
+  // 'the mission'
+  // 'nob hill'
+  // 'inner sunset'
+  // 'north beach'
+  // 'bayview'
+
+</code></pre>
+						</div>
+					</div>
+				</section>
+
+				<section data-background="#FFF" class="text-left">
+					<div class="heading">Array Iteration</div>
+
+					<div class="text-smaller">
+						<p>&#149; JS arrays have several iteration methods:</p>
+						<div class="pad-left-lg text-smallest">
+							<p><code class="code">.forEach()</code></p>
+							<p><code class="code">.every()</code></p>
+							<p><code class="code">.some()</code></p>
+							<p><code class="code">.filter()</code></p>
+							<p><code class="code">.map()</code></p>
+						</div>
+						<p class="fragment">&#149; Most require a function to be supplied as an argument; this function will be applied to each item in the array, individually</p>
+					</div>
+				</section>
+
+				<section data-background="#FFF" class="text-left">
+					<div class="heading">Array Iteration</div>
+					<p>&#149; Let's apply array iteration to our Google Maps Markers:</p>
+					<div class="pad-left-lg">
+						<p>1) Create an array of location objects (each should contain <code class="code">lat</code>, <code class="code">lng</code>, and <code class="code">title</code></p>
+						<p>2) Apply the <code class="code">forEach</code> method to the array</p>
+						<p>3) Write the function to apply each marker to the <code class="code">map</code></p>
+					</div>
+				</section>
+
+				<section data-background="#FFF" class="text-left">
+					<div class="heading">Array Iteration</div>
+
+					<div class="text-smallest">
+						<p>&#149; Create an array of location objects containing <code class="code">lat</code>, <code class="code">lng</code>, and <code class="code">title</code>:</p>
+<pre><code>
+	var locations = [
+	  {
+	    lat: 37.7552,
+	    lng: -122.4528,
+	    title: 'Sutro Tower',
+	  },
+	  {
+	    lat: 37.7983,
+	    lng: -122.3778,
+	    title: 'Bay Bridge',
+	  },
+	  {
+	    lat: 37.8199,
+	    lng: -122.4783,
+	    title: 'Golden Gate Bridge',
+	  },
+	];
+
+</code></pre>
+					</div>
+				</section>
+
+				<section data-background="#FFF" class="text-left">
+					<div class="heading">Array Iteration</div>
+
+					<p>&#149; Apply the <code class="code">forEach</code> method to the array</p>
+<pre><code>
+	var locations = [ ... ];
+
+	locations.forEach(processLocation);
+
+	function processLocation (location) {
+	  console.log(location)
+	}
+
+</code></pre>
+					<p>&#149; Use <code class="code">console.log(...)</code> to test your code is working</p>
+				</section>
+
+				<section data-background="#FFF" class="text-left">
+					<div class="heading">Array Iteration</div>
+
+					<p>&#149; Update <code class="code">processLocation</code> to render the markers</p>
+
+<pre><code>
+	function processLocation (location) {
+	  var marker = new google.maps.Marker({
+	    position: {
+	      lat: location.lat,
+	      lng: location.lng,
+	    },
+	    title: location.title,
+	    map: map,
+	  });
+	}
+
+</code></pre>
+				</section>
+
+				<!-- THE END -->
+				<section class="center">
+					<img src="img/main/the-end.jpg">
+				</section>
+
+				<section class="center">
+					<h1>Exit Tickets!</h1>
+				</section>
+			</div>
+		</div>
+
+		<script src="js/head.min.js"></script>
+		<script src="js/reveal.min.js"></script>
+		<script src="js/main.js"></script>
+	</body>
+</html>
+

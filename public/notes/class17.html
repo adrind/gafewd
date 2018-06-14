@@ -1,0 +1,522 @@
+<!doctype html>
+<html lang="en">
+
+	<head>
+		<title>FEWD: Class 17</title>
+		<link rel="stylesheet" href="css/reveal.css">
+		<link rel="stylesheet" href="css/general-assembly.css" id="theme">
+		<link rel="shortcut icon" type="image/x-icon" href="img/favicon.ico" />
+		<link rel="stylesheet" href="css/zenburn.css">
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.9.0/styles/default.min.css">
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.9.0/highlight.min.js"></script>
+	</head>
+
+	<body>
+		<div class="reveal">
+			<div class="slides">
+				<section class="hero">
+					<h1>HELLO</h1>
+
+
+					<div class="opening-instructions">
+						<p>1) Please download <a href="../materials/class17.zip">Class 17 Starter Code</a></p>
+						<p>2) Move the following into your <code class="code">class-work</code> directory:</p>
+						<div class="pad-left-lg">
+							<p>&#149; <code class="code">google-maps-example</code></p>
+						</div>
+					</div>
+				</section>
+
+				<section class="hero">
+					<h1>Class <span class="red">#17</span></h1>
+					<h1>01/30/2018</h1>
+					<h1 class="lesson-title">JavaScript and APIs (Pt 1)</h1>
+				</section>
+
+				<!-- ANNOUNCEMENTS -->
+				<section data-background="#FFF" class="text-left">
+					<div class="heading">Announcements</div>
+
+					<p>&#149; Final Projects:</p>
+					<div class="pad-left-lg">
+						<p>&rArr; Final projects due in nine days!</p>
+						<p>&rArr; Keep coming to office hours</p>
+					</div>
+				</section>
+
+				<!-- AGENDA -->
+				<section data-background="#FFF" class="text-left">
+					<div class="heading">Agenda</div>
+
+					<p>&#149; JavaScript Warmup</p>
+					<p>&#149; <a href="#google-maps">What's an API</a></p>
+					<p>&#149; Google Maps Activity</p>
+					<p>&#149; <a href="#arrays">JavaScript Arrays</a></p>
+					<p>&#149; <a href="#objects">JavaScript Objects</a></p>
+				</section>
+
+				<!-- REVIEW -->
+				<section class="title">
+					<h1>Warmup</h1>
+				</section>
+
+				<section data-background="#FFF" class="text-left">
+					<div class="heading">JavaScript Warmup</div>
+					<div>
+						<p>&#149; <a href="https://codepen.io/adrind/pen/xYKdwN?editors=1010" target="_blank">CodePen exercise</a></p>
+					</div>
+				</section>
+
+				<!-- GOOGLE MAPS API -->
+				<section class="title" id="google-maps">
+					<h1>Google Maps API</h1>
+				</section>
+
+				<section data-background="#FFF" class="text-left">
+					<div class="heading">What is an API?</div>
+
+					<div class="text-smallest">
+						<p>&#149; API &rArr; Application Programming Interface</p>
+						<p>&#149; Set of rules/instructions for interacting with a piece of software</p>
+						<p>&#149; Middleman; allows different pieces of software to "talk" to each other</p>
+					</div>
+					<div class="text-center">
+						<img src="img/class15/api.png" alt="">
+					</div>
+				</section>
+
+				<section data-background="#FFF" class="text-left">
+					<div class="heading">API vs Plugin</div>
+
+					<div class="text-smaller">API
+
+					</div>
+
+					<div class="text-smallest pad-left-lg">
+						<p>&#149; A way to get/send data to/from another piece of software</p>
+						<p>&#149; Up to the developer to style/add the data to their website</p>
+						<p>&#149; Often requires permissions to use</p>
+					</div>
+					<div class="text-smaller">
+						Plugin
+					</div>
+					<div class="text-smallest pad-left-lg">
+						<p>&#149; Gives you a file or code to add to your page</p>
+						<p>&#149; Usually comes with some configured styles/functionality so a developer doesn't have to do much work</p>
+						<p>&#149; Doesn't necessarily talk to another piece of software -- stand alone code snippet</p>
+					</div>
+					<div class="text-smaller">
+						Facebook <a href="https://developers.facebook.com/docs/plugins">plugins</a> vs <a href="https://developers.facebook.com/tools/explorer">Facebook API</a>
+					</div>
+				</section>
+
+				<section class="center">
+					<h2>Let's Build a Map</h2>
+					<div class="text-left">
+						<p>&#149; <a target="_blank" href="https://developers.google.com/maps/documentation/javascript/tutorial">Google Maps JavaScript API V3 Documentation</a></p>
+						<p>&#149; Open <code class="code">google-maps-example</code> in Sublime Text</p>
+					</div>
+				</section>
+
+				<section data-background="#FFF" class="text-left">
+					<div class="heading">Let's Build a Map</div>
+
+					<p>1. Obtain API Key</p>
+					<p>2. Add starter HTML and CSS</p>
+					<p>3. Enable map using JS</p>
+					<p>4. ???</p>
+					<p>5. Profit</p>
+				</section>
+
+				<section data-background="#FFF" class="text-left">
+					<div class="heading">Google Maps: Changing the <code class="lower">center</code></div>
+
+					<p>Google Maps require:</p>
+					<p class="pad-left-lg">&rArr; <code class="code">center</code></p>
+					<p class="pad-left-lg">&rArr; <code class="code">zoom</code></p>
+
+					<p>Challenge: Change the <code class="code">center</code> of your map to SF</p>
+					<p class="pad-left-lg fragment">&rArr; Hint: look up SF's coordinates!</p>
+					<p class="pad-left-lg fragment">&rArr; 37.7749 N, -122.4194 W</p>
+				</section>
+
+				<section data-background="#FFF" class="text-left">
+					<div class="heading">Google Maps: Adding Markers</div>
+
+					<p>&#149; Markers require:</p>
+					<div class="pad-left-lg">
+						<p>&rArr; <code class="code">position: {lat: y, lng: x}</code></p>
+						<p>&rArr; <code class="code">map</code></p>
+					</div>
+					<p>&#149; Challenge: use the following to add a marker at SF</p>
+<pre><code>
+	var marker = new google.maps.Marker({
+	  position: {lat: y, lng: x},
+	  map: map,
+	  title: 'San Francisco, CA'
+	});
+
+</code></pre>
+				</section>
+
+				<section data-background="#FFF" class="text-left">
+					<div class="heading">Google Maps: Multiple Markers</div>
+
+					<div class="text-smallest">
+						<p>&#149; Easiest way to add multiple markers:</p>
+<div class="fragment">
+<pre><code>
+	var marker1 = new google.maps.Marker({
+	  position: {lat: 38, lng: 50},
+	  map: map,
+	});
+
+	var marker2 = new google.maps.Marker({
+	  position: {lat: 45, lng: 45},
+	  map: map,
+	});
+
+	var marker3 = new google.maps.Marker({
+	  position: {lat: 25, lng: 75},
+	  map: map,
+	});
+
+	...
+
+</code></pre>
+</div>
+						<p class="fragment">&#149; Is this efficient? Say I want to add 100 markers? 1,000?</p>
+					</div>
+				</section>
+
+				<section class="title" id="arrays">
+					<h1>Arrays</h1>
+				</section>
+
+				<section data-background="#FFF" class="text-left">
+					<div class="heading">Arrays</div>
+
+					<div class="text-smallest">
+						<p>&#149; Arrays are a list-like data structure of comma-separated values</p>
+						<p>&#149; Useful for storing a sequence of related data</p>
+						<p>&#149; Declare arrays using square brackets: <code class="code">[ ]</code></p>
+<pre><code>
+	var friends = ['Moe', 'Larry', 'Curly'];
+
+</code></pre>
+						<div class="fragment">
+							<p>&#149; <b>Element</b> - an item inside the array</p>
+							<p>&#149; <b>Index</b> - the numerical location of each element in the array (starts at position 0 - aka "0-indexed")</p>
+						</div>
+					</div>
+				</section>
+
+				<section data-background="#FFF" class="text-left">
+					<div class="heading">Arrays</div>
+
+					<div class="text-smallest">
+						<p>&#149; JS provides multiple methods for array creation:</p>
+						<div class="pad-left-lg">
+							<div class="fragment">
+								<p>&rArr; The <code class="code">new</code> keyword</p>
+<pre><code>
+	var drinks = new Array('beer', 'coffee', 'water');
+
+</code></pre>
+							</div>
+							<div class="fragment">
+								<p>&rArr; Using the array literal</p>
+<pre><code>
+	var drinks = ['beer', 'coffee', 'water'];
+
+</code></pre>
+							</div>
+						</div>
+						<div class="fragment">
+							<p>&#149; While similar, there are crucial differences</p>
+							<p>&#149; Use the <u>array literal</u> for now</p>
+						</div>
+					</div>
+				</section>
+
+				<section data-background="#FFF" class="text-left">
+					<div class="heading">Arrays</div>
+
+					<div class="text-smallest">
+						<p>&#149; Use <code class="code">[index]</code> to retrieve values from an array</p>
+						<p>&#149; Remember that arrays are <u>0-indexed</u></p>
+<pre><code>
+	var drinks = ['beer', 'coffee', 'water'];
+
+	drinks[0]
+	// 'beer'
+
+	drinks [0+1]
+	// 'coffee'
+
+	var x = drinks.length - 1
+	drinks[x]
+	// 'water'
+
+	drinks[4]
+	// undefined
+
+</code></pre>
+						<p>&#149; <a href="https://codepen.io/adrind/pen/WMePEd?editors=1010" target="_blank">Todo list</a> example</p>
+					</div>
+				</section>
+
+				<section data-background="#FFF" class="text-left">
+					<div class="heading">Array Iteration</div>
+
+					<div class="text-smallest">
+						<p>&#149; Consider an array of names:</p>
+<pre><code>
+  var neighborhoods = ['the mission', 'nob hill', 'inner sunset', 'north beach', 'bayview'];
+
+</code></pre>
+						<p class="fragment">&#149; How would we <code class="code">console.log</code> (print the value to the console) all the names in this array?</p>
+						<div class="fragment">
+<pre><code>
+	console.log(neighborhoods[0]);
+	console.log(neighborhoods[1]);
+	console.log(neighborhoods[2]);
+	console.log(neighborhoods[3]);
+	console.log(neighborhoods[4]);
+
+</code></pre>
+						</div>
+						<p class="fragment">&#149; Is this efficient/scalable?</p>
+					</div>
+				</section>
+
+				<!-- ARRAY ITERATION -->
+				<section class="title" id="iteration">
+					<h1>Array Iteration</h1>
+				</section>
+
+				<section data-background="#FFF" class="text-left">
+					<div class="heading">Array Iteration</div>
+
+					<div class="text-smaller">
+						<p>&#149; Iteration is the process of running the same function to every element in an array:</p>
+						<div class="fragment">
+<pre><code>
+  var neighborhoods = ['the mission', 'nob hill', 'inner sunset', 'north beach', 'bayview'];
+
+  neighborhoods.forEach(logNeighborhood);
+
+  function logNeighborhood (neighborhood) {
+    console.log(neighborhood);
+  }
+
+  // 'the mission'
+  // 'nob hill'
+  // 'inner sunset'
+  // 'north beach'
+  // 'bayview'
+
+</code></pre>
+						</div>
+					</div>
+				</section>
+
+				<section data-background="#FFF" class="text-left">
+					<div class="heading">Array Iteration</div>
+
+					<div class="text-smaller">
+						<p>&#149; JS arrays have several iteration methods:</p>
+						<div class="pad-left-lg text-smallest">
+							<p><code class="code">.forEach()</code></p>
+							<p><code class="code">.every()</code></p>
+							<p><code class="code">.some()</code></p>
+							<p><code class="code">.filter()</code></p>
+							<p><code class="code">.map()</code></p>
+						</div>
+						<p class="fragment">&#149; Most require a function to be supplied as an argument; this function will be applied to each item in the array, individually</p>
+					</div>
+				</section>
+
+				<section data-background="#FFF" class="text-left" id="objects">
+					<div class="heading">Objects</div>
+
+					<div class="text-smallest">
+						<p class="fragment">&#149; JS has another complex data type: an Object</p>
+						<p class="fragment">&#149; Object is a way to store related bits of data in one variable</p>
+						<div class="pad-left-lg">
+							<div class="fragment">
+								<p>&rArr; Not using an object</p>
+<pre><code>var dogName = 'Rocky';
+var dogBreed = 'Corgi mix';
+var dogColor = 'Black';
+</code></pre>
+							</div>
+							<div class="fragment">
+								<p>&rArr; Using an object</p>
+<pre><code>var dog = {
+  'name': 'Rocky',
+  'breed': 'Corgi mix',
+  'color': 'black'
+};
+
+console.log(dog.name); //This will say "Rocky"
+console.log(dog['name']); //Also "Rocky"
+</code></pre>
+							</div>
+						</div>
+					</div>
+				</section>
+
+				<section data-background="#FFF" class="text-left">
+					<div class="heading">Objects</div>
+
+					<p class="fragment text-smaller">&#149; We can create Objects that have Arrays in them:</p>
+<pre class="fragment"><code>var dog = {
+  'name': 'Rocky',
+  'breed': 'Corgi mix',
+  'favoriteThings': ['food', 'attention', 'purple ball']
+};
+</code></pre>
+					<p class="fragment text-smaller">&#149; Or create Arrays of Objects:</p>
+<pre class="fragment"><code>var dogs = [
+  {'name': 'Rocky', 'breed': 'Corgi mix'}, 
+  {'name': 'Romeo', 'breed': 'German Shepherd'}
+];
+</code></pre>
+				</section>
+
+				<section data-background="#FFF" class="text-left">
+					<div class="heading">Arrays vs Objects</div>
+
+					<p class="fragment text-smaller">&#149; Arrays are <strong>lists</strong> of data</p>
+<pre class="fragment"><code>var food = ['orange', 'banana', 'apple'];
+
+var firstFood = food[0]; //How to get a value from the list
+
+food.push('pineapple'); //How to add a value to the list
+
+food[1] = 'strawberry'; //How to change a value in a list
+</code></pre>
+					<p class="fragment text-smaller">Now the list is <code class="code">['orange', 'strawberry', 'apple', 'pineapple']</code></p>
+				</section>
+
+				<section data-background="#FFF" class="text-left">
+					<div class="heading">Arrays vs Objects</div>
+
+					<p class="fragment text-smaller">&#149; Objects store key:value pairs of information</p>
+<pre class="fragment"><code>var food = {'name': 'orange', 'type': 'fruit', 'price': '1 dollar'};
+
+var foodName = food.name; //How to get a value from the object
+
+food['flavor'] = 'sweet'; //How to add a new key:value pair to the object
+
+food['price'] = '2 dollars'; //How to change a value in the object
+</code></pre>
+					<p class="fragment text-smaller">Now the object is <code class="code">{'name': 'orange', 'type': 'fruit', 'price': '2 dollars', 'flavor': 'sweet'}</code></p>
+				</section>
+
+				<section data-background="#FFF" class="text-left">
+					<div class="heading">Todo List Practice</div>
+
+					<p>Practice working with Arrays and Objects with our <a href="https://codepen.io/adrind/pen/JpPxed?editors=1010" target="_blank">Todo List</a></p>
+				</section>
+
+				<section data-background="#FFF" class="text-left">
+					<div class="heading">Array Iteration</div>
+					<p>&#149; Let's apply what we've learned to our Google Maps Markers:</p>
+					<div class="pad-left-lg">
+						<p>1) Create an array of location objects (each should contain <code class="code">lat</code>, <code class="code">lng</code>, and <code class="code">title</code></p>
+						<p>2) Apply the <code class="code">forEach</code> method to the array</p>
+						<p>3) Write the function to apply each marker to the <code class="code">map</code></p>
+					</div>
+				</section>
+
+				<section data-background="#FFF" class="text-left">
+					<div class="heading">Array Iteration</div>
+
+					<div class="text-smallest">
+						<p>&#149; Create an array of location objects containing <code class="code">lat</code>, <code class="code">lng</code>, and <code class="code">title</code>:</p>
+<pre><code>
+	var locations = [
+	  {
+	    lat: 37.7552,
+	    lng: -122.4528,
+	    title: 'Sutro Tower',
+	  },
+	  {
+	    lat: 37.7983,
+	    lng: -122.3778,
+	    title: 'Bay Bridge',
+	  },
+	  {
+	    lat: 37.8199,
+	    lng: -122.4783,
+	    title: 'Golden Gate Bridge',
+	  },
+	];
+
+</code></pre>
+					</div>
+				</section>
+
+				<section data-background="#FFF" class="text-left">
+					<div class="heading">Array Iteration</div>
+
+					<p>&#149; Apply the <code class="code">forEach</code> method to the array</p>
+<pre><code>
+	var locations = [ ... ];
+
+	locations.forEach(processLocation);
+
+	function processLocation (location) {
+	  console.log(location)
+	}
+
+</code></pre>
+					<p>&#149; Use <code class="code">console.log(...)</code> to test your code is working</p>
+				</section>
+
+				<section data-background="#FFF" class="text-left">
+					<div class="heading">Array Iteration</div>
+
+					<p>&#149; Update <code class="code">processLocation</code> to render the markers</p>
+
+<pre><code>
+	function processLocation (location) {
+	  var marker = new google.maps.Marker({
+	    position: {
+	      lat: location.lat,
+	      lng: location.lng,
+	    },
+	    title: location.title,
+	    map: map,
+	  });
+	}
+
+</code></pre>
+				</section>
+				<section data-background="#FFF" class="text-left">
+					<div class="heading">Next Class:</div>
+
+					<p>&#149; Using <a href="https://www.airtable.com">Airtable</a> to build your own API</p>
+					<p>&#149; Using jQuery to fetch <a href="https://datasf.org/opendata/">raw data</a> from APIs!</p>
+					<p>&#149; These APIs give us Arrays and Objects of data - how to add the data they send to our page</p>
+				</section>
+
+				<!-- THE END -->
+				<section class="center">
+					<img src="img/main/the-end.jpg">
+				</section>
+
+				<section class="center">
+					<h1>Exit Tickets!</h1>
+				</section>
+			</div>
+		</div>
+
+		<script src="js/head.min.js"></script>
+		<script src="js/reveal.min.js"></script>
+		<script src="js/main.js"></script>
+	</body>
+</html>
+

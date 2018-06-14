@@ -1,0 +1,406 @@
+<!doctype html>
+<html lang="en">
+
+	<head>
+		<title>FEWD: Class 14</title>
+		<link rel="stylesheet" href="css/reveal.css">
+		<link rel="stylesheet" href="css/general-assembly.css" id="theme">
+		<link rel="shortcut icon" type="image/x-icon" href="img/favicon.ico" />
+		<link rel="stylesheet" href="css/zenburn.css">
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.9.0/styles/default.min.css">
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.9.0/highlight.min.js"></script>
+	</head>
+
+	<body>
+		<div class="reveal">
+			<div class="slides">
+				<section class="hero">
+					<h1>HELLO</h1>
+
+					<div class="opening-instructions text-smallest">
+						<p>1) Please download <a href="../materials/class14.zip">Class 14 Starter Code</a></p>
+						<p>2) Move the following into your <code class="code">class-work</code> directory:</p>
+						<div class="pad-left-lg">
+							<p>&#149; <code class="code">bootstrap-startup-matchmaker</code></p>
+						</div>
+					</div>
+				</section>
+
+				<section class="hero condensed">
+					<h1>Class <span class="red">#14</span></h1>
+					<h1>01/18/2018</h1>
+					<h1 class="lesson-title">Bootstrap and CSS Grid</h1>
+				</section>
+
+				<!-- ANNOUNCEMENTS -->
+				<section data-background="#FFF" class="text-left">
+					<div class="heading">Announcements</div>
+
+					<div class="text-smaller">
+						<p>&#149; Homework due Tuesday:</p>
+						<div class="pad-left-lg">
+							<p>&rArr; Fifth <a href="http://sf-fewd.surge.sh/pages/final-project.html">final project</a> deliverable due next Tuesday, Jan 23rd</p>
+							<p>&rArr; JavaScript (pt. 1)</p>
+							<p class="fragment">&rArr; Also: check out the comments I made on your HTML/CSS first draft and update accordingly</p>
+						</div>
+					</div>
+				</section>
+
+				<!-- AGENDA -->
+				<section data-background="#FFF" class="text-left">
+					<div class="heading">Agenda</div>
+
+					<div class="text-smallest">
+						<p>&#149; <a href="#/layout">CSS Layout: A history</a></p>
+						<p>&#149; <a href="#/css-frameworks">CSS Frameworks</a></p>
+						<p>&#149; <a href="#/bootstrap">Bootstrap 4</a></p>
+						<p>&#149; Try out Bootstrap 4</p>
+						<p>&#149; Happy hour! Done with Unit 2!</p>
+					</div>
+				</section>
+
+				<!-- LAYOUT -->
+				<section class="title" id="layout">
+					<h1>CSS Layout</h1>
+				</section>
+
+				<!-- HISTORY -->
+				<section data-background="#FFF" class="text-left">
+					<div class="heading">CSS Layout: History</div>
+
+					<p>&#149; As you are probably aware...HTML/CSS <a href="https://www.w3schools.com/html/html_layout.asp" target="_blank">page layout</a> can be difficult</p>
+					<p>&#149; In the early days, HTML and CSS specs were <a href="https://thehistoryoftheweb.com/tables-layout-absurd/">slow to develop</a> and browsers were being built without any guidance</p>
+				</section>
+
+				<!-- TABLES -->
+				<section data-background="#FFF" class="text-left">
+					<div class="heading">CSS Layout: Tables</div>
+					<p class="fragment">&#149; An early strategy for building complex layouts was using <code class="code">table</code></p>
+					<p class="fragment">&#149; This quickly became known as <a href="http://phrogz.net/css/WhyTablesAreBadForLayout.html">bad style</a> because it was not semantic -- a table should be used as a table of data, not for layout</p>
+					<p class="fragment">&#149; Also poor for <a href="https://webaim.org/techniques/tables/">accessibility</a></p>
+					<p class="fragment">&#149; <a href="https://codepen.io/adrind/pen/eyQazM?editors=1000" target="_blank">Example</a></p>
+				</section>
+
+				<!-- Tables in CSS -->
+				<section data-background="#FFF" class="text-left">
+					<div class="heading">CSS Layout: CSS Tables</div>
+					<p class="fragment">&#149; The use of tables later inspired <a href="https://www.sitepoint.com/table-based-layout-is-the-next-big-thing/">CSS Tables</a></p>
+					<p class="fragment">&#149; AKA <code class="code">display: table;</code> and <code class="code">display: table-cell;</code></p>
+					<p class="fragment">&#149; It let us style elements as "tables" so we didn't have to use the <code class="code">table</code> element.</p>
+					<p class="fragment">&#149; Not great, inflexible when it comes to responsiveness, semantically still not right.</p>
+					<p class="fragment">&#149; <a href="https://codepen.io/adrind/pen/OzaYJV" target="_blank">Example</a></p>
+				</section>
+				<!-- Floats/Inline-block in CSS -->
+				<section data-background="#FFF" class="text-left">
+					<div class="heading">CSS Layout: Floats and inline-block</div>
+					<p class="fragment">&#149; Floats and inline-block become new standards but are still difficult</p>
+					<p class="fragment">&#149; Floats require "clearfix" to make sure it doesn't break out of its container</p>
+					<p class="fragment">&#149; <code class="code">display:inline-block;</code> not supported below IE8 </p>
+					<p class="fragment">&#149; <a href="https://codepen.io/adrind/pen/GyobOX" target="_blank">Floats example</a></p>
+					<p class="fragment">&#149; <a href="https://codepen.io/adrind/pen/ZvmdOZ?editors=1100#0" target="_blank">Inline-block exmaple</a></p>
+				</section>
+
+				<!-- Flexbox in CSS -->
+				<section data-background="#FFF" class="text-left">
+					<div class="heading">CSS Layout: Flexbox</div>
+					<p class="fragment">&#149; By the early 2010s we still hadn't perfected <a href="https://designshack.net/articles/css/farewell-floats-the-future-of-css-layout/">page layout.</a></p>
+					<p class="fragment">&#149; 2011: A <a href="https://www.smashingmagazine.com/2011/09/css3-flexible-box-layout-explained/">spec for Flexbox</a> was proposed</p>
+					<p class="fragment">&#149; Now we have <a href="https://caniuse.com/#feat=flexbox">strong support</a></p>
+					<p class="fragment">&#149; <a href="https://codepen.io/adrind/pen/GyZzxr?editors=1100">Flexbox Example</a></p>
+				</section>
+
+				<!-- CSS Grid in CSS -->
+				<section data-background="#FFF" class="text-left">
+					<div class="heading">CSS Layout: Grid</div>
+					<p class="fragment">&#149; Flexbox is powerful but not perfect</a></p>
+					<p class="fragment">&#149; Good for arranging items on one axis, but not for 2D layouts.</p>
+					<p class="fragment">&#149; A spec for CSS Grid was <a href="http://alistapart.com/article/the-story-of-css-grid-from-its-creators">proposed</a> by Microsoft in 2011</p>
+					<p class="fragment">&#149; Currently at <a href="https://caniuse.com/#search=CSS%20grid">decent support</a> despite not being an "official" standard</p>
+					<p class="fragment">&#149; <a href="https://codepen.io/adrind/pen/zpMVLv?editors=1100">CSS Grid Example</a></p>
+				</section>
+
+				<!-- CSS FRAMEWORKS -->
+				<section class="title" id="css-frameworks">
+					<h1>CSS Frameworks</h1>
+				</section>
+
+				<section data-background="#FFF" class="text-left">
+					<div class="heading">CSS Frameworks: Overview</div>
+
+					<div class="text-smaller">
+						<p>&#149; Standardized approach for solving common problems</p>
+						<p>&#149; Pre-packaged code used to support web development</p>
+						<div class="fragment">
+							<p>&#149; Goals:</p>
+							<div class="pad-left-lg">
+								<p>&rArr; Provide a common structure (boilerplate)</p>
+								<p>&rArr; Eliminate repetitive work</p>
+								<p>&rArr; Speed development process</p>
+								<p>&rArr; Increase on-boarding time of new developers</p>
+							</div>
+						</div>
+					</div>
+				</section>
+				<section data-background="#FFF" class="text-left">
+					<div class="heading">CSS Frameworks: Overview</div>
+
+					<p><u>Frontend Framework</u>:</p>
+					<div class="text-smaller">
+						<p>&#149; Contains standardized code and assets (HTML/CSS/JS)</p>
+						<p>&#149; Typography and pre-built styles for HTML elements</p>
+						<p>&#149; CSS grid for developing a responsive layout</p>
+						<p>&#149; Solutions to cross-browser compatibility issues</p>
+						<p>&#149; JS library for UI/UX interactions (dropdowns/carousels/etc.)</p>
+					</div>
+				</section>
+				<section data-background="#FFF" class="text-left">
+					<div class="heading">CSS Frameworks: Overview</div>
+
+					<p>Two types of framework:</p>
+					<div class="text-smallest pad-left-lg">
+						<p>1) Grid/Layouts (simple):</p>
+						<div class="pad-left-lg">
+							<p>&rArr; <a target="_blank" href="http://960.gs/">960 Grid System</a></p>
+							<p>&rArr; <a target="_blank" href="http://daneden.github.io/Toast/">Toast</a></p>
+							<p>&rArr; <a target="_blank" href="http://getbase.org/">Base</a></p>
+						</div>
+						<p>2) Complete (complex):</p>
+						<div class="pad-left-lg">
+							<p>&rArr; <a target="_blank" href="http://getbootstrap.com/">Bootstrap</a></p>
+							<p>&rArr; <a target="_blank" href="http://foundation.zurb.com/">(Zurb) Foundation</a></p>
+							<p>&rArr; <a target="_blank" href="http://getskeleton.com/">Skeleton</a></p>
+						</div>
+					</div>
+				</section>
+
+				<section data-background="#FFF" class="text-left">
+					<div class="heading">CSS Frameworks: Selecting a Framework</div>
+
+					<p>Rule of thumb:</p>
+					<p class="pad-left-lg text-smallest">&rArr; The more stylistically complex (the more custom CSS you will be writing), the less complex of a framework you will need</p>
+					<div class="fragment">
+					<p>As with plugins:</p>
+						<div class="pad-left-lg text-smallest">
+							<p>&rArr; Open source</p>
+							<p>&rArr; Recently updated</p>
+							<p>&rArr; Community of active contributors</p>
+							<p>&rArr; Well-documented</p>
+						</div>
+					</div>
+				</section>
+
+				<section data-background="#FFF" class="text-left">
+					<div class="heading">CSS Frameworks: Pros/Cons</div>
+
+					<div class="text-smaller">
+						<p>Pros:</p>
+						<div class="pad-left-lg text-smallest">
+							<p>&rArr; Major increase in speed of development</p>
+							<p>&rArr; Solutions to common problems already built</p>
+							<p>&rArr; Cross-browser compatibility</p>
+						</div>
+						<p>Cons:</p>
+						<div class="pad-left-lg text-smallest">
+							<p>&rArr; Reliance: you might un-learn CSS!</p>
+							<p>&rArr; Dependence: what if you want to switch frameworks?</p>
+							<p>&rArr; Bloat: unused framework code</p>
+							<p>&rArr; <a href="http://adventurega.me/bootstrap/" target="_blank">Identical/similar-looking/clones</a></p>
+						</div>
+					</div>
+				</section>
+
+				<!-- BOOTSTRAP -->
+				<section class="title" id="bootstrap">
+					<h1>Bootstrap</h1>
+				</section>
+
+				<section data-background="#FFF" class="text-left">
+					<div class="heading">Bootstrap: What is it?</div>
+
+					<p>In their own words:</p>
+					<blockquote>"Bootstrap is the most popular HTML, CSS, and JS framework for developing responsive, mobile first projects on the web."</blockquote>
+				</section>
+
+				<section data-background="#FFF" class="text-left">
+					<div class="heading">Bootstrap: What is it?</div>
+
+					<div class="text-smaller">
+						<p>&#149; Released by Twitter as an open source project in 2011</p>
+						<p>&#149; OG built by <a target="_blank" href="https://twitter.com/mdo">@mdo</a> and <a target="_blank" href="https://twitter.com/fat">@fat</a></p>
+						<p>&#149; CSS framework (with HTML and JS components)</p>
+						<p>&#149; Collection of CSS styles for common UI <a target="_blank" href="http://getbootstrap.com/components/">components</a>:</p>
+						<div class="pad-left-lg text-smallest">
+							<p>&rArr; Navbars</p>
+							<p>&rArr; Buttons</p>
+							<p>&rArr; Forms</p>
+							<p>&rArr; Image Carousels</p>
+						</div>
+						<p>&#149; Notable for its responsive <a target="_blank" href="http://getbootstrap.com/css/#grid">grid</a> layout</p>
+						<p>&#149; Second most starred repo on GitHub!</p>
+					</div>
+				</section>
+				<section data-background="#FFF" class="text-left">
+					<div class="heading">Bootstrap: What is it?</div>
+					<p>&#149; Premade <a href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/css/bootstrap.css">CSS</a> and JS files you can add!</p>
+					<div class="text-center">
+						<img src="../img/class14/bootstrap-files.png" alt="Bootstrap file structure">
+					</div>
+				</section>
+				<section data-background="#FFF" class="text-left">
+					<div class="heading">Bootstrap: The Grid</div>
+
+					<div class="text-center">
+						<img src="../img/class14/bootstrap-12-grid.png" alt="">
+					</div>
+					<p class="text-left text-smallest">Source: <a target="_blank" href="http://gdiboulder.github.io/gdi-boulder-intro-bootstrap/">Girl Develop It</a></p>
+				</section>
+
+				<section data-background="#FFF" class="text-left">
+					<div class="heading">Bootstrap: The Grid</div>
+
+					<div class="text-smaller">
+						<p>Core CSS Classes:</p>
+						<p><code class="code">.container</code></p>
+						<p class="pad-left-lg text-smaller">&rArr; Top-level element; contains other HTML</p>
+
+						<p><code class="code">.row</code></p>
+						<p class="pad-left-lg text-smaller">&rArr; Horiztonal row used to hold <code class="code">.col</code>'s</p>
+						<p class="pad-left-lg text-smaller">&rArr; Must be children of a <code class="code">.container</code></p>
+
+						<p><code class="code">.col</code></p>
+						<p class="pad-left-lg text-smaller">&rArr; Used to hold content (text/images/etc.)</p>
+						<p class="pad-left-lg text-smaller">&rArr; Must be immediate children of <code class="code">row</code>'s</p>
+					</div>
+				</section>
+
+				<section data-background="#FFF" class="text-left">
+					<div class="heading">Bootstrap: Columns</div>
+
+					<div class="text-smaller">
+						<p>&#149; Bootstrap's grid is divided into 12 columns</p>
+						<p>&#149; Columns are created using CSS classes</p>
+						<p>&#149; Build columns using the following formula: <code class="code">col-{size}-{width}</code></p>
+						<div class="fragment">
+							<hr>
+							<p>&#149; <code class="code">&lt;div class="col-md-6"&gt;</code></p>
+							<p class="pad-left-lg text-smaller">&rArr; A <code class="code">&lt;div&gt;</code> for medium-sized screens that is 6-columns wide</p>
+							<p>&#149; <code class="code">&lt;div class="col-xs-2"&gt;</code></p>
+							<p class="pad-left-lg text-smaller">&rArr; A <code class="code">&lt;div&gt;</code> for x-small screens that is 2-columns wide</p>
+							<p></p>
+							<hr>
+							<p>&#149; <a href="https://codepen.io/adrind/pen/ypQmGg?editors=1100" target="_blank">Codepen Example</a></p>
+						</div>
+					</div>
+				</section>
+				<section data-background="#FFF" class="text-left">
+					<div class="heading">Codealong: Boostrap + Startup Matchmaker (pt. 1)</div>
+					<div class="text-smallest">
+						<p>1) Open <code class="code">bootstrap-startup-matchmaker</code></p>
+						<p>2) Download Boostrap <code class="code">.css</code> and <code class="code">.js</code> from <a href="https://www.bootstrapcdn.com/" target="_blank">https://www.bootstrapcdn.com/</a></p>
+						<p>3) Update <code class="code">.touts</code> and <code class="code">.tout</code> classes to remove width, float, overflow, padding</p>
+						<p>4) Implement the <code class="code">.row</code> and <code class="code">column-xx-yy</code> for the three columns</p>
+					</div>
+				</section>
+				<section class="title" id="bootstrap-components">
+					<h1>Bootstrap Componenets</h1>
+				</section>
+
+				<section data-background="#FFF" class="text-left">
+					<div class="heading">Bootstrap Components: Overview</div>
+					<p>&#149; Bootstrap components are pre-rolled HTML/CSS (often JS) combinations</p>
+					<p>&#149; Make it easy to implement typical functionality:</p>
+					<div class="pad-left-lg">
+						<p>&rArr; Dropdowns</p>
+						<p>&rArr; Navigation</p>
+						<p>&rArr; Pagination</p>
+					</div>
+					<p>&#149; <a href="https://getbootstrap.com/docs/4.0/components" target="_blank">Components List</a></p>
+				</section>
+				<section data-background="#FFF" class="text-left">
+					<div class="heading">Bootstrap Components: Navbar</div>
+
+					<p>&#149; Bootstrap's <a href="https://getbootstrap.com/docs/4.0/components/navbar/" target="_blank">Navbar</a> provides a responsive nav out-of-the-box</p>
+					<p>&#149; Provides built-in links, search, and dropdown components</p>
+					<p>&#149; Can be "fixed" to top/bottom of screen</p>
+					<div class="fragment">
+						<p>&#149; Easy-install:</p>
+						<div class="pad-left-lg">
+							<p>1) Copy the starter code from the documents</p>
+							<p>2) Paste the starter code right before the opening <code class="code">&lt;body&gt;</code> tag</p>
+							<p>3) Customize to your liking</p>
+						</div>
+					</div>
+				</section>
+				<section data-background="#FFF" class="text-left">
+					<div class="heading">Bootstrap Components: Navbar</div>
+
+					<div class="text-center">
+						<img src="../img/class14/bootstrap-nav-starter-code.png" alt="bootstrap nav starter code">
+					</div>
+				</section>
+
+				<section data-background="#FFF" class="text-left">
+					<div class="heading">Bootstrap Components: Navbar</div>
+
+					<div class="text-smallest">
+						<p>&#149; The nav's containers:</p>
+<pre><code>
+	&lt;nav class="navbar fixed-top navbar-light"&gt;
+		&lt;div class="collapse navbar-collapse"&gt;
+			...rest of nav elements here
+		&lt;/div&gt;
+	&lt;/nav&gt;
+
+</code></pre>
+						<div class="fragment">
+							<p>&#149; Apply the following classes to nav:</p>
+							<div class="pad-left-lg">
+								<p>&rArr; <code class="code">navbar</code></p>
+								<p>&rArr; <code class="code">navbar-light</code></p>
+								<p>&rArr; <code class="code">fixed-top</code></p>
+							</div>
+						</div>
+						<p class="fragment">&#149; Creates a light colored navbar that is fixed to the top of the page</p>
+						<p class="fragment">&#149; 
+							<a href="https://codepen.io/adrind/pen/ZvVELZ?editors=1100">Codepen</a></p>
+					</div>
+				</section>
+
+
+				<section data-background="#FFF" class="text-left">
+					<div class="heading">Give it a try: Boostrap + Startup Matchmaker (pt. 2)</div>
+
+					<p>1) Re-open <code class="code">bootstrap-startup-matchmaker</code></p>
+					<p>2) Replace the <code class="code">&lt;header&gt;</code> and it's children with a Boostrap navbar</p>
+					<p>3) Ensure the navbar is fixed to the top of the viewport</p>
+					<p>4) Consider adding a logo/image using the class <code class="code">.navbar-brand</code></p>
+					<p>5) This will impact the original styles; see if you can dig around the documentation to see if you can maintain some of them</p>
+				</section>
+				<section data-background="#FFF" class="text-left">
+					<div class="heading">Things to keep in mind:</div>
+
+					<div class="fragment">
+						<p>&#149; Bootstrap just came out with a new version (4)</p>
+						<div class="pad-left-lg">
+							<p>&rArr; Make sure you're reading the documentation for the version you're using!</p>
+							<p>&rArr; There are some differences with class names between Bootstrap 3 and 4</p>
+						</div>
+					</div>
+					<div class="fragment">
+						&#149; There are <a href="https://thecssworkshop.com/">so many</a> great resources out there for more practice. 
+					</div>
+				</section>
+				<!-- THE END -->
+				<section class="center">
+					<img src="img/main/the-end.jpg">
+				</section>
+
+			</div>
+		</div>
+
+		<script src="js/head.min.js"></script>
+		<script src="js/reveal.min.js"></script>
+		<script src="js/main.js"></script>
+	</body>
+</html>
+

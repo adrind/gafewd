@@ -1,0 +1,344 @@
+<!doctype html>
+<html lang="en">
+
+	<head>
+		<title>FEWD: Class 18</title>
+		<link rel="stylesheet" href="css/reveal.css">
+		<link rel="stylesheet" href="css/general-assembly.css" id="theme">
+		<link rel="shortcut icon" type="image/x-icon" href="img/favicon.ico" />
+		<link rel="stylesheet" href="css/zenburn.css">
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.9.0/styles/default.min.css">
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.9.0/highlight.min.js"></script>
+	</head>
+
+	<body>
+		<div class="reveal">
+			<div class="slides">
+				<section class="hero">
+					<h1>HELLO</h1>
+
+
+					<div class="opening-instructions">
+						<p>1) Please download <a href="../materials/class18.zip">Class 18 Starter Code</a></p>
+						<p>2) Move the following into your <code class="code">class-work</code> directory:</p>
+						<div class="pad-left-lg">
+							<p>&#149; <code class="code">favorite-things</code></p>
+							<p>&#149; <code class="code">chart-demo</code></p>
+						</div>
+					</div>
+				</section>
+
+				<section class="hero">
+					<h1>Class <span class="red">#18</span></h1>
+					<h1>02/01/2018</h1>
+					<h1 class="lesson-title">JavaScript and APIs (Pt 2)</h1>
+				</section>
+
+				<!-- ANNOUNCEMENTS -->
+				<section data-background="#FFF" class="text-left">
+					<div class="heading">Announcements</div>
+
+					<p>&#149; Final Projects:</p>
+					<div class="pad-left-lg">
+						<p>&rArr; Final projects due in a week!</p>
+						<p>&rArr; Keep coming to office hours</p>
+					</div>
+				</section>
+
+				<!-- AGENDA -->
+				<section data-background="#FFF" class="text-left">
+					<div class="heading">Agenda</div>
+
+					<p>&#149; <a href="#warmup">JavaScript Warmup</a></p>
+					<p>&#149; <a href="#api-review">What's an API</a></p>
+					<p>&#149; <a href="#airtable">Build a full website</a></p>
+					<p>&#149; In Class Project Perfection time</p>
+				</section>
+
+				<!-- REVIEW -->
+				<section class="title">
+					<h1>Warmup</h1>
+				</section>
+
+				<!-- WARMUP: 30 min -->
+				<section data-background="#FFF" class="text-left" id="warmup">
+					<div class="heading">JavaScript Warmup</div>
+					<div>
+						<p>&#149; <a href="https://codepen.io/adrind/pen/aqOqrP?editors=1010" target="_blank">CodePen exercise</a></p>
+						<p>&#149; <a href="http://sf-fewd.surge.sh/notes/class17.html#/arrays">Notes</a> from last class</p>
+					</div>
+				</section>
+
+				<!-- API 20 min-->
+				<section class="title" id="api-review">
+					<h1>API Review</h1>
+				</section>
+
+				<section data-background="#FFF" class="text-left">
+					<div class="heading">What is an API?</div>
+
+					<div class="text-smallest">
+						<p>&#149; API &rArr; Application Programming Interface</p>
+						<p>&#149; Set of rules/instructions for interacting with a piece of software</p>
+					</div>
+					<div class="text-center">
+						<img src="img/class18/client-server.png" alt="Client Server">
+					</div>
+				</section>
+
+				<section data-background="#FFF" class="text-left">
+					<div class="heading">What is an API?</div>
+					<div class="text-center">
+<iframe width="560" height="315" src="https://www.youtube.com/embed/s7wmiS2mSXY" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+					</div>
+				</section>
+
+				<section data-background="#FFF" class="text-left">
+					<div class="heading">What is an API?</div>
+					<div class="text-smaller">
+						Public APIs are a recent innovation
+					</div>
+					<div class="text-center">
+						<img src="img/class18/salesforce-original-web-site.png" alt="Salesforce API">
+						<p class="text-smallest">Salesforce circa 2000</p>
+					</div>
+				</section>
+
+				<section data-background="#FFF" class="text-left">
+					<div class="heading">What is an API?</div>
+					<div class="text-smaller">
+						Popularity and support has grown
+					</div>
+					<div class="text-center">
+						<img src="img/class18/public-apis.png" alt="Public API Growth">
+						<p class="text-smallest">Growth of public APIs</p>
+					</div>
+				</section>
+				<section data-background="#FFF" class="text-left">
+					<div class="heading">What is an API?</div>
+					<div class="text-center">
+						<img src="img/class18/client-server.png" alt="Client Server">
+					</div>
+				</section>
+
+				<section data-background="#FFF" class="text-left">
+					<div class="heading">What is an API?</div>
+					<div class="text-center">
+						<img src="img/class18/yourclient-server.png" alt="Client Server">
+					</div>
+				</section>
+
+				<section data-background="#FFF" class="text-left">
+					<div class="heading">What is a Database?</div>
+					<div class="text-center">
+						<img src="img/class18/salesforce-table-update.png" alt="Salesforce table">
+					</div>
+				</section>
+
+				<section data-background="#FFF" class="text-left">
+					<div class="heading">What is an API?</div>
+					<div class="text-smaller">
+						How do we want to interact with a database?
+					</div>
+					<div class="text-smallest pad-left-lg">
+						<p class="fragment">&#149; Get some data</p>
+						<p class="fragment">&#149; Add some new data</p>
+						<p class="fragment">&#149; Update existing data</p>
+						<p class="fragment">&#149; Remove existing data</p>
+					</div>
+				</section>
+
+				<section class="title" id="rest-apis">
+					<h1>REST APIs</h1>
+				</section>
+
+				<section data-background="#FFF" class="text-left">
+					<div class="heading">REST APIs</div>
+
+					<p>&#149; A style for building APIs to give a uniform interface</p>
+					<p>&#149; Uses HTTP methods to interact with a database</p>
+					<div class="text-smallest pad-left-lg">
+						<p class="fragment">&#149; POST</p>
+						<p class="fragment">&#149; GET</p>
+						<p class="fragment">&#149; PATCH</p>
+						<p class="fragment">&#149; DELETE</p>
+					</div>
+				</section>
+
+				<section data-background="#FFF" class="text-left">
+					<div class="heading">HTTP requests</div>
+
+					<p class="text-smaller">&#149; Making requests from our website is easy to do with jQuery</p>
+					<p class="text-smaller">&#149; jQuery comes with methods that make HTTP requests to APIs</p>
+					<p class="text-smaller">&#149; Uses AJAX - Asynchronous JavaScript and XML</p>
+					<p class="text-smaller pad-left-lg">&#149; Means we can make a request using JavaScript to load data asynchronously</p>
+				</section>
+
+				<section data-background="#FFF" class="text-left">
+					<div class="heading">jQuery methods</div>
+
+					<p><code class="code">$.ajax()</code> method</p>
+					<p class="pad-left-lg">&rArr; url: the url of the API</p>
+					<p class="pad-left-lg">&rArr; type: HTTP method</p>
+					<p class="pad-left-lg">&rArr; headers: extra info the server might need</p>
+					<p class="pad-left-lg">&rArr; success: function to do something with the data we receive</p>
+				</section>
+
+				<section class="center" id="airtable">
+					<h2>Let's Build a Website</h2>
+					<div class="text-left">
+						<p>&#149; <a target="_blank" href="https://airtable.com/tblsmUzRnmcFVwUy7/viwYlPT4RTXQzFaaQ">Using Airtable</a></p>
+						<p>&#149; Open <code class="code">favorite-things</code> in Sublime Text</p>
+					</div>
+				</section>
+
+				<section data-background="#FFF" class="text-left">
+					<div class="heading">Build a website</div>
+
+					<p>&#149; First: re-implement our <a href="https://codepen.io/adrind/pen/aqOqrP">CodePen warmup</a> in our app.js file</p>
+				</section>
+
+				<section data-background="#FFF" class="text-left">
+					<div class="heading">Build a website</div>
+
+					<p>&#149; Next: using <code class="code">$.ajax()</code></p>
+					<p>&#149; Great documention on the web but can be overly complicated</p>
+				</section>
+
+				<section data-background="#FFF" class="text-left">
+					<div class="heading">Build a website</div>
+
+					<p>&#149; Let's test our website!</p>
+					<p>&#149; Add your own favorite thing using <a href="https://airtable.com/shrenKrVbIujQ2kzD">this form</a></p>
+					<p>&#149; Does our GET method still work?</p>
+				</section>
+
+				<section data-background="#FFF" class="text-left">
+					<div class="heading">Build a website</div>
+
+					<p>&#149; What if we only want to see our own favorite things?</p>
+					<p class="fragment">&#149; We can <strong>filter</strong> the request</p>
+					<p class="fragment">&#149; Filtering lets us use query parameters to GET a subset of data</p>
+				</section>
+
+				<section data-background="#FFF" class="text-left">
+					<div class="heading">Build a website</div>
+
+					<p>&#149; What if we wanted to <a href="https://airtable.com/appQytW1PVY1M77vN/api/docs#curl/table:favorites:create">add</a> new data?</p>
+					<p class="fragment">
+<pre><code>$.ajax({
+	url: 'https://api.airtable.com/v0/appQytW1PVY1M77vN/Favorites',
+	headers: {
+		'Authorization': 'Bearer keyHSu1cfEZyaBVMg'
+	},
+	type: 'POST',
+	data: {
+		fields: {
+			text: 'Chocolate',
+			name: 'Adrienne',
+			image: 'picture-of-chocolate.jpg'
+		}
+	},
+	success: function(response) {
+		alert('Data added!');
+	}
+})
+
+</code></pre>
+					</p>
+				</section>
+
+				<section data-background="#FFF" class="text-left">
+					<div class="heading">Build a website</div>
+
+					<p>&#149; What if we wanted to <a href="https://airtable.com/appQytW1PVY1M77vN/api/docs#curl/table:favorites:update">update</a> existing data?</p>
+					<p class="fragment">
+<pre><code>$.ajax({
+	url: 'https://api.airtable.com/v0/appQytW1PVY1M77vN/Favorites/id-of-the-data',
+	headers: {
+		'Authorization': 'Bearer keyHSu1cfEZyaBVMg'
+	},
+	type: 'PATCH',
+	data: {
+		fields: {
+			text: 'Dark Chocolate'
+		}
+	},
+	success: function(response) {
+		alert('Data updated!');
+	}
+})
+
+</code></pre>
+					</p>
+				</section>
+				<section data-background="#FFF" class="text-left">
+					<div class="heading">Build a website</div>
+
+					<p>&#149; What if we wanted to <a href="https://airtable.com/appQytW1PVY1M77vN/api/docs#curl/table:favorites:delete">delete</a> existing data?</p>
+					<p class="fragment">
+<pre><code>$.ajax({
+	url: 'https://api.airtable.com/v0/appQytW1PVY1M77vN/Favorites/id-of-the-data',
+	headers: {
+		'Authorization': 'Bearer keyHSu1cfEZyaBVMg'
+	},
+	type: 'DELETE',
+	success: function(response) {
+		alert('Data deleted!');
+	}
+})
+
+</code></pre>
+					</p>
+				</section>
+				<section data-background="#FFF" class="text-left">
+					<div class="heading">Building Websites</div>
+
+					<p>&#149; Web development is about making it easy to interact with data</p>
+					<p class="fragment">&#149; Front-end development is focused on displaying data</p>
+					<p class="fragment">&#149; Back-end development is about making easy to use APIs that correct change/work with data</p>
+				</section>
+				<section data-background="#FFF" class="text-left">
+					<div class="heading">Building Websites</div>
+
+					<p>There are so many APIs in the world already built for you to use!</p>
+					<p class="fragment">&#149; <a href="https://developers.facebook.com/">Facebook</a></p>
+					<p class="fragment">&#149; <a href="https://www.twilio.com/docs/api/rest">Twilio</a></p>
+					<p class="fragment">&#149; <a href="https://api.slack.com/">Slack</a></p>
+					<p class="fragment">&#149; <a href="https://datasf.org/opendata/">City data</a></p>
+				</section>
+
+				<section data-background="#FFF" class="text-left">
+					<div class="heading">Building Websites</div>
+
+					<p>Visualization libraries</p>
+					<p class="fragment">&#149; <a href="http://www.chartjs.org//">Chart.js</a></p>
+					<p class="fragment">&#149; <a href="https://d3js.org/">D3.js</a></p>
+					<p class="fragment">Combining open datasets and APIs can give you <a href="https://www.informationisbeautifulawards.com/news/118-the-nyt-s-best-data-visualizations-of-the-year">powerful</a> and <a href="http://a816-dohbesp.nyc.gov/IndicatorPublic/dognames/">fun</a> websites</p>
+				</section>
+
+				<section data-background="#FFF" class="text-left">
+					<div class="heading">Building Websites</div>
+
+					<p>Chart.js starter code in <code class="code">chart-demo</code> if you're curious</p>
+					<p>&#149; But first let's perfect your final projects</p>
+					<p class="fragment">&#149; Tuesday's class will be focused on deploying your project to the web</p>
+				</section>
+
+				<!-- THE END -->
+				<section class="center">
+					<img src="img/main/the-end.jpg">
+				</section>
+
+				<section class="center">
+					<h1>Exit Tickets!</h1>
+				</section>
+			</div>
+		</div>
+
+		<script src="js/head.min.js"></script>
+		<script src="js/reveal.min.js"></script>
+		<script src="js/main.js"></script>
+	</body>
+</html>
+
