@@ -18,16 +18,16 @@
 					<h1>HELLO</h1>
 					<div class="opening-instructions">
 						<p>First:</p>
-						<p class="pad-left-lg">Make sure your class work/homework from last class is pushed up to Github</a></b></p>
+						<p class="pad-left-lg">Make sure your homework from last class is pushed up to Github</a></b></p>
 						<p>Then:</p>
 						<p class="pad-left-lg">&#149; Download <a href="../materials/class03.zip">Class 03 Starter Code</a></b></p>
-						<p class="pad-left-lg">&#149; Copy the <code class="code">keanu</code> directory into your <code class="code">class-work</code> directory</p>
+						<p class="pad-left-lg">&#149; Copy the <code class="code">ice-cream</code> directory into a <code class="code">class-work</code> directory</p>
 					</div>
 				</section>
 
 				<section class="hero">
 					<h1>Class <span class="red">#03</span></h1>
-					<h1>09/25/2017</h1>
+					<h1>06/26/2018</h1>
 					<h1 class="lesson-title">CSS Basics</h1>
 				</section>
 
@@ -42,31 +42,31 @@
 					<p>&#149; <a href="#/warmup">Warmup Exercise</a></p>
 					<p>&#149; <a href="#/css-intro">CSS Intro</a></p>
 					<p>&#149; <a href="#/color-property">Color Property</a></p>
-					<p>&#149; <a href="#/fonts">Fonts + Text</a></p>
+					<p>&#149; <a href="#/fonts">Group Exercise</a></p>
 					<p>&#149; <a href="#/working-with-css">Working with CSS</a></p>
 				</section>
 
-<!-- 				<section class="title">
+ 				<section class="title">
 					<h1>Questions</h1>
 				</section>
 
 				<section data-background="#FFF" class="text-left">
 					<div class="heading">Questions</div>
 
-					<p class="text-smaller"><b>Q: Text editor shortcuts:</b></p>
+					<p class="text-smaller"><b>Q: What are some good websites to look at for basic HTML?</b></p>
 					<div class="fragment text-smallest">
 						<p>A: Recommend investing a few hours becoming a power user:</p>
 						<div class="pad-left-lg">
-							<p>&rArr; <a target="_blank" href="https://generalassemb.ly/blog/sublime-text-3-tips-tricks-shortcuts/">25 tricks/shortcuts</a></p>
-							<p>&rArr; <a target="_blank" href="https://scotch.io/bar-talk/the-complete-visual-guide-to-sublime-text-3-getting-started-and-keyboard-shortcuts">Scotch.io Sublime Text Overview</a></p>
-							<p>&rArr; <a target="_blank" href="https://scotch.io/bar-talk/best-of-atom-features-plugins-acting-like-sublime-text">Scotch.io Atom Overview</a></p>
+							<p>&rArr; <a target="_blank" href="https://www.w3schools.com/html/default.asp">Documentation</a></p>
+							<p>&rArr; <a target="_blank" href="https://glitch.com/learn-to-code">Glitch</a></p>
 						</div>
 					</div>
-					<p class="fragment text-smaller"><b>Q: Will we learn how different browsers handle HTML/CSS?</b></p>
-					<p class="fragment text-smallest">A: Not specifics, but we will cover <a href="http://meyerweb.com/eric/tools/css/reset/" target="_blank">solutions</a> to normalize behavior</p>
-					<p class="fragment text-smaller"><b>Q: Will sites like SquareSpace replace the need for coding basic sites?</b></p>
-					<p class="fragment text-smallest">A: Yes and <a target="_blank" href="https://www.quora.com/Why-do-people-still-hire-web-designers-when-there-are-website-builders-out-there-such-as-WordPress-Wix-and-Weebly">no</a></p>
-				</section> -->
+					<p class="fragment text-smaller"><b>Q: What are some other attributes? What's a class? How can we use inputs?</b></p>
+					<p class="fragment text-smallest">A: We will get to these! Slow and steady wins the race!</p>
+					<p class="fragment text-smaller"><b>Q: Do you build with the intention of mobile first before desktop or the other way around?</b></p>
+					<p class="fragment text-smallest">A: Yes and no! It depends on the website you're building and the audience you expect it would draw. But there are ways to build your website so they work well for both (we will learn later)</p>
+					<p class="fragment text-smallest">Keep asking questions your fellow classmates appreciate it!</p>
+				</section>
 
 				<!-- WARMUP (20-25mins) -->
 				<section class="hero" id="warmup">
@@ -77,7 +77,7 @@
 					<div class="heading">Warmup</div>
 
 					<div class="text-smallest">
-						<p>1. Open <code class="code">keanu</code> in SublimeText</p>
+						<p>1. Open <code class="code">ice-cream</code> in SublimeText</p>
 						<p>2. Mark up <code class="code">copy.txt</code> with HTML in <code class="code">about.html</code></p>
 						<p>3. Ensure <code class="code">about.html</code> contains proper structure:</p>
 						<div class="pad-left-lg">
@@ -85,7 +85,7 @@
 							<p>&rArr; <code class="code">html</code></p>
 							<p>&rArr; <code class="code">head</code> & <code class="code">body</code></p>
 						</div>
-						<p>4. Link the <code class="code">.html</code> files (index, about, films) together</p>
+						<p>4. Link the <code class="code">.html</code> files (index, about, flavors) together</p>
 					</div>
 				</section>
 
@@ -233,37 +233,112 @@
 					</div>
 				</section>
 
-				<!-- FONTS -->
-				<section class="hero" id="fonts">
-					<h1><span style="font-family: 'Comic Sans MS'">Fonts and Text</span></h1>
+				<!-- BREAK (5-7 mins) -->
+				<section class="center">
+					<h1>5 minute break</h1>
+					<img src="img/main/break-time-bear.jpg">
 				</section>
 
 				<section data-background="#FFF" class="text-left">
-					<div class="heading">CSS Font: Various Properties</div>
+					<div class="heading">CSS Properties</div>
+					<p class="fragment">There are <a href="https://meiert.com/en/indices/css-properties/">hundreds</a> of CSS properties.</p>
+					<p class="fragment">It can often feel overwhelming to know which property you need.</p>
+					<p class="fragment">Luckily there's a lot of documentation out there to help us!</p>
+				</section>
+
+				<section data-background="#FFF" class="text-left">
+					<div class="heading">Group Exercise</div>
+					<div class="fragment">Each group will be assigned one CSS property</div>
+					<div class="text-smaller fragment">
+						<p>&#149; What does this property do?</p>
+						<p>&#149; What tag names can you use this property with?</p>
+						<p>&#149; What are 3 example values this property can take?</p>
+					</div>
+					<div class="fragment">Use any documentation you find online but <a href="https://www.w3schools.com/cssref/default.asp">W3Schools</a> or <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Reference">Mozilla Docs</a> is a good start!</div>
+				</section>
+
+				<!-- FONTS -->
+				<section class="hero" id="fonts">
+					<h1>Let's review!</h1>
+				</section>
+
+				<section data-background="#FFF" class="text-left">
+					<div class="heading">CSS Font: <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/font-weight">font-weight</a></div>
 
 					<div class="text-smallest">
 						<div class="fragment">
 							<p>&#149; <code class="code">font-weight</code></p>
 							<p class="pad-left-lg text-smaller">&rArr; Sets the "thickness" of the font</p>
+							<p class="pad-left-lg text-smaller">&rArr; You can use it on <code class="code">p</code> or <code class="code">div</code> or any element that has text</p>
+							<p class="pad-left-lg text-smaller">&rArr; Can take keyword or numerical values:</p>
 							<p class="pad-left-lg text-smaller">
-								&rArr; normal and <span style="font-weight: bold">bold</span>; values 100 - 900
+								&#149; normal and bold eg:  <code class="code" style="font-weight: bold">font-weight: bold;</code>
 							</p>
-						</div>
-						<div class="fragment">
-							<p>&#149; <code class="code">font-style</code></p>
-							<p class="pad-left-lg text-smaller">&rArr; Sets a "slant" to the font</p>
 							<p class="pad-left-lg text-smaller">
-								&rArr; <span style="font-style: normal">normal</span> and <span style="font-style: italic">italic</span>
+								&#149; or values 100 - 900 eg: <code class="code" style="font-weight: 600">font-weight: 600;</code>
 							</p>
-						</div>
-						<div class="fragment">
-							<p>&#149; <code class="code">font-size</code></p>
-							<p class="pad-left-lg text-smaller">&rArr; Sets the size of the font</p>
-							<p class="pad-left-lg text-smaller">&rArr; Pixel values (12px); percentage (75%); em's (1em)</p>
 						</div>
 					</div>
 				</section>
 
+				<section data-background="#FFF" class="text-left">
+					<div class="heading">CSS Font: <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/font-style">font-style</a></div>
+					<div class="fragment">
+						<p>&#149; <code class="code">font-style</code></p>
+						<p class="pad-left-lg text-smaller">&rArr; Sets a "slant" to the font</p>
+						<p class="pad-left-lg text-smaller">&rArr; You can use it on <code class="code">p</code> or <code class="code">div</code> or any element that has text</p>
+						<p class="pad-left-lg text-smaller">&rArr; Can take keyword values:</p>
+						<p class="pad-left-lg text-smaller">
+							&rArr; <span style="font-style: normal">normal</span> and <span style="font-style: italic">italic</span>
+						</p>
+						<p class="pad-left-lg text-smaller">
+							&#149; Eg: <code class="code" style="font-style: italic">font-style: italic;</code>
+						</p>
+					</div>
+				</section>
+				<section data-background="#FFF" class="text-left">
+					<div class="heading">CSS Style: <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/border">border</a></div>
+					<div class="fragment">
+						<p>&#149; <code class="code">border</code></p>
+						<p class="pad-left-lg text-smaller">&rArr; Adds a border to an element. You can specify how thick, the type, and the color in one property.</p>
+						<p class="pad-left-lg text-smaller">&rArr; You can use it on any element!</p>
+						<p class="pad-left-lg text-smaller">&rArr; Requires three values or you can break it up using seperate property names.</p>
+						<p class="pad-left-lg text-smaller">
+							&#149; Eg: 
+<pre><code style="border: 2px solid red">div {
+  border: 2px solid red;
+}
+</code></pre>
+						</p>
+						<p class="pad-left-lg text-smaller">
+							&#149; Eg (same result!):
+<pre><code style="border: 2px solid red">div {
+  border-width: 2px;
+  border-color: red;
+  border-type: solid;
+}
+</code></pre>
+						</p>
+					</div>
+				</section>
+				<section data-background="#FFF" class="text-left">
+					<div class="heading">CSS Font: font-size</div>
+					<div class="fragment">
+						<p>&#149; <code class="code">font-size</code></p>
+						<p class="pad-left-lg text-smaller">&rArr; Sets the size of the font</p>
+						<p class="pad-left-lg text-smaller">&rArr; You can use it on <code class="code">p</code> or <code class="code">div</code> or any element that has text</p>
+						<p class="pad-left-lg text-smaller">&rArr; Can take pixel values, percentages, or <a href="https://www.sitepoint.com/power-em-units-css/">"ems"</a>:</p>
+						<p class="pad-left-lg text-smaller">
+							&#149; Eg: <code class="code" style="font-size: 28px">font-size: 28px;</code>
+						</p>
+						<p class="pad-left-lg text-smaller">
+							&#149; Eg: <code class="code" style="font-size: 200%;">font-size: 200%;</code>
+						</p>
+						<p class="pad-left-lg text-smaller">
+							&#149; Eg: <code class="code" style="font-size: 1.5em;">font-size: 1.5em;</code>
+						</p>
+					</div>
+				</section>
 				<section data-background="#FFF" class="text-left">
 					<div class="heading">CSS Font: Font-Family Property</div>
 
@@ -311,7 +386,7 @@
 				<!-- CSS CODEALONG -->
 				<section class="center">
 					<h1>Code Along</h1>
-					<a href="http://codepen.io/cheshireoctopus/pen/mexgPX?editors=110" target="_blank">CodePen</a>
+					<a href="https://codepen.io/adrind/pen/mKGdOP?editors=110" target="_blank">CodePen</a>
 				</section>
 
 				<!-- BREAK (5-7 mins) -->
@@ -342,11 +417,11 @@
 					<div class="text-smallest">
 <pre><code>
 	&lt;p style="color: blue; font-size: 14px;">
-	  Keanu Reeves is Johnny Utah
+	  Chocolate chip ice cream is better than Chocolate ice cream.
 	&lt;/p>
 
 	&lt;p style="color: blue; text-decoration: underline;">
-	  Or is Johnny Utah Keanu Reeves?
+	  But Cookies N'Cream is better than both of them.
 	&lt;/p>
 
 </code></pre>
@@ -434,7 +509,7 @@
 
 				<section data-background="#FFF" class="text-left">
 					<div class="heading">Exercise: CSS Linking</div>
-					<p>1. Re-open <code class="code">keanu</code> directory</p>
+					<p>1. Re-open <code class="code">ice-cream</code> directory</p>
 					<p>2. Link <code class="code">style.css</code> to all three <code class="code">.html</code> files</p>
 					<div class="pad-left-lg text-smaller">
 						<p>&rArr; Hint: <code class="code">style.css</code> is located <u>inside</u> the <code class="code">css</code> directory</p>
@@ -446,8 +521,7 @@
 				<section data-background="#FFF" class="text-left">
 					<div class="heading">Lab</div>
 					<div class="text-smallest">
-						<p>&#149; At the root of your GitHub folder, create a file called <code class="code">index.html</code></p>
-						<p>&#149; Add a <code class="code">styles.css</code> file to the same directory</p>
+						<p>&#149; Add a <code class="code">styles.css</code> file to the root of your GitHub folder (next to index.html)</p>
 						<p>&#149; The <code class="code">index.html</code> will be the landing page for your course portfolio</p>
 						<div class="pad-left-lg text-smaller">
 							<p>1) Add new HTML (perhaps a paragraph on why you are taking FEWD)</p>
