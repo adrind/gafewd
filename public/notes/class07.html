@@ -27,7 +27,7 @@
 
 				<section class="hero condensed">
 					<h1>Class <span class="red">#07</span></h1>
-					<h1>12/19/2017</h1>
+					<h1>07/10/2018</h1>
 					<h1 class="lesson-title">Page Layout: Lab</h1>
 				</section>
 
@@ -36,8 +36,8 @@
 					<div class="heading">Annoucements</div>
 					<p>&#149; Final Projects:</p>
 					<div class="pad-left-lg">
-						<p>&rArr; <a href="https://adriennedreyfus.typeform.com/to/WfmZnv" target="_blank">Project ideas</a> due today</p>
-						<p>&rArr; Wireframes due when we get back</p>
+						<p>&rArr; <a href="https://adriennedreyfus.typeform.com/to/WfmZnv" target="_blank">Project ideas</a> due Thursday</p>
+						<p>&rArr; Wireframes are a fast follow -- July 19th</p>
 					</div>
 				</section>
 
@@ -50,10 +50,10 @@
 					<div class="heading">Questions</div>
 
 					<div class="text-smaller">
-						<p class="text-smaller"><b>Q: Can we review the more complicated/nested selectors like when to use <code class="code">p.article</code> vs <code class="code">.article p?</code></b></p>
-						<p class="text-smallest fragment">A: Yes! Let's do an <a href="https://codepen.io/adrind/pen/ZvQdRO">exercise</a></p>
-						<p class="fragment text-smaller"><b>Q: Do I have to use floats in my final project?</b></p>
-			 			<p class="fragment text-smallest">A: No! Only use what is useful for you to accomplish the goal of your project. We will play with lots of things this class but you will only use a subset in your final project.</p>
+						<p class="text-smaller"><b>More guidance for final project? Will this be our homework going forward?</b></p>
+						<p class="text-smallest fragment">A: Yes! I'll cover that more in the next slide but basically -- pick something that excites you (even if it's silly!)</p>
+						<p class="fragment text-smaller"><b>Q: Are there any practice resources similar to that of our HW assignments? A place I can find an image of a website design and the coded solution to check?</b></p>
+			 			<p class="fragment text-smallest">A: Not that I know of but that sounds like a great idea.</p>
 				 	</div>
 				</section>
 
@@ -75,7 +75,7 @@
 
 					<div class="text-smallest">
 						<p>&#149; Culmination of all skills/technologies (and then some...)</p>
-						<p class="fragment">&#149; Five deliverables; due weekly starting when we get back</p>
+						<p class="fragment">&#149; Five deliverables; due weekly starting this week.</p>
 						<p class="fragment">&#149; Watch out for scope creep!</p>
 						<div class="fragment">
 							<p>&#149; Student Gallery: <a href="http://gallery.ga.co/" target="_blank">http://gallery.ga.co/</a></p>
@@ -112,20 +112,19 @@
 							</div>
 							<p class="fragment">3) Floated elements need to be handled using one of the clearing techniques</p>
 						</div>
-						<p class="fragment">&#149; <a target="_blank" href="https://codepen.io/adrind/pen/GyobOX?editors=110">Example</a></p>
 					</div>
 				</section>
 
 				<section data-background="#FFF" class="text-left">
 					<div class="heading">Clears: Review</div>
 
-					<p>&#149; How we handlefloating elements</p>
-					<p>&#149; Various approaches to clearing elements:</p>
+					<p>&#149; How we handle floating elements</p>
+					<p>&#149; Various approaches to clearing elements. Two most common ones:</p>
 					<div class="pad-left-lg">
 						<p>&rArr; <code class="code">clear</code> CSS property</p>
 						<p>&rArr; <code class="code">overflow: hidden;</code></p>
-						<p>&rArr; <code class="code">clearfix</code> class</p>
 					</div>
+					<p class="fragment">&#149; Also <a href="https://css-tricks.com/snippets/css/clear-fix/">cleafix class</a> trick.</p>
 				</section>
 
 				<section data-background="#FFF" class="text-left">
@@ -147,35 +146,30 @@
 					<p class="fragment">&#149; Takes the following values: <code class="code">visible, hidden, scroll, auto</code></p>
 					<p class="fragment">&#149; If <code class="code">hidden</code> or <code class="code">auto</code> is applied to an element containing floated elements, will cause the element to extend to accompany any floating children</p>
 					<p class="fragment">&#149; <a href="https://css-tricks.com/almanac/properties/o/overflow/">More info</a></p>
+					<p class="fragment">&#149; <a target="_blank" href="https://codepen.io/adrind/pen/GyobOX?editors=110">Review</a></p>
 				</section>
 
-				<section data-background="#FFF" class="text-left">
-					<div class="heading">Clears: The Clearfix</div>
-
-					<p>&#149; Applying <code class="code">overflow</code> may cause undesirable behavior</p>
-					<p>&#149; Clearfix to the rescue:</p>
-<pre><code>
-	.clearfix:after {
-	  content: "";
-	  display: table;
-	  clear: both;
-	}
-
-</code></pre>
-					<p>&#149; Works on collapsed elements only!</p>
-				</section>
 
 				<section data-background="#FFF" class="text-left">
 					<div class="heading">Flexbox Basics</div>
 
-					<p>&#149; Designed as a <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Flexible_Box_Layout/Basic_Concepts_of_Flexbox" target="_blank">layout model</a></p>
+					<p>&#149; Designed as a <a href="https://css-tricks.com/snippets/css/a-guide-to-flexbox/" target="_blank">layout model</a></p>
 					<p class="fragment">&#149; Thinks about layout as two components:</p>
 					<div class="pad-left-lg fragment">
 						<p>&rArr; flex container</p>
 						<p>&rArr; flex items</p>
 					</div>
 					<p class="fragment">Makes super <a href="https://codepen.io/adrind/pen/GyZzxr?editors=1100#0">simple</a> responsive layouts</p>
+					<p class="fragment"><a href="https://codepen.io/adrind/pen/yqBWBB?editors=1100">CodePen Challenge</a></p>
 				</section>
+
+				<section data-background="#FFF" class="text-left">
+					<div class="heading">Flexbox Froggy</div>
+
+					<p>Let's try the first 5 levels of <a href="https://flexboxfroggy.com/">Flexbox Froggy!</a></p>
+					<p class="fragment">Try to guide the frog to the lilypads using flexbox properties.</p>
+				</section>
+
 
 				<section data-background="#FFF" class="text-left" id="startup-matchmaker-lab">
 					<div class="heading">Startup Matchmaker Lab</div>

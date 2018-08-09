@@ -31,7 +31,7 @@
 
 				<section class="hero">
 					<h1>Class <span class="red">#10</span></h1>
-					<h1>01/04/2018</h1>
+					<h1>07/19/2018</h1>
 					<h1 class="lesson-title">jQuery (pt. 1)</h1>
 				</section>
 
@@ -71,151 +71,79 @@
 					</div>
 				</section>
 
-				<section data-background="#FFF" class="text-left" id="js-salad">
-					<div class="heading">JavaScript Review</div>
+				<section data-background="#FFF" class="text-left" id="js-review">
+					<div class="heading">JS Review: Creating Variables</div>
 
 					<div class="text-smaller">
-						<p class="fragment">Let's make a salad</p>
-						<p class="fragment">Things we need:</p>
-						<div class="pad-left-lg text-smallest fragment">
-								<p>&rArr; Ingredients</p>
-								<p>&rArr; Bowls</p>
-								<p>&rArr; Knife</p>
-						</div>
+						<p class="fragment">&#149; Let's start from the beginning - variables!</p>
+						<p class="fragment">&#149; Variables let us store pieces of data we want to use throughout our program.</p>
+						<p class="fragment">&#149; <a href="https://codepen.io/adrind/pen/zLKjyo">Variables Notes</a></p>
+						<p class="fragment">&#149; <a href="https://codepen.io/adrind/pen/yqajqL?editors=0010">CodePen Exercise</a></p>
 					</div>
 				</section>
 
-				<section data-background="#FFF" class="text-left" id="js-salad-ingredients">
-					<div class="heading">Ingredients</div>
+				<section data-background="#FFF" class="text-left" id="js-review-variables">
+					<div class="heading">JS Review: Reassigning Variables</div>
 					<div class="text-smaller">
-						<p class="fragment">&#149; In JavaScript this is our "raw" data</p>
-						<p class="fragment">&#149; This raw data falls into the data types we learned about:</p>
-						<div class="pad-left-lg text-smallest fragment">
-								<p>&rArr; Numbers (6, 15, -2, 3.4)</p>
-								<p>&rArr; Strings ("Hello!!", "I am a cat", "6")</p>
-								<p>&rArr; Booleans (true, false)</p>
-						</div>
+						<p class="fragment">&#149; Sometimes we want to change the value of our variables after we've created them. This is called "reassigning"</p>
+						<p class="fragment">&#149; <a href="https://codepen.io/adrind/pen/zLKjyo">Variables Notes</a></a></p>
+						<p class="fragment">&#149; <a href="https://codepen.io/adrind/pen/ajmGRp?editors=0010">CodePen Exercise</a></p>
 					</div>
 				</section>
 
-				<section data-background="#FFF" class="text-left" id="js-salad-bowls">
-					<div class="heading">Salad Bowls</div>
+				<section data-background="#FFF" class="text-left" id="js-review-functions">
+					<div class="heading">JS Review: Creating Functions</div>
 					<div class="text-smaller">
-						<p class="fragment">&#149; We use variables to keep track of our data as we change it</p>
-						<p class="fragment"> 
-							<code class="code">var saladBowl = "lettuce";</code></p>
-						<p class="fragment">&#149;
-							As we go through our program we can use variables to store data
-						</p>
-						<p class="pad-left-lg">
-<pre class="fragment"><code class="code">var saladBowl = "lettuce";
-saladBowl = "lettuce" + "tomato";
-</code></pre>
-						</p>
+						<p class="fragment">&#149; We create functions to make reusable pieces of code that we can use throughout our program.</p>
+						<p class="fragment">&#149; <a href="https://codepen.io/adrind/pen/oMzdmo">Functions Notes</a></a></p>
+						<p class="fragment">&#149; <a href="https://codepen.io/adrind/pen/OwREJq?editors=0010">CodePen Exercise</a></p>
 					</div>
 				</section>
 
-				<section data-background="#FFF" class="text-left" id="js-salad-bowls-2">
-					<div class="heading">Salad Bowls (aka variables)</div>
-					<div class="text-smaller">
-						<p class="fragment">&#149; You can assign the value of one variable to a different variable.</p>
-						<p class="pad-left-lg">
-<pre class="fragment"><code class="code">var smallBowl = "chopped tomato";
-var largeBowl = "lettuce";
-var saladBowl = smallBowl + largeBowl;
 
-//value of saladBowl is now "chopped tomatolettuce"
-</code></pre>
-						</p>
+				<section data-background="#FFF" class="text-left" id="js-review-data">
+					<div class="heading">JS Review: Reading data from our HTML</div>
+					<div class="text-smaller">
+						<p class="fragment">&#149; We can read data from specific HTML elements using the .innerHTML property.</p>
+						<p class="fragment">&#149; <a href="https://codepen.io/adrind/pen/zLoPgQ?editors=1010">.innerHTML Notes</a></a></p>
+						<p class="fragment">&#149; <a href="https://codepen.io/adrind/pen/PBbEYj?editors=1010">CodePen Exercise</a></p>
 					</div>
 				</section>
 
-				<section data-background="#FFF" class="text-left" id="js-salad-bowls-functions">
-					<div class="heading">Chopping</div>
+				<section data-background="#FFF" class="text-left" id="js-review-values">
+					<div class="heading">JS Review: Reading values from an input</div>
 					<div class="text-smaller">
-						<p class="fragment">&#149; Functions are used to transform the raw data into a new form we want.</p>
-						<p class="pad-left-lg">
-<pre class="fragment"><code class="code">function chopTomatoes() {
-	var numberOfTomatoes = 2;
-	numberOfTomatoes = numberOfTomatoes * 2;
-	document.write("You now have " + numberOfTomatoes + " tomato pieces");
-}
-</code></pre>
-						</p>
+						<p class="fragment">&#149; Sometimes we want our users to give us data! We can use input elements to let a user type in data.</p>
+						<p class="fragment">&#149; <a href="https://codepen.io/adrind/pen/NBbrLa">Input Notes</a></a></p>
+						<p class="fragment">&#149; <a href="https://codepen.io/adrind/pen/QBKxwW?editors=0010">CodePen Exercise</a></p>
 					</div>
 				</section>
 
-				<section data-background="#FFF" class="text-left" id="js-salad-bowls-functions-2">
-					<div class="heading">Chopping (aka Functions)</div>
+
+				<section data-background="#FFF" class="text-left" id="js-review-events">
+					<div class="heading">JS Review: Listening to browser events</div>
 					<div class="text-smaller">
-						<p class="fragment">&#149; Functions can take in data as input</p>
-						<p class="pad-left-lg">
-<pre class="fragment"><code class="code">function chopTomatoes(numberOfTomatoes) {
-	numberOfTomatoes = numberOfTomatoes * 2;
-	document.write("You now have " + numberOfTomatoes + " tomato pieces");
-}
-</code></pre>
-						</p>
-						<p class="pad-left-lg">
-<pre class="fragment"><code class="code">chopTomatoes(2); //You now have 4 tomato pieces
-chopTomatoes(4); //You now have 16 tomato pieces
-chopTomatoes(0); //You now have 0 tomato pieces
-</code></pre>
-						</p>
+						<p class="fragment">&#149; Sometimes we want to run some code when a user interacts with our website (clicks, hovers, presses a key, submits some data etc).</p>
+						<p class="fragment">&#149; <a href="https://codepen.io/adrind/pen/PBGaWv">Browser Event Notes</a></p>
+						<p class="fragment">&#149; <a href="https://codepen.io/adrind/pen/QBKxGj?editors=1010">CodePen Exercise</a></p>
 					</div>
 				</section>
 
-				<section data-background="#FFF" class="text-left" id="js-salad-bowls-functions-3">
-					<div class="heading">Chopping (aka Functions)</div>
+
+				<section data-background="#FFF" class="text-left" id="js-review-events-2">
+					<div class="heading">JS Review: Listening to browser events</div>
 					<div class="text-smaller">
-						<p class="fragment">&#149; Functions can also output data. We call this "returning" a value</p>
-						<p class="pad-left-lg">
-<pre class="fragment"><code class="code">function chopTomatoes(numberOfTomatoes) {
-	numberOfTomatoes = numberOfTomatoes * 2;
-	return numberOfTomatoes;
-}
-</code></pre>
-						</p>
-						<p class="pad-left-lg">
-<pre class="fragment"><code class="code">var tomatoPieces = chopTomatoes(2);
-document.write("I'm done chopping! I have " + tomatoPieces + " tomato pieces");
-document.write("I love my " + tomatoPieces + " tomato pieces");
-</code></pre>
-						</p>
+						<p class="fragment">&#149; Usually our event listener function needs to do more than simply print a value out to the page.</p>
+						<p class="fragment">&#149; <a href="https://codepen.io/adrind/pen/PBGaWv">Browser Event Notes</a></a></p>
+						<p class="fragment">&#149; <a href="https://codepen.io/adrind/pen/ajmKWE?editors=1010">CodePen Exercise</a></p>
 					</div>
-				</section>
-
-				<section data-background="#FFF" class="text-left" id="js-salad-bowls-functions-4">
-					<div class="heading">Chopping (aka Functions)</div>
-					<div class="text-smaller">
-						<p class="fragment">&#149; When we use a built-in function like <code class="code">document.querySelector("#myId")</code> we are calling a function that takes an input ("#myId") and has an output (the element on the page)</p>
-						<p class="fragment">&#149; You can think of this like using some store bought ingredients</p>
-						<p class="fragment">&#149; Even though you can make your own salad dressing, it's sometimes easier to buy pre-made. You don't know how they made it but you know what the output is!</p>
-						<p class="fragment">&#149; This is what we're doing when we're using functions like <code class="code">document.write</code>, <code class="code">parseInt</code></p>, and jQuery.
-					</div>
-				</section>
-
-				<section data-background="#FFF" class="text-left" id="js-salad-bowls-events">
-					<div class="heading">Browser Events</div>
-					<p class="fragment">&#149; When we assign a function to an event, we are giving it a task to do. </p>
-					<p>  
-<pre class="fragment"><code class="code">function dressSalad() {
-	var saladBowl = document.querySelector('#fakeSaladBow');
-	saladBowl = saladBowl + ' salad dressing';
-	document.write('We added salad dressing to the salad!')
-}
-
-document.querySelector('#submitButton').onclick = chopTomatoes;
-</code></pre>
-					</p>
-					<p class="fragment">&#149; It's like telling your friend to dress the salad when the guests arrive. It gives them a task to do in the future when a event occurs. </p>
 				</section>
 
 				<section data-background="#FFF" class="text-left" id="hw-review">
-					<div class="heading">Homework Review</div>
+					<div class="heading">Class Lab Review</div>
 				</section>
 
-				<section data-background="#FFF" class="text-left" id="js-review">
+				<section data-background="#FFF" class="text-left" id="js-review-exercise">
 					<div class="heading">JavaScript Review</div>
 
 					<div class="text-smallest">
@@ -429,6 +357,16 @@ document.querySelector('#submitButton').onclick = chopTomatoes;
 					</div>
 				</section>
 
+				<section data-background="#FFF" class="text-left">
+					<div class="heading">jQuery Click Event</div>
+
+					<div class="text-smallest">
+						<p>&#149; Let's redo our earlier click event handler example but this time use jQuery!</p>
+						<p>&#149; <a href="https://codepen.io/adrind/pen/zLoKYV">CodePen Exercise</a></p>
+					</div>
+				</section>
+
+
 				<section class="center">
 					<h1>CodeAlong</h1>
 					<p><a target="_blank" href="https://codepen.io/adrind/pen/KZvbNa?editors=1010">CodePen</a></p>
@@ -485,10 +423,28 @@ document.querySelector('#submitButton').onclick = chopTomatoes;
 					</div>
 				</section>
 
+				<section data-background="#FFF" class="text-left">
+					<div class="heading">jQuery .val()</div>
+
+					<div class="text-smallest">
+						<p>&#149; Let's redo our earlier input example but this time use jQuery!</p>
+						<p>&#149; <a href="https://codepen.io/adrind/pen/djOpNO">CodePen Exercise</a></p>
+					</div>
+				</section>
+
 <!-- 				<section class="center">
 					<h1>CodeAlong</h1>
 					<a target="_blank" href="http://codepen.io/cheshireoctopus/pen/JYqvqW?editors=101">CodePen</a>
 				</section> -->
+
+				<section data-background="#FFF" class="text-left">
+					<div class="heading">jQuery</div>
+
+					<div class="text-smallest">
+						<p>&#149; Let's redo our earlier Celsius to Fahrenheit converter using jQuery!</p>
+						<p>&#149; <a href="https://codepen.io/adrind/pen/MBbjpd?editors=1010">CodePen Exercise</a></p>
+					</div>
+				</section>
 
 				<section class="title" id="using-jquery">
 					<h1>Using jQuery</h1>

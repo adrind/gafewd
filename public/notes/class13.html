@@ -2,7 +2,7 @@
 <html lang="en">
 
 	<head>
-		<title>FEWD: Class 13</title>
+		<title>FEWD: Class 16</title>
 		<link rel="stylesheet" href="css/reveal.css">
 		<link rel="stylesheet" href="css/general-assembly.css" id="theme">
 		<link rel="shortcut icon" type="image/x-icon" href="img/favicon.ico" />
@@ -20,16 +20,18 @@
 					<div class="opening-instructions">
 						<p>1) Please download <a href="../materials/class13.zip">Class 13 Starter Code</a></p>
 						<p>2) Move the following into your <code class="code">class-work</code> directory:</p>
-						<p class=" pad-left-lg">&#149; <code class="code">list-maker</code></p>
-						<!-- <p>3) Move the following into your homework direction</p>
-						<p class=" pad-left-lg"><code class="code">cash-register</code></p> -->
+						<div class="pad-left-lg">
+							<p>&#149; <code class="code">light-box-example</code></p>
+							<p>&#149; <code class="code">parallax-example</code></p>
+							<p>&#149; <code class="code">google-maps-example</code></p>
+						</div>
 					</div>
 				</section>
 
-				<section class="hero condensed">
+				<section class="hero">
 					<h1>Class <span class="red">#13</span></h1>
-					<h1>01/16/2018</h1>
-					<h1 class="lesson-title">Function Arguments and HTML Manipulation</h1>
+					<h1>07/31/2018</h1>
+					<h1 class="lesson-title">jQuery Plugins + Google Maps API</h1>
 				</section>
 
 				<!-- ANNOUNCEMENTS -->
@@ -39,130 +41,84 @@
 					<div class="text-smaller">
 						<p>&#149; Final Projects:</p>
 						<div class="pad-left-lg">
-							<p>&rArr; <a href="http://sf-fewd.surge.sh/pages/final-project.html">Fourth deliverable</a> due TUESDAY, Jan 23rd</p>
-							<p>&rArr; JavaScript First Draft</p>
-							<p>&rArr; Spend a couple hours on your JS -- submit to GitHub so I can give feedback</p>
-						</div>
-						<p>&#149; In class celebration Thursday!</p>
-						<div class="pad-left-lg">
-							<p>&rArr; I'll be talking about <a href="https://getbootstrap.com/docs/4.0/getting-started/introduction/">Bootstrap</a></p>
-							<p>&rArr; Then we'll hang out</p>
+							<p>&rArr; Fourth deliverable due Tuesday, August 7th</p>
+							<p>&rArr; JavaScript (pt. 1)</p>
 						</div>
 					</div>
-				</section>
+					<div class="text-smaller fragment">
+						<p>&#149; Temperature Converter:</p>
+						<div class="pad-left-lg">
+							<p>&rArr; Teeechnically due today... but only 1/3 of the class did it.</p>
+							<p>&rArr; I'm making it optional but highly encouraged practice so I can give you feedback on your JavaScript!</p>
+						</div>
+					</div>
 
-				<section data-background="#FFF" class="text-left">
-					<div class="heading">Future Agenda</div>
-
-					<p>&#149; We have 7 classes left!</p>
-					<p>&#149; Class 14: Bootstrap.js and CSS Grid</p>
-					<p>&#149; Class 15: jQuery Plugins</p>
-					<p>&#149; Class 16: Making a mobile responsive web page</p>
-					<p>&#149; Class 17: Making requests to a server Pt 1</p>
-					<p>&#149; Class 18: Making requests to a server Pt 2</p>
-					<p>&#149; Class 19: How to host your project on its own domain</p>
-					<p>&#149; Class 20: Demo Day and Party!!</p>
 				</section>
 
 				<!-- AGENDA -->
 				<section data-background="#FFF" class="text-left">
 					<div class="heading">Agenda</div>
-					<p>&#149; <a href="#/function-arguments">Function Arguments</a></p>
-					<p>&#149; <a href="#/html-insertion">HTML Insertion</a></p>
-					<p>&#149; <a href="#/html-removal">HTML Removal</a></p>
-					<p>&#149; Practice, practice, practice</p>
-					<!--
-					<p class="text-smaller">&#149; HTML <code>&lt;table&gt;</code> Element</p>
-					<p class="text-smaller">&#149; Preventing Default Event Behaviours</p> -->
-				</section>
-				<section data-background="#FFF" class="text-left">
-					<div class="heading">Remember - the Internet is your friend</div>
-					<p>&#149; <a href="https://oscarotero.com/jquery/">jQuery Cheat Sheet</a></p>
-					<p>&#149; <a href="https://codepen.io/adrind/pen/jYzxbv">My jQuery Cheat Sheet</a></p>
-					<p>&#149; <a href="https://sf-fewd.surge.sh/pages/lessons.html">Old classroom notes</a></p>
-				</section>
 
-				<!-- SKILL ASSESSMENT -->
-				<section class="center">
-					<h1>Warmup (20 - 25 min)</h1>
-					<p><a href="https://codepen.io/adrind/pen/jYebRb?editors=1010" target="_blank">Homework Grader - CodePen</a></p>
-				</section>
-
-				<section class="title" id="function-arguments">
-					<h1>Function Arguments</h1>
-				</section>
-
-				<section data-background="#FFF" class="text-left">
-					<div class="heading">Function Arguments</div>
-
-					<div class="text-smallest">
-						<p>So far, most <u>named</u> functions have been defined like this:</p>
-<pre><code>
-	function someName () {
-	  // ...
-	  // ...
-	}
-
-</code></pre>
-						<p>...and called like this:</p>
-<pre><code>
-	someName();
-
-</code></pre>
-						<p>Many of you have inquired: <span class="fragment">What are the <code class="code">()</code> for?</span></p>
+					<!-- <p>&#149; <code class="code lower">cash-register</code> Review</p> -->
+					<p>&#149; <a href="#/jquery-plugins">jQuery Plugins</a></p>
+					<div class="pad-left-lg text-smallest">
+						<p>&rArr; Lightbox</p>
+						<p>&rArr; Parallax</p>
 					</div>
+					<p>&#149; <a href="#/google-maps">Google Maps API</a></p>
+					<p>&#149; <a href="#/arrays">Arrays</a></p>
+					<p>&#149; <a href="#/iteration">Array Iteration</a></p>
+					<p>&#149; Final Project Check-ins/Work</p>
 				</section>
 
 				<section data-background="#FFF" class="text-left">
-					<div class="heading">Function Arguments</div>
+					<div class="heading">Questions</div>
 
 					<div class="text-smaller">
-						<p><b><u>Arguments</u>:</b> <span class="fragment">inputs that are "passed" into a function</span></p>
-						<div class="text-smallest fragment">
-							<p>&#149; Define a function that will accept an argument:</p>
-<pre><code>
-	function hello (name) {
-	  alert("Hello, it's " + name);
-	}
+						<p class="text-smaller"><b>Q: Why do we use three equals signs ("===") to check for equality? In other programming languages I've seen only two equals signs ("==")</b></p>
+						<p class="text-smallest fragment">A: Good observation! There is also the concept of "==" in JavaScript but that checks for equality for values and <b>not</b> the types. <a href="https://codepen.io/adrind/pen/ajqqYV?editors=0010">Example.</a></p>
+						<p class="text-smaller fragment"><b>Q: What's the difference between classList and addClass?</b></p>
+						<p class="text-smallest fragment">A: <a href="https://www.w3schools.com/jsref/prop_element_classlist.asp">classList</a> is how we can change an element's classes with pure JavaScript, <a href="https://www.w3schools.com/jquery/html_addclass.asp">addClass</a> is a jQuery function that we can use to add a class.</p>
+				 	</div>
+				</section>
 
-</code></pre>
-						</div>
-						<div class="text-smallest fragment">
-							<p>&#149; Call a function that accepts an argument:</p>
-<pre><code>
-	hello('me');
-
-	// outputs: "hello, it's me"
-
-	hello('Robert');
-	hello('Chandler');
-
-</code></pre>
-						</div>
-					</div>
+				<!-- jQuery Warmup -->
+				<section class="title" id="jquery-warmup">
+					<h1>jQuery Warmup</h1>
 				</section>
 
 				<section data-background="#FFF" class="text-left">
-					<div class="heading">Function Arguments</div>
+					<div class="heading">Warmup</div>
+
+					<p>1) Open this <a href="https://codepen.io/adrind/pen/LeKvKV?editors=1010">CodePen</a></p>
+					<p>2) Follow the instructions in the JavaScript section</p>
+					<p>3) Review old slides!</p>
+					<p>4) Remember <code class="code"><a href="https://codepen.io/adrind/pen/djJBjo?editors=1010">$(this)</a></code> and <code class="code"><a href="https://codepen.io/adrind/pen/bjaPLr?editors=1010">if/else</a></code></p>
+				</section>
+
+				<!-- jQuery Plugins -->
+				<section class="title" id="jquery-plugins">
+					<h1>jQuery Plugins</h1>
+				</section>
+
+				<section data-background="#FFF" class="text-left">
+					<div class="heading">jQuery Plugins</div>
 
 					<div class="text-smallest">
-						<p>&#149; Function arguments are accessible in the function body using their respective names:</p>
-<pre><code>
-	function hello (name) {
-	  alert("Hello, it's " + name);
-	}
-
-</code></pre>
+						<p>&#149; Plugins (or libraries) are pre-written pieces of JavaScript</p>
 						<div class="fragment">
-							<p>&#149; Whatever is "passed" as <code class="code">name</code> replaces instances of <code class="code">name</code> in the function body:</p>
+							<p>&#149; Built to solve a particular issue:</p>
+							<div class="pad-left-lg text-smaller">
+								<p>&rArr; Fullscreen video player</p>
+								<p>&rArr; Image carousel</p>
+								<p>&rArr; Page scrolling</p>
+							</div>
+						</div>
+						<div class="fragment">
+							<p>&#149; To use, just add the plugin's <code class="code">script</code> tag <b>below</b> jQuery:</p>
 <pre><code>
-	hello('rob');
-
-	// translates to:
-
-	function hello ('rob') {
-	  alert("Hello, it's " + 'rob');
-	}
+	&lt;script src="jquery.js"&gt;&lt;/script&gt;
+	&lt;script src="my-super-plugin.js"&gt;&lt;/script&gt;
 
 </code></pre>
 						</div>
@@ -170,117 +126,277 @@
 				</section>
 
 				<section data-background="#FFF" class="text-left">
-					<div class="heading">Function Arguments: Multiple Arguments</div>
+					<div class="heading">jQuery Plugins: What to look for?</div>
+
+					<p>&#149; There are 1000's of plugins; be judicious:</p>
+					<div class="pad-left-lg">
+						<p class="fragment">&rArr; Recently updated</p>
+						<p class="fragment">&rArr; Well-documented</p>
+						<p class="fragment">&rArr; The more contributors the better</p>
+						<p class="fragment">&rArr; Open source</p>
+						<p class="fragment">&rArr; Hosted on GitHub</p>
+					</div>
+				</section>
+
+				<section data-background="#FFF" class="text-left">
+					<div class="heading">jQuery Plugins: Tips for using</div>
+
+					<p class="fragment">1) Read the documentation</p>
+					<p class="fragment">2) Seriously, read the documentation</p>
+					<p class="fragment">3) Look for, and copy, examples</p>
+					<p class="fragment">4) Start simple<span class="fragment">, then add complexity</span></p>
+					<p class="fragment">5) Search for tutorials/examples if you get stuck</p>
+					<p class="fragment">6) Open a GitHub issue if you think you found a bug</p>
+				</section>
+
+				<!-- Accordian Tutorial -->
+				<section data-background="#FFF" class="text-left">
+					<div class="heading">Accordians</div>
+					<p class="fragment">Let's say we want to add an accordian to our page</p>
+					<p class="fragment"><a href="http://freefrontend.com/jquery-accordions/">Many options</a> to choose from! </p>
+					<p class="fragment">Let's try this one: <a href="https://github.com/vctrfrnndz/jquery-accordion">jQuery accordian</a></p>
+				</section>
+
+				<!-- Light Box Tutorial -->
+				<section data-background="#FFF" class="text-left">
+					<div class="heading">Lightbox Plugin</div>
+					<p>1) Open <code class="code">light-box-example</code> in Sublime Text</p>
+					<p>2) Visit <a href="http://lokeshdhakar.com/projects/lightbox2/" target="_blank">http://lokeshdhakar.com/projects/lightbox2/</a></p>
+				</section>
+
+				<!-- RAIN DROPS PLUGIN -->
+				<section data-background="#FFF" class="text-left">
+					<div class="heading">Parallax.js</div>
+
+					<p>1) Open <code class="code">parallax-example</code></p>
+					<p>2) Visit <a href="http://pixelcog.github.io/parallax.js/" target="_blank">http://pixelcog.github.io/parallax.js/</a></p>
+				</section>
+
+				<!-- GOOGLE MAPS API -->
+				<section class="title" id="google-maps">
+					<h1>Google Maps API</h1>
+				</section>
+
+				<section data-background="#FFF" class="text-left">
+					<div class="heading">What is an API?</div>
 
 					<div class="text-smallest">
-						<p>&#149; Functions can accept multiple arguments</p>
-						<div class="fragment">
-							<p>&#149; Use a comma-separated list to define:</p>
-<pre><code>
-	function add (x, y) {
-	  return x + y;
-	}
+						<p>&#149; API &rArr; Application Programming Interface</p>
+						<p>&#149; Set of rules/instructions for interacting with a piece of software</p>
+						<p>&#149; Middleman; allows different pieces of software to "talk" to each other</p>
+					</div>
+					<div class="text-center">
+						<img src="img/class15/api.png" alt="">
+					</div>
+				</section>
 
-</code></pre>
-						</div>
-						<div class="fragment">
-							<p>&#149; Call a function with multiple arguments:</p>
-<pre><code>
-	add(2, 2);
-	// returns 4
-
-	add(2, 5);
-	// returns 7
-
-</code></pre>
-						</div>
+				<section class="center">
+					<h2>Let's Build a Map</h2>
+					<div class="text-left">
+						<p>&#149; <a target="_blank" href="https://developers.google.com/maps/documentation/javascript/tutorial">Google Maps JavaScript API V3 Documentation</a></p>
+						<p>&#149; Open <code class="code">google-maps-example</code> in Sublime Text</p>
 					</div>
 				</section>
 
 				<section data-background="#FFF" class="text-left">
-					<div class="heading">Arguments vs Parameters</div>
+					<div class="heading">Let's Build a Map</div>
 
-					<p>&#149; Arguments and parameters are often used interchangeably</p>
-					<p class="fragment">&#149; There is a clear distinction:</p>
-					<div class="fragment pad-left-lg text-smaller">
-						<p>&rArr; <u>Parameters</u> refer to the variables declared in the function definition</p>
-						<p>&rArr; <u>Arugments</u> refer to the data passed into the function</p>
-					</div>
+					<p>1. Obtain API Key</p>
+					<p>2. Add starter HTML and CSS</p>
+					<p>3. Enable map using JS</p>
+					<p>4. ???</p>
+					<p>5. Profit</p>
 				</section>
 
 				<section data-background="#FFF" class="text-left">
-					<div class="heading">Arguments vs Parameters</div>
+					<div class="heading">Google Maps: Changing the <code class="lower">center</code></div>
+
+					<p>Google Maps require:</p>
+					<p class="pad-left-lg">&rArr; <code class="code">center</code></p>
+					<p class="pad-left-lg">&rArr; <code class="code">zoom</code></p>
+
+					<p>Challenge: Change the <code class="code">center</code> of your map to SF</p>
+					<p class="pad-left-lg fragment">&rArr; Hint: look up SF's coordinates!</p>
+					<p class="pad-left-lg fragment">&rArr; 37.7749 N, -122.4194 W</p>
+				</section>
+
+				<section data-background="#FFF" class="text-left">
+					<div class="heading">Google Maps: Adding Markers</div>
+
+					<p>&#149; Markers require:</p>
+					<div class="pad-left-lg">
+						<p>&rArr; <code class="code">position: {lat: y, lng: x}</code></p>
+						<p>&rArr; <code class="code">map</code></p>
+					</div>
+					<p>&#149; Challenge: use the following to add a marker at SF</p>
+<pre><code>
+	var marker = new google.maps.Marker({
+	  position: {lat: y, lng: x},
+	  map: map,
+	  title: 'San Francisco, CA'
+	});
+
+</code></pre>
+				</section>
+
+				<section data-background="#FFF" class="text-left">
+					<div class="heading">Google Maps: Multiple Markers</div>
 
 					<div class="text-smallest">
-						<p>Parameters:</p>
-						<p class="text-smaller pad-left-lg">&#149; Function <code class="code">add</code> defined with two <u>parameters</u>, <code class="code">x</code> and <code class="code">y</code>:</p>
+						<p>&#149; Easiest way to add multiple markers:</p>
+<div class="fragment">
 <pre><code>
-	function add (x, y) {
-	  return x + y;
-	}
+	var marker1 = new google.maps.Marker({
+	  position: {lat: 38, lng: 50},
+	  map: map,
+	});
+
+	var marker2 = new google.maps.Marker({
+	  position: {lat: 45, lng: 45},
+	  map: map,
+	});
+
+	var marker3 = new google.maps.Marker({
+	  position: {lat: 25, lng: 75},
+	  map: map,
+	});
+
+	...
 
 </code></pre>
-						<div class="fragment">
-						<p>Arguments:</p>
-							<p class="text-smaller pad-left-lg">&#149; Function <code class="code">add</code> called with the <u>arguments</u> <code class="code">5</code> and <code class="code">2</code>:</p>
-<pre><code>
-	add(5, 2);
-
-	// returns 7
-
-</code></pre>
-						</div>
+</div>
+						<p class="fragment">&#149; Is this efficient? Say I want to add 100 markers? 1,000?</p>
 					</div>
 				</section>
-				
-				<section class="center">
-					<h1>Codealong</h1>
-					<a href="https://codepen.io/adrind/pen/GyYZZj?editors=0010" target="_blank">CodePen</a>
-				</section>
 
-				<section class="center">
-					<h1>Try it out: Name Machine</h1>
-					<p><a href="https://codepen.io/adrind/pen/QaZyqG?editors=1010" target="_blank">CodePen</a></p>
-				</section>
-
-				<!-- <section class="center">
-					<h1>CodeAlong</h1>
-					<p>Refactor Homework Grader using functions and arguments</p>
-					<p><a href="http://codepen.io/cheshireoctopus/pen/QywMov?editors=101" target="_blank">CodePen</a></p>
-				</section> -->
-
-
-				<!-- BREAK (5-7 mins) -->
-				<section class="center">
-					<h1>5 minute break</h1>
-					<img src="img/main/break-time-bear.jpg">
-				</section>
-
-				<section class="center">
-					<h1>Exercise: Bill Calculator</h1>
-					<p><a href="https://codepen.io/adrind/pen/opabGm?editors=101" target="_blank">CodePen</a></p>
-				</section>
-
-				<!-- HTML INSERTION -->
-				<section class="title" id="html-insertion">
-					<h1>HTML Insertion</h1>
+				<section class="title" id="arrays">
+					<h1>Arrays</h1>
 				</section>
 
 				<section data-background="#FFF" class="text-left">
-					<div class="heading">HTML Insertion</div>
+					<div class="heading">Arrays</div>
+
+					<div class="text-smallest">
+						<p>&#149; Arrays are a list-like data structure of comma-separated values</p>
+						<p>&#149; Useful for storing a sequence of related data</p>
+						<p>&#149; Declare arrays using square brackets: <code class="code">[ ]</code></p>
+<pre><code>
+	var friends = ['Moe', 'Larry', 'Curly'];
+
+</code></pre>
+						<div class="fragment">
+							<p>&#149; <b>Element</b> - an item inside the array</p>
+							<p>&#149; <b>Index</b> - the numerical location of each element in the array (starts at position 0 - aka "0-indexed")</p>
+						</div>
+						<div class="fragment">
+							&#149; Let's code along with this <a href="https://codepen.io/adrind/pen/MBQQjK?editors=0012">CodePen</a>
+						</div>
+					</div>
+				</section>
+
+				<section data-background="#FFF" class="text-left">
+					<div class="heading">Arrays</div>
+
+					<div class="text-smallest">
+						<p>&#149; JS provides multiple methods for array creation:</p>
+						<div class="pad-left-lg">
+							<div class="fragment">
+								<p>&rArr; The <code class="code">new</code> keyword</p>
+<pre><code>
+	var drinks = new Array('beer', 'coffee', 'water');
+
+</code></pre>
+							</div>
+							<div class="fragment">
+								<p>&rArr; Using the array literal</p>
+<pre><code>
+	var drinks = ['beer', 'coffee', 'water'];
+
+</code></pre>
+							</div>
+						</div>
+						<div class="fragment">
+							<p>&#149; While similar, there are crucial differences</p>
+							<p>&#149; Use the <u>array literal</u> for now</p>
+						</div>
+					</div>
+				</section>
+
+				<section data-background="#FFF" class="text-left">
+					<div class="heading">Arrays</div>
+
+					<div class="text-smallest">
+						<p>&#149; Use <code class="code">[index]</code> to retrieve values from an array</p>
+						<p>&#149; Remember that arrays are <u>0-indexed</u></p>
+<pre><code>
+	var drinks = ['beer', 'coffee', 'water'];
+
+	drinks[0]
+	// 'beer'
+
+	drinks [0+1]
+	// 'coffee'
+
+	var x = drinks.length - 1
+	drinks[x]
+	// 'water'
+
+	drinks[4]
+	// undefined
+
+</code></pre>
+					</div>
+				</section>
+
+				<section data-background="#FFF" class="text-left">
+					<div class="heading">Array Iteration</div>
+
+					<div class="text-smallest">
+						<p>&#149; Consider an array of names:</p>
+<pre><code>
+  var neighborhoods = ['the mission', 'nob hill', 'inner sunset', 'north beach', 'bayview'];
+
+</code></pre>
+						<p class="fragment">&#149; How would we <code class="code">console.log</code> all the names in this array?</p>
+						<div class="fragment">
+<pre><code>
+	console.log(neighborhoods[0]);
+	console.log(neighborhoods[1]);
+	console.log(neighborhoods[2]);
+	console.log(neighborhoods[3]);
+	console.log(neighborhoods[4]);
+
+</code></pre>
+						</div>
+						<p class="fragment">&#149; Is this efficient/scalable?</p>
+					</div>
+				</section>
+
+				<!-- ARRAY ITERATION -->
+				<section class="title" id="iteration">
+					<h1>Array Iteration</h1>
+				</section>
+
+				<section data-background="#FFF" class="text-left">
+					<div class="heading">Array Iteration</div>
 
 					<div class="text-smaller">
-						<p><code class="code">.append('content')</code></p>
-						<p class="text-smallest pad-left-lg">&rArr; Insert "content" at the <b>END</b> of each element</p>
-<pre><code>
-	$('div').append('&lt;p&gt;Appended paragraph&lt;/p&gt;')
-
-</code></pre>
+						<p>&#149; Iteration is the process of running the same function to every element in an array:</p>
 						<div class="fragment">
-							<p><code class="code">.prepend('content')</code></p>
-							<p class="text-smallest pad-left-lg">&rArr; Insert "content" at the <b>BEGINNING</b> of each element</p>
 <pre><code>
-	$('div').prepend('&lt;p&gt;Prepended paragraph&lt;/p&gt;')
+  var neighborhoods = ['the mission', 'nob hill', 'inner sunset', 'north beach', 'bayview'];
+
+  neighborhoods.forEach(logNeighborhood);
+
+  function logNeighborhood (neighborhood) {
+    console.log(neighborhood);
+  }
+
+  // 'the mission'
+  // 'nob hill'
+  // 'inner sunset'
+  // 'north beach'
+  // 'bayview'
 
 </code></pre>
 						</div>
@@ -288,129 +404,99 @@
 				</section>
 
 				<section data-background="#FFF" class="text-left">
-					<div class="heading">HTML Insertion</div>
+					<div class="heading">Array Iteration</div>
+
+					<div class="text-smaller">
+						<p>&#149; JS arrays have several iteration methods:</p>
+						<div class="pad-left-lg text-smallest">
+							<p><code class="code">.forEach()</code></p>
+							<p><code class="code">.every()</code></p>
+							<p><code class="code">.some()</code></p>
+							<p><code class="code">.filter()</code></p>
+							<p><code class="code">.map()</code></p>
+						</div>
+						<p class="fragment">&#149; Most require a function to be supplied as an argument; this function will be applied to each item in the array, individually</p>
+					</div>
+				</section>
+
+				<section data-background="#FFF" class="text-left">
+					<div class="heading">Array Iteration</div>
+					<p>&#149; Let's apply array iteration to our Google Maps Markers:</p>
+					<div class="pad-left-lg">
+						<p>1) Create an array of location objects (each should contain <code class="code">lat</code>, <code class="code">lng</code>, and <code class="code">title</code></p>
+						<p>2) Apply the <code class="code">forEach</code> method to the array</p>
+						<p>3) Write the function to apply each marker to the <code class="code">map</code></p>
+					</div>
+				</section>
+
+				<section data-background="#FFF" class="text-left">
+					<div class="heading">Array Iteration</div>
 
 					<div class="text-smallest">
-					<p>&#149; Assuming the following HTML:</p>
+						<p>&#149; Create an array of location objects containing <code class="code">lat</code>, <code class="code">lng</code>, and <code class="code">title</code>:</p>
 <pre><code>
-	&lt;div id="someDiv"&gt;
-	  &lt;p&gt;A paragrpah of text&lt;/p&gt;
-	&lt;/div&gt;
-
-</code></pre>
-					<p>&#149; The following JS:</p>
-<pre><code>
-	$('#someDiv').append('&lt;p&gt;Appended paragraph&lt;/p&gt;')
-	$('#someDiv').prepend('&lt;p&gt;Prepended paragraph&lt;/p&gt;')
-
-</code></pre>
-					<p>&#149; Will yield the following HTML:</p>
-<pre><code>
-	&lt;div id="someDiv"&gt;
-	  <span class="red">&lt;p&gt;Prepended paragraph&lt;/p&gt;</span>
-	  &lt;p&gt;A paragrpah of text&lt;/p&gt;
-	  <span class="red">&lt;p&gt;Appened paragraph&lt;/p&gt;</span>
-	&lt;/div&gt;
-
-</code></pre>
-					</div>
-				</section>
-
-				<section data-background="#FFF" class="text-left">
-					<div class="heading">HTML Insertion</div>
-
-					<p><code class="code">.before('content')</code></p>
-					<p class="text-smallest pad-left-lg">&rArr; Insert "content" <b>BEFORE</b> each element</p>
-<pre><code>
-	$('div').before('&lt;p&gt;Before paragraph&lt;/p&gt;')
-
-</code></pre>
-					<div class="fragment">
-						<p><code class="code">.after('content')</code></p>
-						<p class="text-smallest pad-left-lg">&rArr; Insert "content" <b>AFTER</b> each element</p>
-<pre><code>
-	$('div').after('&lt;p&gt;After paragraph&lt;/p&gt;')
+	var locations = [
+	  {
+	    lat: 37.7552,
+	    lng: -122.4528,
+	    title: 'Sutro Tower',
+	  },
+	  {
+	    lat: 37.7983,
+	    lng: -122.3778,
+	    title: 'Bay Bridge',
+	  },
+	  {
+	    lat: 37.8199,
+	    lng: -122.4783,
+	    title: 'Golden Gate Bridge',
+	  },
+	];
 
 </code></pre>
 					</div>
 				</section>
 
 				<section data-background="#FFF" class="text-left">
-					<div class="heading">HTML Insertion</div>
+					<div class="heading">Array Iteration</div>
 
-					<div class="text-smallest">
-					<p>Assuming the following HTML:</p>
+					<p>&#149; Apply the <code class="code">forEach</code> method to the array</p>
 <pre><code>
-	&lt;div id="someDiv"&gt;
-	  &lt;p&gt;A paragrpah of text&lt;/p&gt;
-	&lt;/div&gt;
+	var locations = [ ... ];
+
+	locations.forEach(processLocation);
+
+	function processLocation (location) {
+	  console.log(location)
+	}
 
 </code></pre>
-					<p>The following JS:</p>
-<pre><code>
-	$('#someDiv').before('&lt;p&gt;Before paragraph&lt;/p&gt;')
-	$('#someDiv').after('&lt;p&gt;After paragraph&lt;/p&gt;')
-
-</code></pre>
-					<p>Will yield the following HTML:</p>
-<pre><code>
-	<span class="red">&lt;p>Before paragraph&lt;/p&gt;</span>
-	&lt;div id="someDiv"&gt;
-	  &lt;p&gt;A paragrpah of text&lt;/p&gt;
-	&lt;/div&gt;
-	<span class="red">&lt;p&gt;After paragraph&lt;/p&gt;</span>
-
-
-</code></pre>
-					</div>
-				</section>
-
-				<section class="title" id="html-removal">
-					<h1>HTML Removal</h1>
+					<p>&#149; Use <code class="code">console.log(...)</code> to test your code is working</p>
 				</section>
 
 				<section data-background="#FFF" class="text-left">
-					<div class="heading">HTML Removal</div>
+					<div class="heading">Array Iteration</div>
 
-					<p><code class="code">.remove()</code></p>
-					<p class="text-smallest pad-left-lg">&rArr; Remove the selected element</p>
+					<p>&#149; Update <code class="code">processLocation</code> to render the markers</p>
+
 <pre><code>
-	$('#someDiv').remove()
+	function processLocation (location) {
+	  var marker = new google.maps.Marker({
+	    position: {
+	      lat: location.lat,
+	      lng: location.lng,
+	    },
+	    title: location.title,
+	    map: map,
+	  });
+	}
 
 </code></pre>
-					<div class="fragment">
-						<p><code class="code">.empty()</code></p>
-						<p class="text-smallest pad-left-lg">&rArr; Removes all content inside the selected element</p>
-<pre><code>
-	$('#someDiv').empty()
-
-</code></pre>
-					</div>
-				</section>
-
- 				<section class="center">
-					<h1>You Try</h1>
-					<p><a href="https://codepen.io/adrind/pen/LegGdq?editors=1010" target="_blank">HTML Insertion/Removal</a></p>
-				</section> 
-
-				<section data-background="#FFF" class="text-left">
-					<div class="heading">Lab (30 min)</div>
-					<p>1. Open <code class="code">list-maker</code> </p>
-					<p>2. Follow instructions in <code class="code">js/app.js</code></p>
 				</section>
 
 				<!-- THE END -->
 				<section class="center">
 					<img src="img/main/the-end.jpg">
-				</section>
-
-				<!-- ON DECK -->
-				<section data-background="#FFF" class="text-left">
-					<div class="heading">What's On Deck</div>
-
-					<h4>Class #14 (of 20) - Bootstrap.js!</h4>
-					<p>Temperature Converter is due on Thursday!!! Please</p>
-
 				</section>
 
 				<section class="center">

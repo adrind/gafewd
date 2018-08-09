@@ -21,17 +21,16 @@
 						<p>1) Please download <a href="../materials/class16.zip">Class 16 Starter Code</a></p>
 						<p>2) Move the following into your <code class="code">class-work</code> directory:</p>
 						<div class="pad-left-lg">
-							<p>&#149; <code class="code">light-box-example</code></p>
-							<p>&#149; <code class="code">raindrops-example</code></p>
-							<p>&#149; <code class="code">google-maps-example</code></p>
+							<p>&#149; <code class="code">animated-sticky-nav</code></p>
+							<p>&#149; <code class="code">animate-css</code></p>
 						</div>
 					</div>
 				</section>
 
 				<section class="hero">
 					<h1>Class <span class="red">#16</span></h1>
-					<h1>01/25/2018</h1>
-					<h1 class="lesson-title">jQuery Plugins + Google Maps API</h1>
+					<h1>08/09/2018</h1>
+					<h1 class="lesson-title">CSS Animations + libraries</h1>
 				</section>
 
 				<!-- ANNOUNCEMENTS -->
@@ -41,7 +40,7 @@
 					<div class="text-smaller">
 						<p>&#149; Final Projects:</p>
 						<div class="pad-left-lg">
-							<p>&rArr; Sixth deliverable due Tuesday, January 30th</p>
+							<p>&rArr; Sixth deliverable due Tuesday, August 14th</p>
 							<p>&rArr; JavaScript (pt. 2)</p>
 						</div>
 					</div>
@@ -52,425 +51,373 @@
 					<div class="heading">Agenda</div>
 
 					<!-- <p>&#149; <code class="code lower">cash-register</code> Review</p> -->
-					<p>&#149; <a href="#/jquery-plugins">jQuery Plugins</a></p>
-					<div class="pad-left-lg text-smallest">
-						<p>&rArr; Lightbox</p>
-						<p>&rArr; Raindrops</p>
+					<p>&#149; <a href="#/css-positioning">CSS positioning + transitions</a></p>
+					<p>&#149; <a href="#/animation-history">History of Animations in the Web</a></p>
+					<p>&#149; <a href="#/css-animations">CSS Animations</a></p>
+					<p>&#149; <a href="#/js-animations">JavaScript Animation libraries</a></p>
+				</section>
+
+
+				<section class="title" id="css-positioning">
+					<h1>CSS Positioning</h1>
+				</section>
+
+				<section data-background="#FFF" class="text-left">
+					<div class="heading">CSS Positioning: Overview</div>
+
+					<div class="text-smaller">
+						<p>&#149; The <code class="code">position</code> CSS property defines alternative positioning rules for elements</p>
+						<p>&#149; Useful for advanced layouts, fixed headers, and animated elements</p>
+						<p>&#149; When set, can use the CSS properties: <code class="code">top</code>, <code class="code">right</code>, <code class="code">bottom</code>, <code class="code">left</code></p>
+						<p>&#149; <code class="code">position</code> has four values:</p>
 					</div>
-					<p>&#149; <a href="#/google-maps">Google Maps API</a></p>
-					<p>&#149; <a href="#/arrays">Arrays</a></p>
-					<p>&#149; <a href="#/iteration">Array Iteration</a></p>
-					<p>&#149; Final Project Check-ins/Work</p>
-				</section>
-
-				<!-- jQuery Warmup -->
-				<section class="title" id="jquery-warmup">
-					<h1>jQuery Warmup</h1>
-				</section>
-
-				<section data-background="#FFF" class="text-left">
-					<div class="heading">Raindrops.js</div>
-
-					<p>1) Open this <a href="https://codepen.io/adrind/pen/LeKvKV?editors=1010">CodePen</a></p>
-					<p>2) Follow the instructions in the JavaScript section</p>
-					<p>3) Review old slides!</p>
-					<p>4) Remember <code class="code">.click()</code>event handler and <code class="code">.html()</code></p>
-				</section>
-
-				<!-- jQuery Plugins -->
-				<section class="title" id="jquery-plugins">
-					<h1>jQuery Plugins</h1>
-				</section>
-
-				<section data-background="#FFF" class="text-left">
-					<div class="heading">jQuery Plugins</div>
-
-					<div class="text-smallest">
-						<p>&#149; Plugins (or libraries) are pre-written pieces of JavaScript</p>
-						<div class="fragment">
-							<p>&#149; Built to solve a particular issue:</p>
-							<div class="pad-left-lg text-smaller">
-								<p>&rArr; Fullscreen video player</p>
-								<p>&rArr; Image carousel</p>
-								<p>&rArr; Page scrolling</p>
-							</div>
-						</div>
-						<div class="fragment">
-							<p>&#149; To use, just add the plugin's <code class="code">script</code> tag <b>below</b> jQuery:</p>
 <pre><code>
-	&lt;script src="jquery.js"&gt;&lt;/script&gt;
-	&lt;script src="my-super-plugin.js"&gt;&lt;/script&gt;
+	position: static;
+	position: fixed;
+	position: relative;
+	position: absolute;
 
 </code></pre>
+				</section>
+
+				<section data-background="#FFF" class="text-left">
+					<div class="heading"><code class="lower">position: static;</code></div>
+
+					<p>&#149; Default CSS positioning value for <u>ALL</u> elements</p>
+					<p>&#149; Considered "normal" behavior</p>
+					<p>&#149; Static elements are <u>NOT</u> positioned</p>
+					<p>&#149; Cannot set the following properties:</p>
+					<div class="pad-left-lg text-smaller">
+						<p>&rArr; <code class="code">top</code></p>
+						<p>&rArr; <code class="code">right</code></p>
+						<p>&rArr; <code class="code">bottom</code></p>
+						<p>&rArr; <code class="code">left</code></p>
+					</div>
+				</section>
+
+				<section data-background="#FFF" class="text-left">
+					<div class="heading"><code class="lower">position: fixed;</code></div>
+
+					<div class="text-smaller">
+						<p>&#149; Positioned relative to the browser window</p>
+						<p>&#149; Element will stay in view, even as window scrolls</p>
+						<p>&#149; Removed from the normal flow of the document</p>
+						<p>&#149; Used for for persistent navigation: "sticky headers"</p>
+						<p>&#149; Can position using:</p>
+						<div class="pad-left-lg">
+							<p>&rArr; <code class="code">top</code></p>
+							<p>&rArr; <code class="code">right</code></p>
+							<p>&rArr; <code class="code">bottom</code></p>
+							<p>&rArr; <code class="code">left</code></p>
 						</div>
 					</div>
 				</section>
 
 				<section data-background="#FFF" class="text-left">
-					<div class="heading">jQuery Plugins: What to look for?</div>
+					<div class="heading">Sticky Header Example</div>
 
-					<p>&#149; There are 1000's of plugins; be judicious:</p>
-					<div class="pad-left-lg">
-						<p class="fragment">&rArr; Recently updated</p>
-						<p class="fragment">&rArr; Well-documented</p>
-						<p class="fragment">&rArr; The more contributors the better</p>
-						<p class="fragment">&rArr; Open source</p>
-						<p class="fragment">&rArr; Hosted on GitHub</p>
-					</div>
+					<p class="text-smaller">&#149; Apply the following CSS rules to the element you want to fix:</p>
+<pre><code>
+ header {
+   position: fixed;
+   width: 100%;
+   top: 0;
+   height: 50px; // should match the padding-top on body
+ }
+
+</code></pre>
+					<p class="text-smaller">&#149; Apply the following CSS rules to your <code>&lt;body&gt;</code>:</p>
+<pre><code>
+ body {
+   padding-top: 50px; // should match the height of header
+ }
+
+</code></pre>
+					<p class="text-smaller">&#149; <a target="_blank" href="https://codepen.io/adrind/pen/wyWqOp?editors=1100">CodePen Example</a></p>
 				</section>
 
 				<section data-background="#FFF" class="text-left">
-					<div class="heading">jQuery Plugins: Tips for using</div>
-
-					<p class="fragment">1) Read the documentation</p>
-					<p class="fragment">2) Seriously, read the documentation</p>
-					<p class="fragment">3) Look for, and copy, examples</p>
-					<p class="fragment">4) Start simple<span class="fragment">, then add complexity</span></p>
-					<p class="fragment">5) Search for tutorials/examples if you get stuck</p>
-					<p class="fragment">6) Open a GitHub issue if you think you found a bug</p>
-				</section>
-
-				<!-- Accordian Tutorial -->
-				<section data-background="#FFF" class="text-left">
-					<div class="heading">Accordians</div>
-					<p class="fragment">Let's say we want to add an accordian to our page</p>
-					<p class="fragment"><a href="http://freefrontend.com/jquery-accordions/">Many options</a> to choose from! </p>
-					<p class="fragment">Let's try this one: <a href="https://github.com/vctrfrnndz/jquery-accordion">jQuery accordian</a></p>
-				</section>
-
-				<!-- Light Box Tutorial -->
-				<section data-background="#FFF" class="text-left">
-					<div class="heading">Lightbox Plugin</div>
-					<p>1) Open <code class="code">light-box-example</code> in Sublime Text</p>
-					<p>2) Visit <a href="http://lokeshdhakar.com/projects/lightbox2/" target="_blank">http://lokeshdhakar.com/projects/lightbox2/</a></p>
-				</section>
-
-				<!-- RAIN DROPS PLUGIN -->
-				<section data-background="#FFF" class="text-left">
-					<div class="heading">Raindrops.js</div>
-
-					<p>1) Open <code class="code">raindrops-exmaple</code></p>
-					<p>2) Visit <a href="http://daniellaharel.com/raindrops/" target="_blank">http://daniellaharel.com/raindrops/</a></p>
-				</section>
-
-				<!-- GOOGLE MAPS API -->
-				<section class="title" id="google-maps">
-					<h1>Google Maps API</h1>
-				</section>
-
-				<section data-background="#FFF" class="text-left">
-					<div class="heading">What is an API?</div>
-
-					<div class="text-smallest">
-						<p>&#149; API &rArr; Application Programming Interface</p>
-						<p>&#149; Set of rules/instructions for interacting with a piece of software</p>
-						<p>&#149; Middleman; allows different pieces of software to "talk" to each other</p>
-					</div>
+					<div class="heading"><code class="lower">position: relative;</code></div>
 					<div class="text-center">
-						<img src="img/class15/api.png" alt="">
+						<p>How would we create this?</p>
+						<img src="img/class19/position-relative.png" alt="">
 					</div>
+				</section>
+
+				<section data-background="#FFF" class="text-left">
+					<div class="heading"><code class="lower">position: relative;</code></div>
+
+					<p>&#149; Positioned relative to its normal position</p>
+					<p>&#149; Move using <code class="code">top</code>, <code class="code">right</code>, <code class="code">bottom</code>, and <code class="code">left</code> properties</p>
+					<p>&#149; <u>Note</u>: the original space for the element is preserved</p>
+					<p>&#149; Used for:</p>
+					<p class="pad-left-lg">&rArr; Overlapping elements</p>
+					<p class="pad-left-lg">&rArr; As a reference for absolutely-positioned elements</p>
+					<p>&#149; <a target="_blanl" href="https://codepen.io/adrind/pen/RQaJKQ?editors=1100">CodePen exercise</a></p>
+				</section>
+
+				<section data-background="#FFF" class="text-left">
+					<div class="heading"><code class="lower">position: absolute;</code></div>
+
+					<div class="text-smaller">
+						<p>&#149; Positioned relative to either:</p>
+						<p class="pad-left-lg">&rArr; Browser window</p>
+						<p class="pad-left-lg">&rArr; Closest <u>positioned</u> element</p>
+						<p>&#149; Removed from the normal flow of the document</p>
+						<p>&#149; Element will collapse to content's width</p>
+						<p>&#149; Used for:</p>
+						<p class="pad-left-lg">&rArr; Animations (we will see shortly)</p>
+						<p class="pad-left-lg">&rArr; Precisely placing an element within a parent</p>
+						<p>&#149; <a target="_blank" href="https://codepen.io/adrind/pen/VQadpM?editors=1100">CodePen Exercise</a></p>
+					</div>
+				</section>
+
+				<section data-background="#FFF" class="text-left">
+					<div class="heading"><code class="lower">absolute</code> & <code class="lower">relative</code></div>
+
+					<p>&#149; Use <code class="code">position: absolute</code> with <code class="code">position: relative</code> to absolutely position an element <u>within</u> another element</p>
+					<p>&#149; <code class="code">position: relative</code> is placed on the parent element</p>
+					<p>&#149; <code class="code">position: absolute</code> is placed on the child element</p>
+					<p>&#149; <a target="_blank" href="https://codepen.io/adrind/pen/NyNzpo?editors=1100">CodePen Exercise</a></p>
 				</section>
 
 				<section class="center">
-					<h2>Let's Build a Map</h2>
-					<div class="text-left">
-						<p>&#149; <a target="_blank" href="https://developers.google.com/maps/documentation/javascript/tutorial">Google Maps JavaScript API V3 Documentation</a></p>
-						<p>&#149; Open <code class="code">google-maps-example</code> in Sublime Text</p>
-					</div>
+					<h2><code>Position: Absolute;</code></h2>
+					<p><a target="_blank" href="https://codepen.io/adrind/pen/payKeM?editors=1100">CodePen Exercise</a></p>
+					<img src="img/class19/position-absolute.png" alt="">
+				</section>
+
+
+				<section class="title" id="animation-history">
+					<h2>CSS Animations</h2>
 				</section>
 
 				<section data-background="#FFF" class="text-left">
-					<div class="heading">Let's Build a Map</div>
+					<div class="heading">CSS Animations</div>
 
-					<p>1. Obtain API Key</p>
-					<p>2. Add starter HTML and CSS</p>
-					<p>3. Enable map using JS</p>
-					<p>4. ???</p>
-					<p>5. Profit</p>
+					<p class="fragment text-smaller">&#149; Early web devs would use the <code class="code">onhover</code> event to make <a href="https://codepen.io/adrind/pen/baZPde">simple animations</a></p>
+					<p class="fragment text-smaller">&#149; In 2011 browsers started creating support for <a href="https://caniuse.com/#feat=css-animation">CSS animations</a></p>
+					<p class="fragment text-smaller">&#149; <a href="https://www.quora.com/What-are-the-differences-cons-pros-between-CSS3-animations-and-JS-animations">Pros</a> and <a href="https://snook.ca/archives/javascript/css_animations_in_safari/">cons</a></p>
+					<p class="fragment text-smaller">&#149; <a href="https://codepen.io/FabioG/pen/QjLreK">Example</a></p>
+				</section>
+
+
+				<section class="title" id="css-transitions">
+					<h1>CSS Transitions</h1>
 				</section>
 
 				<section data-background="#FFF" class="text-left">
-					<div class="heading">Google Maps: Changing the <code class="lower">center</code></div>
+					<div class="heading">CSS Transitions</div>
 
-					<p>Google Maps require:</p>
-					<p class="pad-left-lg">&rArr; <code class="code">center</code></p>
-					<p class="pad-left-lg">&rArr; <code class="code">zoom</code></p>
-
-					<p>Challenge: Change the <code class="code">center</code> of your map to SF</p>
-					<p class="pad-left-lg fragment">&rArr; Hint: look up SF's coordinates!</p>
-					<p class="pad-left-lg fragment">&rArr; 37.7749 N, -122.4194 W</p>
-				</section>
-
-				<section data-background="#FFF" class="text-left">
-					<div class="heading">Google Maps: Adding Markers</div>
-
-					<p>&#149; Markers require:</p>
-					<div class="pad-left-lg">
-						<p>&rArr; <code class="code">position: {lat: y, lng: x}</code></p>
-						<p>&rArr; <code class="code">map</code></p>
-					</div>
-					<p>&#149; Challenge: use the following to add a marker at SF</p>
+					<p>&#149; Provide a method for controlling CSS changes</p>
+					<p>&#149; Ex: Slowly fade <code class="code">color</code> change over a second</p>
+					<p>&#149; Syntax:</p>
+					<p class="pad-left-lg text-smaller"><code class="code">transition: property duration function delay;</code></p>
+					<p>&#149; Applied:</p>
 <pre><code>
-	var marker = new google.maps.Marker({
-	  position: {lat: y, lng: x},
-	  map: map,
-	  title: 'San Francisco, CA'
-	});
+	p {
+	  transition: color 2s;
+	}
 
 </code></pre>
+<p>&#149;<a href="https://codepen.io/adrind/pen/RBeRXJ">CodePen</a></p>
 				</section>
 
 				<section data-background="#FFF" class="text-left">
-					<div class="heading">Google Maps: Multiple Markers</div>
+					<div class="heading">CSS Transitions</div>
 
+					<p><a target="_blank" href="http://easings.net/">Transition functions</a>:</p>
+					<div class="pad-left-lg text-smaller">
+						<p>&#149; <code class="code">ease</code></p>
+						<p>&#149; <code class="code">linear</code></p>
+						<p>&#149; <code class="code">ease-in</code></p>
+						<p>&#149; <code class="code">ease-out</code></p>
+						<p>&#149; <code class="code">ease-in-out</code></p>
+						<p>&#149; <code class="code">step-start</code></p>
+						<p>&#149; <code class="code">step-end</code></p>
+					</div>
+				</section>
+
+				<section data-background="#FFF" class="text-left">
+					<div class="heading">Codealong: Animated Sticky Navigation Bar</div>
 					<div class="text-smallest">
-						<p>&#149; Easiest way to add multiple markers:</p>
-<div class="fragment">
+						<p>1) Open <code class="code">animated-sticky-nav</code></p>
+						<p>2) Apply <code class="code">fixed</code> positioning and <code class="code">transition: all 2s;</code> to the <code class="code">&lt;header&gt;</code></p>
+						<p>4) Create an "offset" class:</p>
 <pre><code>
-	var marker1 = new google.maps.Marker({
-	  position: {lat: 38, lng: 50},
-	  map: map,
-	});
-
-	var marker2 = new google.maps.Marker({
-	  position: {lat: 45, lng: 45},
-	  map: map,
-	});
-
-	var marker3 = new google.maps.Marker({
-	  position: {lat: 25, lng: 75},
-	  map: map,
-	});
-
-	...
+	.header-offset {
+	  background: red;
+	  font-size: 30px;
+	}
 
 </code></pre>
-</div>
-						<p class="fragment">&#149; Is this efficient? Say I want to add 100 markers? 1,000?</p>
+						<p>5) Use jQuery to listen for scrolling and toggle the CSS class</p>
+<pre><code>
+	$(window).scroll(function () {
+	  var offset = $(window).scrollTop();
+
+	  if (offset > 150) {
+	    $('header').addClass('header-offset')
+	  } else {
+	    $('header').removeClass('header-offset')
+	  }
+	})
+
+</code></pre>
 					</div>
 				</section>
 
-				<section class="title" id="arrays">
-					<h1>Arrays</h1>
-				</section>
 
 				<section data-background="#FFF" class="text-left">
-					<div class="heading">Arrays</div>
-
-					<div class="text-smallest">
-						<p>&#149; Arrays are a list-like data structure of comma-separated values</p>
-						<p>&#149; Useful for storing a sequence of related data</p>
-						<p>&#149; Declare arrays using square brackets: <code class="code">[ ]</code></p>
-<pre><code>
-	var friends = ['Moe', 'Larry', 'Curly'];
-
-</code></pre>
-						<div class="fragment">
-							<p>&#149; <b>Element</b> - an item inside the array</p>
-							<p>&#149; <b>Index</b> - the numerical location of each element in the array (starts at position 0 - aka "0-indexed")</p>
-						</div>
+					<div class="heading">CSS Animations</div>
+					<p class="fragment">&#149; Two parts to creating a CSS Animation</p>
+					<div class="pad-left-lg fragment">
+						<p>&rArr; <code class="code">@keyframes</code> - define the animation</p>
+						<p>&rArr; <code class="code">animation</code> CSS property to assign that animation to a selector</p>
 					</div>
 				</section>
 
 				<section data-background="#FFF" class="text-left">
-					<div class="heading">Arrays</div>
-
-					<div class="text-smallest">
-						<p>&#149; JS provides multiple methods for array creation:</p>
-						<div class="pad-left-lg">
-							<div class="fragment">
-								<p>&rArr; The <code class="code">new</code> keyword</p>
-<pre><code>
-	var drinks = new Array('beer', 'coffee', 'water');
-
-</code></pre>
-							</div>
-							<div class="fragment">
-								<p>&rArr; Using the array literal</p>
-<pre><code>
-	var drinks = ['beer', 'coffee', 'water'];
-
-</code></pre>
-							</div>
-						</div>
-						<div class="fragment">
-							<p>&#149; While similar, there are crucial differences</p>
-							<p>&#149; Use the <u>array literal</u> for now</p>
-						</div>
-					</div>
-				</section>
-
-				<section data-background="#FFF" class="text-left">
-					<div class="heading">Arrays</div>
-
-					<div class="text-smallest">
-						<p>&#149; Use <code class="code">[index]</code> to retrieve values from an array</p>
-						<p>&#149; Remember that arrays are <u>0-indexed</u></p>
-<pre><code>
-	var drinks = ['beer', 'coffee', 'water'];
-
-	drinks[0]
-	// 'beer'
-
-	drinks [0+1]
-	// 'coffee'
-
-	var x = drinks.length - 1
-	drinks[x]
-	// 'water'
-
-	drinks[4]
-	// undefined
-
-</code></pre>
-						<p>&#149; <a href="https://repl.it/@adrind/FEWD-Array-Examples" target="_blank">REPL.it</a> examples</p>
-					</div>
-				</section>
-
-				<section data-background="#FFF" class="text-left">
-					<div class="heading">Array Iteration</div>
-
-					<div class="text-smallest">
-						<p>&#149; Consider an array of names:</p>
-<pre><code>
-  var neighborhoods = ['the mission', 'nob hill', 'inner sunset', 'north beach', 'bayview'];
-
-</code></pre>
-						<p class="fragment">&#149; How would we <code class="code">console.log</code> all the names in this array?</p>
-						<div class="fragment">
-<pre><code>
-	console.log(neighborhoods[0]);
-	console.log(neighborhoods[1]);
-	console.log(neighborhoods[2]);
-	console.log(neighborhoods[3]);
-	console.log(neighborhoods[4]);
-
-</code></pre>
-						</div>
-						<p class="fragment">&#149; Is this efficient/scalable?</p>
-					</div>
-				</section>
-
-				<!-- ARRAY ITERATION -->
-				<section class="title" id="iteration">
-					<h1>Array Iteration</h1>
-				</section>
-
-				<section data-background="#FFF" class="text-left">
-					<div class="heading">Array Iteration</div>
-
-					<div class="text-smaller">
-						<p>&#149; Iteration is the process of running the same function to every element in an array:</p>
-						<div class="fragment">
-<pre><code>
-  var neighborhoods = ['the mission', 'nob hill', 'inner sunset', 'north beach', 'bayview'];
-
-  neighborhoods.forEach(logNeighborhood);
-
-  function logNeighborhood (neighborhood) {
-    console.log(neighborhood);
+					<div class="heading">@keyframes</div>
+					<p class="fragment text-smaller">&#149; <code class="code">@keyframes</code> is a keyword in CSS that lets us define an animation</p>
+<pre class="fragment"><code>@keyframes redToBlue {  
+  from {
+    background: red;
   }
-
-  // 'the mission'
-  // 'nob hill'
-  // 'inner sunset'
-  // 'north beach'
-  // 'bayview'
-
+  
+  to {
+    background: blue;
+  }
+}
 </code></pre>
-						</div>
+					<div class="pad-left-lg text-smaller fragment">
+						<p class="text-smaller">&rArr; <code class="code">redToBlue</code> - the name of our animation</p>
+						<p class="text-smaller">&rArr; <code class="code">from</code> - defines the starting style at the beginning of the animation</p>
+						<p class="text-smaller">&rArr; <code class="code">to</code> - defines the style at the end of the animation</p>
 					</div>
 				</section>
 
 				<section data-background="#FFF" class="text-left">
-					<div class="heading">Array Iteration</div>
-
-					<div class="text-smaller">
-						<p>&#149; JS arrays have several iteration methods:</p>
-						<div class="pad-left-lg text-smallest">
-							<p><code class="code">.forEach()</code></p>
-							<p><code class="code">.every()</code></p>
-							<p><code class="code">.some()</code></p>
-							<p><code class="code">.filter()</code></p>
-							<p><code class="code">.map()</code></p>
-						</div>
-						<p class="fragment">&#149; Most require a function to be supplied as an argument; this function will be applied to each item in the array, individually</p>
-					</div>
-				</section>
-
-				<section data-background="#FFF" class="text-left">
-					<div class="heading">Array Iteration</div>
-					<p>&#149; Let's apply array iteration to our Google Maps Markers:</p>
-					<div class="pad-left-lg">
-						<p>1) Create an array of location objects (each should contain <code class="code">lat</code>, <code class="code">lng</code>, and <code class="code">title</code></p>
-						<p>2) Apply the <code class="code">forEach</code> method to the array</p>
-						<p>3) Write the function to apply each marker to the <code class="code">map</code></p>
-					</div>
-				</section>
-
-				<section data-background="#FFF" class="text-left">
-					<div class="heading">Array Iteration</div>
-
-					<div class="text-smallest">
-						<p>&#149; Create an array of location objects containing <code class="code">lat</code>, <code class="code">lng</code>, and <code class="code">title</code>:</p>
-<pre><code>
-	var locations = [
-	  {
-	    lat: 37.7552,
-	    lng: -122.4528,
-	    title: 'Sutro Tower',
-	  },
-	  {
-	    lat: 37.7983,
-	    lng: -122.3778,
-	    title: 'Bay Bridge',
-	  },
-	  {
-	    lat: 37.8199,
-	    lng: -122.4783,
-	    title: 'Golden Gate Bridge',
-	  },
-	];
-
+					<div class="heading">animation</div>
+					<p class="fragment text-smaller">&#149; Once we define an animation with @keyframes we need to apply it to a selector</p>
+<pre class="fragment"><code>.color-block {
+  width: 100px;
+  height: 200px;
+  animation: 3s redToBlue infinite;
+}
 </code></pre>
+					<div class="pad-left-lg fragment">
+						<p class="text-smaller">&rArr; <code class="code">3s</code> - the amount of time it takes to complete the animation (makes it faster or slower)</p>
+						<p class="text-smaller">&rArr; <code class="code">redToBlue</code> - the animation we are using</p>
+						<p class="text-smaller">&rArr; <code class="code">infinite</code> - tells it to repeat an infinite number of times</p>
 					</div>
+					<p class="fragment text-smaller">
+						<a href="https://codepen.io/adrind/pen/opVaZd?editors=1100#0">Example</a>
+					</p>
+				</section>
+
+				<section data-background="#FFF" class="text-left" id="css-animations">
+					<div class="heading">CSS Animations</div>
+					<p class="fragment">&#149; Certain CSS properties are animatable</p>
+					<p class="fragment">&#149; <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_animated_properties">List of animatable CSS properties</a></p>
+					<p class="fragment">&#149;<a href="https://codepen.io/adrind/pen/rrqero?editors=1100">Let's practice</a></p>
+					<p class="fragment">&#149; We can create more finely tuned animations with %s instead of <code class="code">from/to</code></p>
+					<p class="fragment">&#149; <a href="https://codepen.io/adrind/pen/RxdmqO?editors=1100">Example of percentages</a></p>
 				</section>
 
 				<section data-background="#FFF" class="text-left">
-					<div class="heading">Array Iteration</div>
-
-					<p>&#149; Apply the <code class="code">forEach</code> method to the array</p>
-<pre><code>
-	var locations = [ ... ];
-
-	locations.forEach(processLocation);
-
-	function processLocation (location) {
-	  console.log(location)
-	}
-
-</code></pre>
-					<p>&#149; Use <code class="code">console.log(...)</code> to test your code is working</p>
+					<div class="heading">CSS Animations Challenge</div>
+					<p class="fragment">Time to create your own animation!</p>
+					<div class="pad-left-lg fragment">
+						<p class="text-smaller">&rArr; On <a href="https://codepen.io/collection/DBpZaK/">CodePen</a> fork a sample animation (or create your own from scratch!)</p>
+						<p class="text-smaller">&rArr; Then we'll share with the class</p>
+					</div>
+					<p class="fragment"><a href="https://robots.thoughtbot.com/css-animation-for-beginners">Good blog post</a> about all the animation properties</p>
 				</section>
 
 				<section data-background="#FFF" class="text-left">
-					<div class="heading">Array Iteration</div>
+					<div class="heading">CSS Animations</div>
+					<p class="fragment">&#149; Remember: the Internet is full of rich resources</p>
+					<p class="fragment">&#149; There are small libraries of already written <code class="code">@keyframes</code> animations that you can add to your projects</p>
+					<p class="fragment"><a href="https://daneden.github.io/animate.css/">Example library</a></p>
+					<p class="fragment">Open <span class="code">animate-css</span> and give it a try!</p>
+				</section>
 
-					<p>&#149; Update <code class="code">processLocation</code> to render the markers</p>
+				<!-- BREAK (5-7 mins) -->
+				<section class="center">
+					<h1>5 minute break</h1>
+					<img src="img/main/break-time-bear.jpg">
+				</section>
 
-<pre><code>
-	function processLocation (location) {
-	  var marker = new google.maps.Marker({
-	    position: {
-	      lat: location.lat,
-	      lng: location.lng,
-	    },
-	    title: location.title,
-	    map: map,
-	  });
-	}
+				<!-- jQuery Warmup -->
+				<section class="title" id="js-animations">
+					<h1>JavaScript animation libraries</h1>
+				</section>
 
-</code></pre>
+				<section data-background="#FFF" class="text-left">
+					<div class="heading">JavaScript Animations</div>
+
+					<p class="fragment">&#149; There are some JavaScript/jQuery libraries that specialize in animations</p>
+					<p class="fragment">&#149; It can be <strong>very</strong> tedious to write <a href="https://www.nytimes.com/interactive/2017/05/25/sports/basketball/lebron-career-playoff-points-record.html">complex animations</a> in CSS.</p>
+					<p class="fragment">&#149; JavaScript libraries give us a way to easily create</p>
+				</section>
+
+
+				<section data-background="#FFF" class="text-left">
+					<div class="heading">SVGs</div>
+
+					<p class="fragment">&#149; Scalable Vector Graphics</p>
+					<p class="fragment">&#149; <a href="https://svgwg.org/svg2-draft/intro.html">SVG</a> is a language for describing two-dimensional graphics. </p>
+					<p class="fragment">&#149; SVG drawings can be interactive and dynamic. Animations can be defined and triggered either declaratively (i.e., by embedding SVG animation elements in SVG content) or via scripting. </p>
+					<p class="fragment">&#149; Written in XML (which kind of resembles HTML) it has its own set of special attributes and tags you can use to create shapes.</p>
+					<p class="fragment"><a href="https://codepen.io/antonietta/pen/KVrWeE">Example</a></p>
+				</section>
+
+				<section data-background="#FFF" class="text-left">
+					<div class="heading">SVGs</div>
+
+					<p class="fragment">&#149; SVGs are great for animations because we can use JavaScript to change certain attributes of the SVG.</p>
+					<p class="fragment">&#149; Best way to learn is to copy and paste <a href="https://learn-the-web.algonquindesign.ca/topics/svg-cheat-sheet/">examples</a> and play around with the attributes!</p>
+					<p class="fragment"><a href="https://codepen.io/antonietta/pen/KVrWeE">CodePen Exercise</a></p>
+				</section>
+
+
+				<section data-background="#FFF" class="text-left">
+					<div class="heading">Canvas</div>
+
+					<p>&#149; <span class="code">&#x3C;canvas&#x3E;</span> is an HTML element that let's us "paint" images using JavaScript</p>
+					<p>&#149; You can create <a href="http://www.blobsallad.se/">2D</a> and <a href="http://webglsamples.org/">3D</a> browser experiences.</p>
+					<p class="fragment"><a href="https://codepen.io/adrind/pen/KBGWrN?editors=1010">Example</a></p>	
+				</section>
+
+				<section data-background="#FFF" class="text-left">
+					<div class="heading">Canvas</div>
+
+					<p>&#149; Canvas is another popular way to create robust animations since you use JavaScript to control the drawing on the page.</p>
+					<p class="fragment">&#149; Exercise: Take the example CodePen and create an image that looks like: <br/><img src="img/class16/example.png" alt=""></p>
+					<p class="fragment">&#149; <a href="https://codepen.io/adrind/pen/QBzGrG">CodePen Exercise</a></p>
+				</section>
+
+				<section data-background="#FFF" class="text-left">
+					<div class="heading">Tips for using JavaScript animation libraries</div>
+
+					<p class="fragment">1) Get comfortable with Arrays and Objects</p>
+					<p class="fragment">2) Find example snippets on the web and play around with them in CodePen</p>
+					<p class="fragment">3) Take a <a href="https://www.udacity.com/course/html5-canvas--ud292">class</a> online!</p>
+					<p class="fragment">4) Pick a library that suits your needs:</span></p>
+					<p class="fragment">Basic libraries:</p>
+					<p class="fragment pad-left-lg">&#149;<a href="https://popmotion.io/pure/">Popmotion.js</a></p>
+					<p class="fragment">More complex animation "frameworks":</p>
+					<p class="fragment pad-left-lg">&#149;<a href="https://d3js.org/">D3.js</a></p>
+				</section>
+
+				<section data-background="#FFF" class="text-left">
+					<div class="heading">What's On Deck</div>
+
+					<h4>Class #17 (of 20) - Using APIs</h4>
+
+					<p>&#149; Review of Arrays and Objects</p>
+					<p>&#149; Using an API to fetch data</p>
 				</section>
 
 				<!-- THE END -->

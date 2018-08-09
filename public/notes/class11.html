@@ -14,28 +14,10 @@
 	<body>
 		<div class="reveal">
 			<div class="slides">
-				<section data-background="#FFF" class="text-left">
-					<div class="heading">Finish Last Week's Lab</div>
-					<div class="text-smallest">
-						<p>1. Open <code class="code">calculator-box</code> in SublimeText</p>
-						<p>2. Add a <code class="code">&lt;script&gt;</code> tag to include jQuery</p>
-						<p>3. Build the following behaviors:</p>
-						<div class="pad-left-lg text-smaller">
-							<p>&#149; Clicking on a "plus" box adds to the total in the center</p>
-							<p>&#149; Clicking on a "minus" box subtracts from the total</p>
-							<p>&#149; Clicking the red box makes the background of the center box to red</p>
-							<p>&#149; Clicking the blue box makes the background of the center box to blue</p>
-							<p>&#149; Clicking the center box will make its background white and reset the value inside to zero</p>
-						</div>
-						<p><a href="https://codepen.io/adrind/pen/oppJgW?editors=1010">Sample jQuery Code</a></p>
-					</div>
-				</section>
-
-				<section data-background="#FFF" class="text-left">
-					<div class="heading">Remember! Emotional Learning Curve</div>
-					<div class="text-center">
-						<img src="img/main/emotional_learning_curve.png" alt="">
-					</div>
+				<section class="hero condensed">
+					<h1>Class <span class="red">#11</span></h1>
+					<h1>07/23/2018</h1>
+					<h1 class="lesson-title">jQuery (pt. 2)</h1>
 				</section>
 
 				<section class="hero">
@@ -46,19 +28,10 @@
 						<p>2) Move the following into <code class="code">class-work</code>:</p>
 						<div class="pad-left-lg">
 							<p>&#149; <code class="code">jquery-city</code></p>
-						</div>
-						<p>3) Move the following into <code class="code">homework</code>:</p>
-						<div class="pad-left-lg">
 							<p>&#149; <code class="code">accordian</code></p>
 						</div>
-						<p>4) Solution to <code class="code">calculator-box</code> included</p>
+						<p>3) Solution to <code class="code">calculator-box</code> included</p>
 					</div>
-				</section>
-
-				<section class="hero condensed">
-					<h1>Class <span class="red">#11</span></h1>
-					<h1>01/09/2018</h1>
-					<h1 class="lesson-title">jQuery (pt. 2)</h1>
 				</section>
 
 				<!-- ANNOUNCEMENTS -->
@@ -81,12 +54,264 @@
 					<div class="heading">Agenda</div>
 
 					<div class="text-smaller">
-						<!-- <p>&#149; jQuery Review</p> -->
+						<p>&#149; JavaScript/jQuery Review</p>
 						<p>&#149; <a href="#/jquery-hide-show">Toggling element visibility (hide vs. show)</a></p>
 						<p>&#149; <a href="#/jquery-attr">Manipulating element attributes using <code>.attr()</code></a></p>
 						<p>&#149; <a href="#/jquery-this"><code>$(this)</code></p></a>
 						<p>&#149; <a href="#/dom-traversal">Document traversal</a></p>
 					</div>
+				</section>
+
+				<section data-background="#FFF" class="text-left">
+					<div class="heading">Questions</div>
+
+					<div class="text-smaller">
+						<p class="text-smaller"><b>Q: Do we still need to know JavaScript if everything is simplified in jQuery/libraries?</b></p>
+						<p class="text-smallest fragment">A: Kind of! You don't have to worry about the <b>syntax</b> of JavaScript (like document.querySelector) but you do need to know the <b>concepts</b> (that you can select certain elements)</p>
+						<p class="text-smaller fragment"><b>Q: How do we load JavaScript in my own files/CodePen?</b></p>
+						<p class="text-smallest fragment">A: We'll go over that!</p>
+						<p class="text-smaller fragment"><b>Q: What's a return value in a function? When do functions need an input variable?</b></p>
+						<p class="text-smallest fragment">A: <a href="https://codepen.io/adrind/pen/oMzdmo">Function review.</a></p>
+
+				 	</div>
+				</section>
+
+				<section class="title" id="review">
+					<h1><a href="https://codepen.io/collection/AevqJR/">Let's review</a></h1>
+				</section>
+
+				<section class="title" id="css-manipulation">
+					<h1>CSS Manipulation</h1>
+				</section>
+
+				<section data-background="#FFF" class="text-left">
+					<div class="heading">CSS Manipulation: <code class="lower">.css()</code></div>
+
+					<p>JavaScript:</p>
+<pre><code>
+	document.querySelector('#someId').style.color = 'red'
+
+</code></pre>
+					<div class="fragment">
+						<p>jQuery:</p>
+<pre><code>
+	$('#someId').css('color', 'red')
+
+</code></pre>
+					</div>
+				</section>
+
+				<section data-background="#FFF" class="text-left">
+					<div class="heading">CSS Manipulation: <code class="lower">.css()</code></div>
+
+					<div class="text-smallest">
+						<p>&#149; Set Single Property:</p>
+<pre><code>
+	$('p').css('background-color', 'pink')
+
+</code></pre>
+						<div class="fragment">
+							<p>&#149; Multiple Properties:</p>
+<pre><code>
+	$('#someId').css({ 'height': '100px', 'width': '100px' })
+
+</code></pre>
+						</div>
+						<div class="fragment">
+							<p>&#149; Get/Read Property:</p>
+<pre><code>
+	$('#someId').css('height')
+
+</code></pre>
+						</div>
+					</div>
+				</section>
+
+
+				<section class="title" id="click-event">
+					<h1>Click Event</h1>
+				</section>
+
+				<section data-background="#FFF" class="text-left">
+					<div class="heading">jQuery Click Event</div>
+
+					<div class="text-smallest">
+						<p>JavaScript:</p>
+<pre><code>
+	document.querySelector('#someId').onclick = someFunction
+
+	function someFunction () {
+	  // do something
+	}
+
+</code></pre>
+						<div class="fragment">
+							<p>jQuery:</p>
+<pre><code>
+	$('#someId').click(someFunction)
+
+	function someFunction () {
+	  // do something
+	}
+
+</code></pre>
+						</div>
+					</div>
+				</section>
+
+				<section data-background="#FFF" class="text-left">
+					<div class="heading">jQuery Click Event</div>
+
+					<div class="text-smallest">
+						<p>&#149; Let's redo our earlier click event handler example but this time use jQuery!</p>
+						<p>&#149; <a href="https://codepen.io/adrind/pen/zLoKYV">CodePen Exercise</a></p>
+					</div>
+				</section>
+
+
+				<section class="center">
+					<h1>CodeAlong</h1>
+					<p><a target="_blank" href="https://codepen.io/adrind/pen/KZvbNa?editors=1010">CodePen</a></p>
+				</section>
+
+
+				<!-- INPUTS AND .val() -->
+				<section class="title" id="input-and-val">
+					<h1><code class="lower">&lt;input&gt;</code> and <code class="lower">.val()</code></h1>
+				</section>
+
+				<section data-background="#FFF" class="text-left">
+					<div class="heading"><code class="lower">&lt;input&gt;</code> and <code class="lower">.val()</code></div>
+
+					<p>JavaScript:</p>
+<pre><code>
+	document.querySelector('#someId').value
+	// returns the value inside of someId
+
+</code></pre>
+					<div class="fragment">
+						<p>jQuery:</p>
+<pre><code>
+	$('#someId').val()
+	// returns the value inside of someId
+
+</code></pre>
+					</div>
+				</section>
+
+				<section data-background="#FFF" class="text-left">
+					<div class="heading"><code class="lower">&lt;input&gt;</code> and <code class="lower">.val()</code></div>
+
+					<div class="text-smaller">
+						<p>&#149; Getting values, use <code class="code">.val()</code></p>
+<pre><code>
+	$('#someId').val()
+	// returns the value inside of someId
+
+</code></pre>
+						<div class="fragment">
+							<p>&#149; Setting values, use <code class="code">.val('some text')</code></p>
+<pre><code>
+	$('#someId').val('some text')
+	// sets the value of someId to 'some text'
+
+</code></pre>
+						</div>
+						<p class="fragment"><code class="code">.val()</code> can be used on both <code class="code">&lt;input&gt;</code> and <code class="code">&lt;select&gt;</code> elements</p>
+					</div>
+				</section>
+
+				<section data-background="#FFF" class="text-left">
+					<div class="heading">jQuery .val()</div>
+
+					<div class="text-smallest">
+						<p>&#149; Let's redo our earlier input example but this time use jQuery!</p>
+						<p>&#149; <a href="https://codepen.io/adrind/pen/djOpNO">CodePen Exercise</a></p>
+					</div>
+				</section>
+
+
+				<section data-background="#FFF" class="text-left">
+					<div class="heading">jQuery</div>
+
+					<div class="text-smallest">
+						<p>&#149; Let's redo our earlier Celsius to Fahrenheit converter using jQuery!</p>
+						<p>&#149; <a href="https://codepen.io/adrind/pen/MBbjpd?editors=1010">CodePen Exercise</a></p>
+					</div>
+				</section>
+
+				<section class="title" id="using-jquery">
+					<h1>Using jQuery</h1>
+				</section>
+
+				<section data-background="#FFF" class="text-left">
+					<div class="heading">Using jQuery</div>
+
+					<p>Option 1: Download and store jQuery locally</p>
+					<div class="pad-left-lg text-smallest">
+						<p>1. Download jQuery from <a target="_blank" href="http://jquery.com/download">http://jquery.com/download</a></p>
+						<p>2. Save the <code class="code">.js</code> file in your project's <code class="code">js</code> directory</p>
+						<p>3. Create a <code class="code">&lt;script&gt;</code> tag <u>ABOVE</u> any of your own JS files</p>
+					</div>
+<pre><code>
+	&lt;script src="jquery.js"&gt;&lt;/script&gt;
+	&lt;script src="project.js"&gt;&lt;/script&gt;
+
+</code></pre>
+				</section>
+
+				<section data-background="#FFF" class="text-left">
+					<div class="heading">Using jQuery</div>
+
+					<p>Option 2: Link to an external jQuery source (CDN)</p>
+					<div class="pad-left-lg text-smaller">
+						<p>1. Locate an externally hosted version of jQuery:</p>
+						<p class="pad-left-lg">&rArr; <a target="_blank" href="https://code.jquery.com/">https://code.jquery.com/</a></p>
+					</div>
+					<p class="pad-left-lg text-smallest">2. Create a <code class="code">&lt;script&gt;</code> tag <u>ABOVE</u> any of your own JS files</p>
+					<p class="pad-left-lg text-smallest">3. Point the <code class="code">src</code> attribute to the jQuery CDN</p>
+<pre><code>
+	&lt;script src="https://code.jquery.com/jquery-1.11.3.js"&gt;&lt;/script&gt;
+	&lt;script src="project.js"&gt;&lt;/script&gt;
+
+</code></pre>
+				</section>
+
+				<section data-background="#FFF" class="text-left">
+					<div class="heading">Using jQuery: Script Placement</div>
+
+					<div class="text-smallest">
+						<p><code class="code">&lt;script&gt;</code> tags should always be placed:</p>
+						<p class="pad-left-lg">&#149; At the <u>BOTTOM</u> of your <code class="code">&lt;body&gt;</code></p>
+						<p class="pad-left-lg">&#149; Right before the closing <code class="code">&lt;/body&gt</code>; tag</p>
+						<div class="fragment">
+							<p>Why:</p>
+							<p class="pad-left-lg">&#149; As your JS will reference DOM elements, these elements must be loaded first!</p>
+							<p class="pad-left-lg">&#149; By placing <code class="code">&lt;script&gt;</code> tags at the <u>BOTTOM</u>, the browser will load these <code class="code">&lt;script&gt;</code>'s LAST</p>
+						</div>
+					</div>
+				</section>
+
+				<section data-background="#FFF" class="text-left">
+					<div class="heading">Lab</div>
+					<div class="text-smallest">
+						<p>1. Open <code class="code">calculator-box</code> in SublimeText</p>
+						<p>2. Add a <code class="code">&lt;script&gt;</code> tag to include jQuery</p>
+						<p>3. Build the following behaviors:</p>
+						<div class="pad-left-lg text-smaller">
+							<p>&#149; Clicking on a "plus" box adds to the total in the center</p>
+							<p>&#149; Clicking on a "minus" box subtracts from the total</p>
+							<p>&#149; Clicking the red box makes the background of the center box to red</p>
+							<p>&#149; Clicking the blue box makes the background of the center box to blue</p>
+							<p>&#149; Clicking the center box will make its background white and reset the value inside to zero</p>
+						</div>
+					</div>
+				</section>
+
+				<!-- BREAK (5-7 mins) -->
+				<section class="center">
+					<h1>5 minute break</h1>
+					<img src="img/main/break-time-bear.jpg">
 				</section>
 
 				<!-- TOGGLING ELEMENT VISIBILITY -->
@@ -275,12 +500,6 @@
 						<p>&#149; When a user clicks on a thumbnail, the <code class="code">src</code> attribute from <br> <code class="code">&lt;img id="bigimage"&gt;</code> is replaced with the <code class="code">src</code> from thumbnail</p>
 						<p>&#149; Hint: use <code class="code">.attr()</code></p>
 					</div>
-				</section>
-
-				<!-- BREAK (5-7 mins) -->
-				<section class="center">
-					<h1>5 minute break</h1>
-					<img src="img/main/break-time-bear.jpg">
 				</section>
 
 				<!-- $(this) -->

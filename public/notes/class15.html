@@ -23,15 +23,15 @@
 						<p>2) Move the following into your <code class="code">class-work</code> directory:</p>
 						<div class="pad-left-lg">
 							<p>&#149; <code class="code">super-school-news</code></p>
+							<p>&#149; <code class="code">responsive-news</code></p>
 						</div>
-						<p class="pad-left-lg">&#149; <code class="code">responsive-news</code></p>
 					</div>
 				</section>
 
 				<section class="hero">
 					<h1>Class <span class="red">#15</span></h1>
-					<h1>01/23/2018</h1>
-					<h1 class="lesson-title">CSS Animations & Responsive Web Design</h1>
+					<h1>08/07/2018</h1>
+					<h1 class="lesson-title">Responsive Web Design</h1>
 				</section>
 
 				<!-- ANNOUNCEMENTS -->
@@ -49,7 +49,6 @@
 				<section data-background="#FFF" class="text-left">
 					<div class="heading">Agenda</div>
 
-					<p>&#149; <a href="#/css-animations">CSS Animations Activity</a></p>
 					<p>&#149; <a href="#/border-box"><code class="code lower">box-sizing: border-box</code></a></p>
 					<p>&#149; <a href="#/responsive-web-design">Responsive Web Design Overview</a></p>
 					<p>&#149; <a href="#/fluid-layout">Fluid Layout</a></p>
@@ -62,91 +61,6 @@
 				</section> -->
 
 				<!-- CSS Animations -->
-				<section class="title" id="css-animations">
-					<h2>CSS Animations</h2>
-				</section>
-
-				<section data-background="#FFF" class="text-left">
-					<div class="heading">CSS Animations</div>
-
-					<p class="fragment text-smaller">&#149; Early web devs would use the <code class="code">onhover</code> event to make <a href="https://codepen.io/adrind/pen/baZPde">simple animations</a></p>
-					<p class="fragment text-smaller">&#149; In 2011 browsers started creating support for <a href="https://caniuse.com/#feat=css-animation">CSS animations</a></p>
-					<p class="fragment text-smaller">&#149; <a href="https://www.quora.com/What-are-the-differences-cons-pros-between-CSS3-animations-and-JS-animations">Pros</a> and <a href="https://snook.ca/archives/javascript/css_animations_in_safari/">cons</a></p>
-					<p class="fragment text-smaller">&#149; <a href="https://codepen.io/FabioG/pen/QjLreK">Example</a></p>
-				</section>
-
-				<section data-background="#FFF" class="text-left">
-					<div class="heading">CSS Animations</div>
-					<p class="fragment">&#149; Two parts to creating a CSS Animation</p>
-					<div class="pad-left-lg fragment">
-						<p>&rArr; <code class="code">@keyframes</code> - define the animation</p>
-						<p>&rArr; <code class="code">animation</code> CSS property to assign that animation to a selector</p>
-					</div>
-				</section>
-
-				<section data-background="#FFF" class="text-left">
-					<div class="heading">@keyframes</div>
-					<p class="fragment text-smaller">&#149; <code class="code">@keyframes</code> is a keyword in CSS that lets us define an animation</p>
-<pre class="fragment"><code>@keyframes redToBlue {  
-  from {
-    background: red;
-  }
-  
-  to {
-    background: blue;
-  }
-}
-</code></pre>
-					<div class="pad-left-lg text-smaller fragment">
-						<p class="text-smaller">&rArr; <code class="code">redToBlue</code> - the name of our animation</p>
-						<p class="text-smaller">&rArr; <code class="code">from</code> - defines the starting style at the beginning of the animation</p>
-						<p class="text-smaller">&rArr; <code class="code">to</code> - defines the style at the end of the animation</p>
-					</div>
-				</section>
-
-				<section data-background="#FFF" class="text-left">
-					<div class="heading">animation</div>
-					<p class="fragment text-smaller">&#149; Once we define an animation with @keyframes we need to apply it to a selector</p>
-<pre class="fragment"><code>.color-block {
-  width: 100px;
-  height: 200px;
-  animation: 3s redToBlue infinite;
-}
-</code></pre>
-					<div class="pad-left-lg fragment">
-						<p class="text-smaller">&rArr; <code class="code">3s</code> - the amount of time it takes to complete the animation (makes it faster or slower)</p>
-						<p class="text-smaller">&rArr; <code class="code">redToBlue</code> - the animation we are using</p>
-						<p class="text-smaller">&rArr; <code class="code">infinite</code> - tells it to repeat an infinite number of times</p>
-					</div>
-					<p class="fragment text-smaller">
-						<a href="https://codepen.io/adrind/pen/opVaZd?editors=1100#0">Example</a>
-					</p>
-				</section>
-
-				<section data-background="#FFF" class="text-left">
-					<div class="heading">CSS Animations</div>
-					<p class="fragment">&#149; Certain CSS properties are animatable</p>
-					<p class="fragment">&#149; <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_animated_properties">List of animatable CSS properties</a></p>
-					<p class="fragment">&#149; We can create more finely tuned animations with %s instead of <code class="code">from/to</code></p>
-					<p class="fragment">&#149; <a href="https://codepen.io/adrind/pen/RxdmqO?editors=1100">Example of percentages</a></p>
-				</section>
-
-				<section data-background="#FFF" class="text-left">
-					<div class="heading">CSS Animations Challenge</div>
-					<p class="fragment">Time to create your own animation!</p>
-					<div class="pad-left-lg fragment">
-						<p class="text-smaller">&rArr; On <a href="https://codepen.io/collection/DBpZaK/">CodePen</a> fork a sample animation (or create your own from scratch!)</p>
-						<p class="text-smaller">&rArr; Then we'll share with the class</p>
-					</div>
-					<p class="fragment"><a href="https://robots.thoughtbot.com/css-animation-for-beginners">Good blog post</a> about all the animation properties</p>
-				</section>
-
-				<section data-background="#FFF" class="text-left">
-					<div class="heading">CSS Animations</div>
-					<p class="fragment">Remember: the Internet is full of rich resources</p>
-					<p class="fragment">There are small libraries of already written <code class="code">@keyframes</code> animations that you can add to your projects</p>
-					<p class="fragment"><a href="https://daneden.github.io/animate.css/">Example library</a></p>
-				</section>
 
 				<!-- Box-Sizing: Border-Box -->
 				<section class="title" id="border-box">
@@ -223,7 +137,7 @@
 						<p class="pad-left-lg">Note 2: articles have 10px of padding</p>
 						<p class="pad-left-lg">Note 3: overall container width is 960px</p>
 						<p class="pad-left-lg">Note 4: remember <code class="code">box-sizing: border-box;</code></p>
-						<p class="pad-left-lg">Note 5: Don't use <code class="code">flex-box</code>, try to hack this with <code class="code">float: left;</code></p>
+						<p class="pad-left-lg">Note 5: Don't use <code class="code">flexbox</code>, try to hack this with <code class="code">float: left;</code></p>
 					</div>
 				</section>
 
@@ -450,13 +364,13 @@
 					<div class="heading">Media Queries: Browser-Width</div>
 
 					<p>&#149; <code class="code">min-width: ___ px</code></p>
-					<p class="pad-left-lg">Targets widths greater than or equal to __ px wide</p>
+					<p class="pad-left-lg">Targets widths greater than __ px wide</p>
 <pre><code>
 	@media screen and (min-width: 1000px) { ... }
 
 </code></pre>
 					<p>&#149; <code class="code">max-width: ___ px</code></p>
-					<p class="pad-left-lg">Targets widths less than or equal to __ px wide</p>
+					<p class="pad-left-lg">Targets widths less than __ px wide</p>
 <pre><code>
 	@media screen and (max-width: 1000px) { ... }
 
@@ -530,11 +444,11 @@
 				<section data-background="#FFF" class="text-left">
 					<div class="heading">What's On Deck</div>
 
-					<h4>Class #17 (of 20) - Responsive Web Design (pt. 2)</h4>
+					<h4>Class #15 (of 20) - CSS Animations</h4>
 
-					<p>&#149; Responsive Navbar Tutorial</p>
-					<p>&#149; <code class="code lower">&lt;meta&gt;</code> Tag</p>
-					<p>&#149; Startup Matchmaker Responsive Lab</p>
+					<p>&#149; History of animations in the web</p>
+					<p>&#149; CSS Animations</p>
+					<p>&#149; JavaScript animations</p>
 				</section>
 
 				<section class="center">

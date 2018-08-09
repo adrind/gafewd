@@ -20,15 +20,27 @@
 					<div class="opening-instructions">
 						<p>1) Please download <a href="../materials/class12.zip">Class 12 Starter Code</a></p>
 						<p>2) Move the following into <code class="code">class-work</code>:</p>
+						<p class=" pad-left-lg">&#149; <code class="code">accordian</code></p>
 						<p class=" pad-left-lg">&#149; <code class="code">click-count</code></p>
+						<p class=" pad-left-lg">&#149; <code class="code">jquery-city</code></p>
+						<p>3) Move the following into <code class="code">homework</code>:</p>
 						<p class=" pad-left-lg">&#149; <code class="code">temp-converter</code></p>
+						<p>4) A solution to <code class="code">calculator-box</code> is also included</p>
 					</div>
 				</section>
 
 				<section class="hero condensed">
 					<h1>Class <span class="red">#12</span></h1>
-					<h1>01/11/2018</h1>
-					<h1 class="lesson-title">Conditional Statements</h1>
+					<h1>07/25/2018</h1>
+					<h1 class="lesson-title">Even More jQuery</h1>
+				</section>
+
+				<!-- AGENDA -->
+				<section data-background="#FFF" class="text-left">
+					<div class="heading">Agenda</div>
+					<p>&#149; <a href="#/jQuery-review">jQuery review</a></p>
+					<p>&#149; <a href="#/conditional-statements">Conditional statements</a></p>
+					<p>&#149; <a href="#/logical-operators">Logical Operators</a></p>
 				</section>
 
 				<!-- ANNOUNCEMENTS -->
@@ -41,23 +53,199 @@
 							<p>&rArr; First draft of HTML/CSS due TODAY</p>
 							<p>&rArr; I will leave GitHub comments over the weekend</p>
 						</div>
-						<p>&#149; Happy Hour next Thursday!</p>
-						<div class="pad-left-lg">
-							<p>&rArr; Celebrate that we're more than halfway through</p>
-							<p>&rArr; Drinks and snacks will be provided</p>
+					</div>
+				</section>
+
+				<section data-background="#FFF" class="text-left">
+					<div class="heading">Questions</div>
+
+					<div class="text-smaller">
+						<p class="text-smaller"><b>Q: How common is jQuery in the workplace vs other libraries vs pure JavaScript?</b></p>
+						<p class="text-smallest fragment">A: jQuery is <a href="https://remysharp.com/2017/12/15/is-jquery-still-relevant">very common still.</a> Few companies use pure JavaScript because it's so hard to maintain (although the language is getting better!)</p>
+						<p class="text-smaller fragment"><b>Q: How can I avoid making small typos?</b></p>
+				 	</div>
+				</section>
+
+				<section class="center">
+					<img src="img/class12/typos.png" height="500px">
+				</section>
+
+				<section class="title" id="jquery-review">
+					<h1><a href="https://codepen.io/collection/AGmRyv/">jQuery Review</a></h1>
+				</section>
+
+				<section data-background="#FFF" class="text-left" id="jQuery-city">
+					<div class="heading">Exercise: jQuery City</div>
+
+					<div class="text-smaller">
+						<p>&#149; Open <code class="code">jquery-city</code> in Sublime Text</p>
+						<p>&#149; When a user clicks on a thumbnail, the <code class="code">src</code> attribute from <br> <code class="code">&lt;img id="bigimage"&gt;</code> is replaced with the <code class="code">src</code> from thumbnail</p>
+						<p>&#149; Hint: use <code class="code">.attr()</code></p>
+					</div>
+				</section>
+
+				<!-- $(this) -->
+				<section class="title" id="jquery-this">
+					<h1><code class="lower">$(this)</code></h1>
+				</section>
+
+				<section class="center">
+					<h1><code class="lower">$(this)</code></h1>
+					<div class="text-left text-smaller">
+						<p>1) Open the following: <a target="_blank" href="https://codepen.io/adrind/pen/VyyqXx?editors=101">CodePen</a></p>
+						<p>2) What's going on here?</p>
+						<p class="fragment">3) What if we wanted to turn each individual <code class="code">span</code> red on click?</p>
+					</div>
+				</section>
+
+				<section data-background="#FFF" class="text-left">
+					<div class="heading"><code class="lower">$(this)</code></div>
+
+					<div class="text-smaller">
+						<p>&#149; <code class="code">$(this)</code> allows us to target specific elements that invoked (or called) a function</p>
+						<div class="fragment">
+							<p>&#149; Refactor previous CodePen using <code class="code">$(this)</code>:</p>
+<pre><code>
+	function changeColor() {
+	  $(this).css('color', 'red');
+	}
+
+	$('span').click(changeColor);
+
+</code></pre>
+						</div>
+						<p class="fragment">&#149; On the click event, only the <code class="code">span</code> that invoked the function will turn red</p>
+					</div>
+				</section>
+
+				<section data-background="#FFF" class="text-left">
+					<div class="heading"><code class="lower">$(this)</code></div>
+
+					<div class="text-smaller">
+						<p>&#149; In JS, functions are called (invoked) by an object</p>
+						<p class="fragment">&#149; Whatever object called the function can be accessed inside the function using <code class="code">this</code></p>
+						<p class="fragment">&#149; <code class="code">this</code> is said to be the "context" of the function (refers to whatever object invoked/called it)</p>
+						<div class="fragment">
+							<p>&#149; We can "wrap" <code class="code">this</code> in jQuery: <code class="code">$(this)</code></p>
+							<p>&#149; Remember, DOM nodes (HTML elements) are objects</p>
 						</div>
 					</div>
 				</section>
 
-				<!-- AGENDA -->
-				<section data-background="#FFF" class="text-left">
-					<div class="heading">Agenda</div>
-
-					<p>&#149; <a href="#/conditional-statements">Conditional statements</a></p>
-					<p>&#149; <a href="#/logical-operators">Logical Operators</a></p>
-					<p>&#149; <a href="#/manipulating-css">Manipulating CSS Classes</a></p>
-					<p>&#149; <a href="#/chaining-functions">Chaining Functions</a></p>
+				<section class="center">
+					<h1>CodeAlong</h1>
+					<p>Refactor jQuery City using <code class="code">$(this)</code></p>
 				</section>
+
+				<section class="title" id="dom-traversal">
+					<h1>Document Traversal</h1>
+				</section>
+
+				<section data-background="#FFF" class="text-left">
+					<div class="heading">Document Traversal</div>
+
+					<div class="text-smallest">
+						<p>&#149; Given a certain element, how do I access elements around it?</p>
+						<div class="fragment">
+							<p>&#149; jQuery makes it very easy to move around the DOM</p>
+							<p>&#149; "Walking the DOM"</p>
+							<p>&#149; Details: <a target="_blank" href="http://api.jquery.com/category/traversing/">http://api.jquery.com/category/traversing/</a></p>
+						</div>
+						<div class="fragment">
+							<p>&#149; What do you think the following will do?</p>
+<pre><code>
+	$('#wrapper').children()
+
+</code></pre>
+						</div>
+						<p class="fragment">&#149; Returns the elements nested inside of <code class="code">#wrapper</code></p>
+						</div>
+				</section>
+
+				<section data-background="#FFF" class="text-left">
+					<div class="heading">Document Traversal: HTML Review</div>
+
+					<div class="text-smallest">
+<pre><code>
+	&lt;div id="wrapper"&gt;
+
+		&lt;p id="one"&gt;
+			&lt;span&gt;Some Text&lt;/span&gt;
+		&lt;/p&gt;
+
+		&lt;p id="two"&gt;
+			&lt;span&gt;Some Text&lt;/span&gt;
+		&lt;/p&gt;
+
+	&lt;/div&gt;
+
+</code></pre>
+						<div class="text-smallest">
+							<p class="fragment">1: What are <code class="code">#wrapper</code>'s children?</p>
+							<p class="fragment">2: What is <code class="code">#two</code>'s parent?</p>
+							<p class="fragment">3: Does <code class="code">#one</code> have any siblings?</p>
+							<p class="fragment">4: Does the <code class="code">&lt;span&gt;</code> child of <code class="code">#one</code> have siblings?</p>
+						</div>
+					</div>
+				</section>
+
+				<section data-background="#FFF" class="text-left">
+					<div class="heading">Document Traversal: It's all in the family</div>
+
+					<p><code class="code">.children()</code></p>
+					<p class="pad-left-lg">&rArr; Get an element's child elements</p>
+					<div class="fragment">
+						<p><code class="code">.parent()</code></p>
+						<p class="pad-left-lg">&rArr; Get an element's parent element</p>
+					</div>
+					<div class="fragment">
+						<p><code class="code">.siblings()</code></p>
+						<p class="pad-left-lg">&rArr; Get an element's sibling elements</p>
+					</div>
+				</section>
+
+				<section data-background="#FFF" class="text-left">
+					<div class="heading">Document Traversal: Siblings</div>
+
+					<p><code class="code">.next()</code></p>
+					<p class="pad-left-lg">&rArr; Get the immediate following sibling element</p>
+					<div class="fragment">
+						<p><code class="code">.prev()</code></p>
+						<p class="pad-left-lg">&rArr; Get the immediate preceding sibling element</p>
+					</div>
+				</section>
+
+				<section data-background="#FFF" class="text-left">
+					<div class="heading">Document Traversal: Find</div>
+
+					<div class="text-smaller">
+						<p>&#149; <code class="code">.find('some-css-selector')</code></p>
+						<p class="pad-left-lg">&rArr; Will find all child elements matching a certain selector</p>
+<pre><code>
+	&lt;div id="wrapper"&gt;
+	   &lt;p class="post"&gt;Lorem ipsum dolor sit amet.&lt;/p&gt;
+	   &lt;p&gt;Lorem ipsum dolor sit amet.&lt;/p&gt;
+	   &lt;p class="post"&gt;Lorem ipsum dolor sit amet.&lt;/p&gt;
+	&lt;/div&gt;
+
+</code></pre>
+						<div class="fragment">
+							<p>&#149; What does this do?</p>
+<pre><code>
+	$('#wrapper').find('.post').css('color', 'red')
+
+</code></pre>
+						</div>
+					</div>
+				</section>
+
+				<section data-background="#FFF" class="text-left">
+					<div class="heading">Lab/HW</div>
+
+					<p>&#149; Open <code class="code">accordian</code> in Sublime Text</p>
+					<p>&#149; Follow the instructions in <code class="code">js/app.js</code></p>
+				</section>
+
 
 				<section class="title" id="conditional-statements">
 					<h1>Conditional Statements</h1>
@@ -334,7 +522,7 @@
 					</div>
 				</section>
 
-				<!-- CHAINING FUNCTIONS -->
+				<!-- CHAINING FUNCTIONS 
 				<section class="title" id="chaining-functions">
 					<h1>Chaining Functions</h1>
 				</section>
@@ -383,16 +571,15 @@
 						</div>
 					</div>
 				</section>
-
+-->
 				<section data-background="#FFF" class="text-left">
-					<div class="heading">Lab/HW</div>
+					<div class="heading">Lab/HW for Tuesday</div>
 
 					<p>&#149; Open <code class="code">temp-converter</code>; follow <code class="code">instructions.txt</code></p>
-					<p>&#149; Get as creative as you like! Submit your assignment to your homework folder on GitHub before class next week</p>
+					<p>&#149; Get as creative as you like! </p>
 					<p>&#149; Doesn't have to be perfect - just turn in what you have</p>
-					<p>&#149; <a href="https://codepen.io/adrind/pen/jYzxbv">Tips</a></p>
-					<p>&#149; <a href="https://codepen.io/adrind/pen/WdZMzz?editors=0010#0">Common mistakes to avoid</a></p>
-				</section>
+					<p>&#149; <a href="https://codepen.io/adrind/pen/MBbjpd">Solution from last class</a></p>
+				</section> 
 
 				<!-- THE END -->
 				<section class="center">

@@ -33,7 +33,7 @@
 
 				<section class="hero condensed">
 					<h1>Class <span class="red">#06</span></h1>
-					<h1>12/14/2017</h1>
+					<h1>07/05/2018</h1>
 					<h1 class="lesson-title">Page Layout: Floats and Clears</h1>
 				</section>
 
@@ -42,7 +42,7 @@
 					<div class="heading">Annoucements</div>
 					<p>&#149; Final Projects:</p>
 					<div class="pad-left-lg">
-						<p>&rArr; First deliverable due Tuesday, December 19th</p>
+						<p>&rArr; First deliverable due next Thursday!!</p>
 						<p>&rArr; <a href="https://adriennedreyfus.typeform.com/to/WfmZnv">Project proposal/ideas</a></p>
 					</div>
 				</section>
@@ -56,23 +56,14 @@
 					<div class="heading">Questions</div>
 
 					<div class="text-smaller">
-						<p class="text-smaller"><b>Q: Why do we need normalize.css again? </b></p>
+						<p class="text-smaller"><b>Q: What is scss?</b></p>
 						<div class="fragment">
-							<p class="text-smallest">A: Normalize.css resets default browser styles to make it easier for us to develop on top of. We can use multiple CSS files in a HTML file!</p>
-<pre><code>
-	&lt;link rel="stylesheet" href="css/normalize.css"&gt;
-	&lt;link rel="stylesheet" href="css/main.css"&gt;
-
-</code></pre>
+							<p class="text-smallest">A: <a href="https://sass-lang.com/">SCSS (or SASS)</a> is a tool developers use to write CSS quickly. It has some features that CSS does not have that makes it faster to write CSS for large websites.</p>
 						</div>
-						<p class="fragment text-smaller"><b>Q: I'm still not confident about the box model.</b></p>
+						<p class="fragment text-smaller"><b>Everyone seems to love the in class exercises</b></p>
 						<div class="fragment text-smallest">
-				 			<p>A: Let's review when we go over Tuesday's class work.</p>
+				 			<p>Yay!</p>
 				 		</div>
-				 		<p class="fragment text-smallest"><b>Q: I'm getting more confident with CSS but how do I write the BEST CSS?</b></p>
-				 			<div class="fragment text-smallest">
-				 		<p>A: No easy answer (depends on your design) but <a href="https://css-tricks.com/methods-organize-css/" target="_blank">lots of theory</a></p>
-				 	</div>
 				 	</div>
 				</section>
 
@@ -181,7 +172,7 @@
 							<p>&rArr; <code class="code">&lt;a&gt;</code> tags are <b><a href="http://maxdesign.com.au/articles/inline/" target="_blank">INLINE</a></b> elements</p>
 							<p>&rArr; Cannot set <code class="code">margin-top</code> or <code class="code">margin-bottom</code></p>
 							<p>&rArr; Cannot set <code class="code">height</code> or <code class="code">width</code></p>
-							<p>&rArr; <a target="_blank" href="https://codepen.io/adrind/pen/NXqvYy?editors=1100">CodePen exercise</a></p>
+							<p>&rArr; <a target="_blank" href="https://codepen.io/adrind/pen/NXqvYy?editors=1100">CodePen demo</a></p>
 						</div>
 						<p class="fragment">&#149; We can set <code class="code">display: block</code>...</p>
 						<p class="fragment">&#149; ...but would have to implement floats</p>
@@ -222,6 +213,26 @@
 				<!-- FLOATS -->
 				<section class="title" id="float">
 					<h1>Floats</h1>
+				</section>
+
+				<section data-background="#FFF" class="text-left">
+					<div class="heading">First: A History of Positioning</div>
+
+					<div class="text-smallest fragment">
+						<p>&#149; Since the dawn of the Internet, developers have wanted to be able to move and position elements</p>
+					</div>
+					<div class="text-smallest fragment">
+						<p>&#149; There have been different ways to do this depending on the browsers you need to support:</p>
+						<div class="pad-left-lg fragment">
+							<p>&#149; <a href="https://www.w3schools.com/css/css_float.asp">Float</a> (IE < 9)</p>
+							<p>&#149; <code class="code">display: inline-block;</code>(IE < 10)</p>
+							<p>&#149; <a href="https://caniuse.com/#search=Flexbox">Flexbox</a> (IE < 11)</p>
+							<p>&#149; <a href="https://caniuse.com/#search=CSS%20grid">CSS grid</a> (IE < 11)</p>
+						</div>
+					</div>
+					<div class="text-smallest fragment">
+						<p>&#149; All of these are ways to help arrange elements in a horizonal (or vertical) order.</p>
+					</div>
 				</section>
 
 				<section data-background="#FFF" class="text-left">
@@ -361,7 +372,7 @@
 				<section data-background="#FFF" class="text-left">
 					<div class="heading">TLDR; floats are great but...</div>
 
-					<p>&#149; IE < 9 browser usage is dwindling.</p>
+					<p>&#149; IE < 9 browser usage is dwindling (if not dead).</p>
 					<p>&#149; It's important to <a href="https://www.w3counter.com/globalstats.php?year=2017&month=11" target="_blank">know your audience</a></p>
 					<p>&#149; Lots of alternatives to positioning: inline-block will get you far. Also <a href="https://developer.mozilla.org/en-US/docs/Learn/CSS/CSS_layout/Flexbox" target="_blank">Flexbox</a> (<a href="https://caniuse.com/#search=flexbox" target="_blank">for IE 10+</a>)</p>
 					<p>&#149; Good to know the theory behind it</p>

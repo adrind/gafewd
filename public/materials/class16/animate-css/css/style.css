@@ -1,0 +1,25 @@
+body { background: #9cb8b3; }
+
+.container {
+	display: flex;
+	justify-content: space-around;
+}
+
+
+
+span, span:after {
+    font-weight: 900;
+    color: #efedce;
+    white-space: nowrap;
+    display: inline-block;
+    position: relative;
+    letter-spacing: 5px;
+    padding: 20px;
+}
+
+span {
+    font-size: 32px;
+    z-index: 100;
+    text-shadow: 2px 2px 0 #9cb8b3;
+}
+
